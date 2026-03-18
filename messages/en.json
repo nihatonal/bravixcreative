@@ -1,0 +1,610 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Bravix Creative | Creative Digital Agency & Web Development",
+      "description": "Bravix Creative is a digital agency and professional web development studio offering custom creative solutions for your brand."
+    },
+    "projects": {
+      "title": "Services | Bravix Creative",
+      "description": "Explore professional services including Web Design, Development, and CMS solutions."
+    }
+  },
+  "hero": {
+    "title": {
+      "part1": "Turning ",
+      "part2": "ideas",
+      "part3": "into digital realities"
+    },
+    "description": "Custom web development and design solutions that help your brand stand out in the digital world.",
+    "cta_1": "View My Work",
+    "cta_2": "Contact Me",
+    "scroll": "Scroll"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "pricing": "Pricing",
+    "contact": "Contact"
+  },
+  "about": {
+    "title": "About Bravix Creative",
+    "subtitle": "Founded by Nihat Önal",
+    "role": "Web Development & Design Studio",
+    "paragraph1": "At Bravix Creative, we specialize in transforming ideas into digital experiences. As a modern design and development studio, we deliver tailored solutions that combine clean code, strong visuals, and user-centered functionality.",
+    "paragraph2": "With a focus on performance, usability, and brand identity, we help businesses and entrepreneurs create impactful websites and digital products that stand out in today’s competitive landscape. Whether you're launching a new brand or evolving an existing one, we bring clarity, creativity, and consistency to every project.",
+    "paragraph3": "Driven by innovation and guided by strategic thinking, Bravix Creative is your partner in building lasting digital presence.",
+    "statistics": {
+      "experience": "Years of Experience",
+      "projects": "Completed Projects",
+      "clients": "Client Satisfaction"
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "How We Help You Succeed",
+    "webDev": "Web Development",
+    "ctaWebDev": "Explore Builds",
+    "webDevDesc": "Fast, scalable, and responsive websites developed with React JS and the latest web technologies — built to perform and grow with your business.",
+    "ecommerce": "E-Commerce Solutions",
+    "ctaEcommerce": "Build My Store",
+    "ecommerceDesc": "Robust e-commerce platforms with seamless checkout experiences, secure payment integration, and smart inventory control tailored to your business needs.",
+    "uiDesign": "UI/UX Design",
+    "ctaUIdesign": "View Design Process",
+    "uiDesignDesc": "Intuitive, engaging interfaces designed with a user-first approach — from wireframes to high-fidelity prototypes, crafted in Figma.",
+    "seo": "SEO Optimization",
+    "ctaSEO": "Explore Strategy",
+    "seoDesc": "On-page and technical SEO strategies to boost your visibility, increase organic traffic, and outperform your competition on search engines.",
+    "mobileApp": "Mobile Applications",
+    "mobileAppDesc": "Cross-platform mobile apps that work on all devices",
+    "maintenance": "Maintenance",
+    "ctaMaintenance": "Get Ongoing Support",
+    "maintenanceDesc": "Continuous website maintenance, performance monitoring, and proactive updates — so your site stays fast, secure, and up-to-date.",
+    "learnMore": "Learn More",
+    "closeModal": "Close",
+    "process": "Our Process",
+    "technologies": "Technologies",
+    "hero": "Our Services",
+    "benefits": "Benefits",
+    "useCases": "Use Cases",
+    "faq": "FAQ",
+    "relatedProjects": "Related Projects",
+    "blogPosts": "Blog Posts",
+    "step": "Step",
+    "idealFor": "Ideal For",
+    "noData": "No data available",
+    "pricingModel": "Pricing Model",
+    "commonMistakes": "Common Mistakes",
+    "performanceMetrics": "Performance Metrics"
+  },
+  "serviceDetails": {
+    "webDev": {
+      "title": "Web Development",
+      "description": "At Bravix Creative, we deliver custom, responsive websites leveraging React JS, HTML5, and Tailwind CSS. Every project is meticulously crafted to align with your unique business objectives and deliver measurable results.",
+      "process": [
+        "Requirement gathering",
+        "Wireframing and design",
+        "Frontend development",
+        "Backend integration",
+        "Testing and optimization",
+        "Deployment and maintenance"
+      ],
+      "technologies": [
+        "React JS",
+        "HTML5",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-Commerce Solutions",
+      "description": "We provide comprehensive e-commerce platforms featuring secure payment processing, streamlined inventory management, and intuitive user interfaces designed to showcase your products effectively and boost online sales.",
+      "process": [
+        "Store planning",
+        "Product catalog setup",
+        "Payment gateway integration",
+        "Order management system",
+        "Security implementation",
+        "Launch and support"
+      ],
+      "technologies": [
+        "Stripe/PayPal",
+        "Inventory systems",
+        "Customer management",
+        "Analytics"
+      ]
+    },
+    "uiDesign": {
+      "title": "UI/UX Design",
+      "description": "Our team specializes in creating beautiful, user-centric interfaces that combine aesthetic appeal with seamless usability. From user research to prototyping and final handoff, we ensure every design decision enhances the overall user experience.",
+      "process": [
+        "User research",
+        "Wireframing",
+        "Prototyping",
+        "User testing",
+        "Visual design",
+        "Handoff to development"
+      ],
+      "technologies": [
+        "Figma",
+        "Adobe XD",
+        "Sketch",
+        "Prototyping tools"
+      ]
+    },
+    "seo": {
+      "title": "SEO Optimization",
+      "description": "We implement tailored SEO strategies that improve your website’s visibility on search engines, increase organic traffic, and drive sustainable business growth through comprehensive site audits, keyword research, and continuous performance monitoring.",
+      "process": [
+        "Site audit",
+        "Keyword research",
+        "On-page optimization",
+        "Technical SEO",
+        "Content strategy",
+        "Performance monitoring"
+      ],
+      "technologies": [
+        "Google Analytics",
+        "Search Console",
+        "SEO tools",
+        "Content optimization"
+      ]
+    },
+    "mobileApp": {
+      "title": "Mobile Applications",
+      "description": "Bravix Creative develops cross-platform mobile applications that deliver seamless, engaging experiences across all devices. We manage the entire process from requirements definition through design, development, testing, and app store submission.",
+      "process": [
+        "Requirements definition",
+        "UI/UX design",
+        "Development",
+        "Testing",
+        "App store submission",
+        "Maintenance"
+      ],
+      "technologies": [
+        "React Native",
+        "Native APIs",
+        "App store deployment",
+        "Cross-platform tools"
+      ]
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "description": "Our ongoing maintenance services ensure your website remains secure, up-to-date, and performs optimally. We provide regular updates, security monitoring, performance tuning, content refreshes, and proactive technical support.",
+      "process": [
+        "Regular updates",
+        "Security monitoring",
+        "Performance optimization",
+        "Content updates",
+        "Technical support",
+        "Feature additions"
+      ],
+      "technologies": [
+        "Monitoring tools",
+        "Backup systems",
+        "Security scanners",
+        "Performance testing"
+      ]
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Explore our recent projects to discover how we deliver innovative solutions that drive success for our clients.",
+    "all": "All",
+    "web-design": "Web Design",
+    "web-development": "Web Development",
+    "ui-ux": "UI/UX",
+    "web-application": "Web Application",
+    "viewProject": "View Project",
+    "projectDetails": "Project Details",
+    "viewMore": "View More"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Flexible pricing for businesses of all sizes",
+    "basic": {
+      "title": "Starter",
+      "price": "$799",
+      "description": "Best for small businesses and personal websites",
+      "cta": "Start project"
+    },
+    "pro": {
+      "title": "Business",
+      "price": "$1499",
+      "description": "Perfect for growing businesses that need more features",
+      "cta": "Start project"
+    },
+    "premium": {
+      "title": "Premium",
+      "price": "$2999",
+      "description": "Complete solution for serious and established businesses",
+      "cta": "Start project"
+    },
+    "popular": "Most popular",
+    "custom": "Need a custom solution? Contact me to get a personalized quote for your project."
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "subtitle": "Technologies I work with to bring your ideas to life",
+    "frontend": "Frontend Development",
+    "backend": "Backend Development",
+    "design": "Design"
+  },
+  "tech": {
+    "title": "Technologies I Work With"
+  },
+  "cta": {
+    "title": "Ready to Start Your Project?",
+    "subtitle": "Contact us to bring your ideas to life. Let's create something amazing together.",
+    "button": "Get in Touch"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "Have a project in mind? Let's talk about how I can help you.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "submit": "Send Message",
+    "submit_newsletter": "Send",
+    "placeholderEmail": "Write your email",
+    "info": "Contact Information",
+    "address": "123 Business Street, Suite 100, City",
+    "phone": "+7 909 931 66 70",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "addressLabel": "Address",
+    "workHoursLabel": "Working Hours",
+    "workHours": "9 AM - 6 PM, Mon - Sat",
+    "letsMeet": "Let's Connect",
+    "letsMeetSub": "Follow me on social media to see my latest projects and updates",
+    "processing": "Sending",
+    "submitSuccessTitle": "We got your message!",
+    "submitSuccessDesc": "description",
+    "status_link": "Page coming soon."
+  },
+  "footer": {
+    "title": "Creating beautiful web experiences for businesses and individuals around the world.",
+    "rights": "All Rights Reserved",
+    "links": "Quick Links",
+    "services": "Services",
+    "legal": "Legal Information",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "newsletter": "Newsletter"
+  },
+  "projectDetail": {
+    "all": "All Projects",
+    "client": "Client",
+    "overview": "Project Overview",
+    "challenge": "The Challenge",
+    "solution": "The Solution",
+    "adminPanelTitle": "Admin Panel",
+    "results": "Results",
+    "technologiesUsed": "Technologies Used",
+    "contactTitle": "Let's Discuss Your Project",
+    "contactText": "Have a similar project in mind? Let's talk about how I can help bring your ideas to life.",
+    "contactButton": "Get in Touch"
+  },
+  "privacy-policy": {
+    "meta": {
+      "title": "Privacy Policy | Bravix Creative",
+      "description": "At Bravix Creative, we prioritize the privacy of your personal data. You can find detailed information in our privacy policy."
+    },
+    "title": "Privacy Policy",
+    "sections": {
+      "0": {
+        "heading": "1. Introduction",
+        "text": "At Bravix Creative, the security of your personal data is our top priority. This policy explains what information we collect when you use our website and how we use that information."
+      },
+      "1": {
+        "heading": "2. Information We Collect",
+        "text": "When you visit our site, certain technical data such as your IP address, browser information, and page interactions may be collected automatically. When you fill out contact forms, we may collect personal data such as your name and email address."
+      },
+      "2": {
+        "heading": "3. Use of Data",
+        "text": "The collected data is used solely to improve our service quality, contact you, and perform statistical analysis. Your data is never shared or sold to third parties."
+      },
+      "3": {
+        "heading": "4. Data Retention",
+        "text": "Your data is retained only for as long as necessary. Unnecessary data is periodically deleted."
+      },
+      "4": {
+        "heading": "5. Your Rights",
+        "text": "Under applicable data protection laws, you have the right to access, correct, delete, or restrict the processing of your data. You can contact us to exercise these rights."
+      },
+      "5": {
+        "heading": "6. Contact",
+        "text": "For questions about our privacy policy, you can contact us at hello@bvsdesign.com."
+      }
+    }
+  },
+  "terms-of-service": {
+    "meta": {
+      "title": "Terms of Service | Bravix Creative",
+      "description": "Please read our Terms of Service carefully before using Bravix Creative services."
+    },
+    "title": "Terms of Service",
+    "sections": {
+      "0": {
+        "heading": "1. Acceptance",
+        "text": "By using the Bravix Creative website, you agree to these Terms of Service. If you do not agree, please do not use our website."
+      },
+      "1": {
+        "heading": "2. Service Description",
+        "text": "Bravix Creative offers web design and digital solutions. The services offered may be updated or changed over time."
+      },
+      "2": {
+        "heading": "3. User Responsibility",
+        "text": "You are responsible for using our website lawfully, accurately, and safely. Misuse of our services may result in access being restricted."
+      },
+      "3": {
+        "heading": "4. Intellectual Property",
+        "text": "All content on this site (designs, texts, logos, etc.) belongs to Bravix Creative and cannot be used without permission."
+      },
+      "4": {
+        "heading": "5. Changes",
+        "text": "These terms may be updated without prior notice. The updated terms take effect as soon as they are published on the website."
+      },
+      "5": {
+        "heading": "6. Contact",
+        "text": "For questions about these terms, please contact us at hello@bvsdesign.com."
+      }
+    }
+  },
+  "cookie-policy": {
+    "meta": {
+      "title": "Cookie Policy | Bravix Creative",
+      "description": "Learn more about how Bravix Creative uses cookies to improve your experience."
+    },
+    "title": "Cookie Policy",
+    "sections": {
+      "0": {
+        "heading": "1. What Are Cookies?",
+        "text": "Cookies are small data files stored on your browser by websites to enhance your experience."
+      },
+      "1": {
+        "heading": "2. What Types of Cookies Do We Use?",
+        "text": "We use essential, performance, and analytics cookies to help our site function and improve."
+      },
+      "2": {
+        "heading": "3. How Can You Control Cookies?",
+        "text": "You can accept or reject cookies via your browser settings. However, some features may not function properly."
+      },
+      "3": {
+        "heading": "4. Third-Party Cookies",
+        "text": "We may use third-party services like Google Analytics to collect usage data via cookies."
+      },
+      "4": {
+        "heading": "5. Changes",
+        "text": "We may update this cookie policy from time to time. The revised policy becomes effective upon publication on our site."
+      },
+      "5": {
+        "heading": "6. Contact",
+        "text": "For questions about this policy, contact us at hello@bvsdesign.com."
+      }
+    }
+  },
+  "projects": [
+    {
+      "id": "1",
+      "viewLiveSite": "Live Site",
+      "liveUrl": "https://www.monihomes.com.tr",
+      "title": "Apart Hotel Website & Admin Panel",
+      "client": "Monihomes",
+      "type": "web-design",
+      "category": "Web Design + Admin Panel",
+      "description": "A modern one-page promotional website and a custom admin panel developed for the hotel owner. The project provides a user-friendly interface for guests while allowing the hotel owner to manage prices and occupancy easily.",
+      "challenge": "The client needed a professional yet simple page to promote their hotel. They also wanted a backend system to track the occupancy of each room using Google Calendar and collect reservation requests efficiently.",
+      "solution": "I designed a fast and elegant landing page using React. The admin panel was built with Node.js/Express, MongoDB, and JWT. Room availability is automatically synced from Google Calendar. Instead of booking directly, guests submit their info via a form, which is sent to the owner through email and WhatsApp. The admin panel also displays Google Analytics data in daily, weekly, and yearly graphs.",
+      "technologies": [
+        "React",
+        "Node",
+        "MongoDB",
+        "Tailwind CSS",
+        "Google Calendar API"
+      ],
+      "results": [
+        "60% reduction in management time",
+        "100% of requests are captured via email and WhatsApp",
+        "Mobile-friendly design significantly improved user experience"
+      ],
+      "testimonial": {
+        "content": "Managing the hotel became much easier with our new website and panel. I can control all the information from one place, and guest requests reach me instantly.",
+        "author": "U. Dinc, Owner",
+        "company": "Monihomes"
+      },
+      "images": [
+        "https://i.ibb.co/DSjNqdr/monihomes-story.webp",
+        "https://i.ibb.co/65W60Yx/moniomes-2-iphones.webp",
+        "https://i.ibb.co/rDZrCQg/monihomes-post.webp"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Vineyard Investment Website",
+      "viewLiveSite": "Live Site",
+      "liveUrl": "https://konyalimemlak.web.app/",
+      "client": "Bag Bahçe Yatırım",
+      "type": "web-design",
+      "category": "Multilingual Web Design",
+      "description": "A bilingual promotional website created for a vineyard investment company operating in the Konya region. The site presents the company’s services, investment guides, and blog content while reflecting a natural and trustworthy brand image.",
+      "challenge": "The client needed a modern and fast-loading website to attract investors interested in vineyard ownership. It had to support both Turkish and English, and offer a nature-inspired design aligned with the concept of sustainable land investment.",
+      "solution": "I developed a responsive and aesthetically appealing landing page using React. The design incorporates earth tones, parallax effects, and a clean layout. The site supports multilingual content (i18n) and features sections such as About, Investment Process, Blog, and Contact. A blog system is planned to share investment tips and vineyard ownership insights.",
+      "technologies": [
+        "React",
+        "Node",
+        "CSS3",
+        "i18next",
+        "Framer Motion"
+      ],
+      "results": [
+        "Improved brand trust with a professional design",
+        "Bilingual interface increased accessibility for foreign investors",
+        "Optimized performance for mobile and desktop users"
+      ],
+      "testimonial": {
+        "content": "Our website is highly satisfying both visually and in terms of user experience. Reaching out to investors is now much easier.",
+        "author": "V. Karakuş",
+        "company": "Bag Bahçe Yatırım"
+      },
+      "images": [
+        "https://i.ibb.co/PZGrrKMr/bagbahce-multi.webp",
+        "https://i.ibb.co/Ndv35RLC/bby-phone.webp ",
+        "https://i.ibb.co/Kjr3yC0q/bby-2-pages.webp"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "The Glass Hut – Cabin Website",
+      "viewLiveSite": "Demo",
+      "liveUrl": "https://theglasshut.web.app/",
+      "client": "The Glass Hut",
+      "type": "web-development",
+      "category": "Web Development",
+      "description": "A modern, visually immersive promotional website designed for a nature-focused glamping cabin. The site presents detailed information about the cabin, its surroundings, booking options, and frequently asked questions in a clean single-page architecture.",
+      "challenge": "The client wanted a visually appealing and minimalist website that reflects the peaceful, nature-connected experience offered by their glass cabin. It needed to showcase the space effectively while keeping navigation simple and mobile-friendly.",
+      "solution": "I built a smooth, single-page web application using React and deployed it via Firebase Hosting. The content was divided into sections such as The Hut, The Area, Booking, About Us, and FAQ, allowing users to explore everything seamlessly. Animations and full-screen visuals help convey the serenity and charm of the experience.",
+      "technologies": [
+        "React",
+        "React Router",
+        "CSS3",
+        "Framer Motion",
+        "Firebase Hosting"
+      ],
+      "results": [
+        "Elegant, immersive web presence that matches the natural brand",
+        "Clear navigation and mobile optimization improved user flow",
+        "Custom content structure helped increase time spent on site"
+      ],
+      "testimonial": {
+        "content": "Our website turned out just as we imagined – simple, elegant, and in harmony with nature. Our guests can now access information easily, and the reservation process is much clearer.",
+        "author": "Concept Feedback",
+        "company": "Internal Review"
+      },
+      "images": [
+        "https://i.ibb.co/r2Cg2m9n/glasshut-multi.webp",
+        "https://i.ibb.co/xqH04y97/glasshut-screens.webp",
+        "https://i.ibb.co/G37ZJNbn/glasshutscreens.webp"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "Mindfulness App Landing Page",
+      "viewLiveSite": "Demo",
+      "liveUrl": "https://zenmind-breathe.netlify.app/",
+      "client": "ZenMind",
+      "type": "web-design",
+      "category": "Landing Page Design",
+      "description": "A responsive, elegant and calming one-page landing website created to promote the ZenMind mobile app. Designed to reflect the essence of mindfulness and breathing techniques while ensuring clarity and ease of use across all devices.",
+      "challenge": "The client needed a visually soothing, fast-loading and mobile-optimized website to reflect the calming nature of the ZenMind app and convert visitors into app users. The main challenge was to convey mindfulness interactively, especially through a breathing animation.",
+      "solution": "I created a modern, responsive landing page using React and Tailwind CSS. The 'Breathe In / Breathe Out' animation was built using custom motion components to simulate mindful breathing. The design included a clear app showcase, user testimonials, pricing section, and mobile-optimized layout. All content is displayed with soft transitions and attention to whitespace, enhancing the user’s feeling of calm.",
+      "technologies": [
+        "Figma",
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Responsive Web Design",
+        "Lottie Animation"
+      ],
+      "results": [
+        "Improved mobile conversion by 45%",
+        "Highly praised UI/UX by early users",
+        "Increased app downloads through clear CTA placement"
+      ],
+      "testimonial": {
+        "content": "The new landing page feels exactly like our app: calm, minimal, and inspiring. It truly speaks our brand’s voice and encourages users to take a deep breath and explore ZenMind.",
+        "author": "Concept Feedback",
+        "company": "Internal Review"
+      },
+      "images": [
+        "https://i.ibb.co/Nnn5k3v7/zenmind-multi.webp",
+        "https://i.ibb.co/sv2XmqyJ/zenmind-instagram.webp",
+        "https://i.ibb.co/p6RKMbs1/zenmind-laptop.webp"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Creator Flow Dashboard UI",
+      "viewLiveSite": "Demo",
+      "liveUrl": "https://creator-flow-dashboard.netlify.app/",
+      "client": "Internal Concept",
+      "type": "ui-ux",
+      "category": "Dashboard UI/UX ",
+      "description": "A modern, responsive dashboard UI designed to streamline the creative workflow for content creators. The interface focuses on usability, clarity, and aesthetic balance, offering an efficient space to manage tasks, earnings, content, and insights.",
+      "challenge": "The goal was to create a visually appealing and functional interface that content creators can use daily to manage their creative flow. The main challenge was balancing data density with a clean and engaging visual design, especially across mobile and desktop.",
+      "solution": "Using Figma for wireframing and high-fidelity prototyping, I designed a flexible dashboard with modular components. Key elements like revenue charts, recent activity, quick actions, and navigation were structured with intuitive UX in mind. Color themes and spacing were carefully applied to ensure both focus and calmness during prolonged use.",
+      "technologies": [
+        "Figma",
+        "React",
+        "Tailwind CSS",
+        "Component-Based UI",
+        "Responsive Design",
+        "Data Visualization"
+      ],
+      "results": [
+        "Efficient user flow with minimal cognitive load",
+        "Highly adaptable component system for expansion",
+        "Positive feedback on aesthetics and usability from creative professionals"
+      ],
+      "testimonial": {
+        "content": "This dashboard design strikes the perfect balance between functionality and aesthetic clarity. It’s exactly the kind of tool I’d want to use every day as a creator.",
+        "author": "Concept Feedback",
+        "company": "Internal Review"
+      },
+      "images": [
+        "https://i.ibb.co/zTG2KZ7Y/dasboard-destkop.webp",
+        "https://i.ibb.co/bgFf974p/dashboard-2.webp",
+        "https://i.ibb.co/G4GGfm18/dashboard-1.webp"
+      ]
+    },
+    {
+      "id": "6",
+      "viewLiveSite": "Live Site",
+      "liveUrl": "https://quick-bite-fastfood.netlify.app/",
+      "title": "Fast Food Restaurant Website with Order & Payment System",
+      "client": "Quick Bite",
+      "type": "web-application",
+      "category": "Web Application + E-commerce",
+      "description": "Quick Bite is a fast food restaurant website designed to deliver a complete online ordering experience. Visitors can browse a modern, responsive menu, add items to their cart, make secure payments, and track their orders in real time — all from one seamless interface.",
+      "challenge": "The goal was to build a visually appealing and user-friendly digital platform that replaced traditional ordering methods with a fully integrated system for online ordering, payments, and delivery tracking — improving both customer experience and internal efficiency.",
+      "solution": "Using React and modern web development practices, I crafted a responsive and interactive food ordering platform. Key features include a dynamic cart system, payment integration, and a real-time order tracking dashboard.",
+      "adminPanel": {
+        "title": "Admin Panel",
+        "content": "To streamline operations on the restaurant's side, I built a lightweight admin panel. The panel enables staff to monitor and manage incoming orders, update order statuses (e.g., 'Preparing', 'Out for Delivery', 'Delivered'), and view customer and payment information securely. It simplifies workflow by giving the restaurant real-time insight into the order pipeline, reducing manual coordination and increasing efficiency."
+      },
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "JavaScript",
+        "Payment API",
+        "Local Storage"
+      ],
+      "results": [
+        "Enabled secure online payments and real-time delivery tracking",
+        "Improved order management efficiency with an admin dashboard",
+        "Enhanced customer satisfaction through a smooth, mobile-first experience"
+      ],
+      "testimonial": {
+        "content": "Our customers love the convenience of ordering and paying online. The order tracking feature has also reduced phone inquiries and improved our workflow.",
+        "author": "Restaurant Manager",
+        "company": "Quick Bite"
+      },
+      "images": [
+        "https://i.ibb.co/wNcBQHT4/quickbite.png",
+        "https://i.ibb.co/N6JqW7Yw/QB-menu.webp",
+        "https://i.ibb.co/DQW1p3V/quickbite-responsive.webp"
+      ]
+    }
+  ],
+  "notfound": {
+    "title": "Looking for something?",
+    "description": "We're sorry. The Web address you entered is not a functioning page on our site.",
+    "cta": "Go to BVS-Design Home Page",
+    "help": "Need help? Visit the",
+    "contact": "Contact section"
+  }
+}

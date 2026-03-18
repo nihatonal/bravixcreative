@@ -1,0 +1,625 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Bravix Creative | Yaratıcı Dijital Ajans & Web Geliştirme",
+      "description": "Bravix Creative, markanıza özel yaratıcı çözümler sunan dijital ajans ve profesyonel web geliştirme stüdyosudur."
+    },
+    "projects": {
+      "title": "Hizmetler | Bravix Creative",
+      "description": "Web Tasarımı, Geliştirme ve CMS çözümleri dahil profesyonel hizmetleri keşfedin."
+    }
+  },
+  "hero": {
+    "title": {
+      "part1": "Fikirleri ",
+      "part2": "dijital",
+      "part3": "dünyaya taşıyoruz"
+    },
+    "description": "Markanızı dijital dünyada öne çıkarmak için özel web geliştirme ve tasarım çözümleri.",
+    "cta_1": "Projelerim",
+    "cta_2": "İletişime Geç",
+    "scroll": "Kaydır"
+  },
+  "nav": {
+    "home": "Anasayfa",
+    "about": "Hakkımızda",
+    "services": "Hizmetler",
+    "pricing": "Fiyatlandırma",
+    "portfolio": "Portföy",
+    "contact": "İletişim"
+  },
+  "about": {
+    "title": "Bravix Creative Hakkında",
+    "subtitle": "Nihat Önal tarafından kurulan",
+    "role": "Web Geliştirme & Tasarım Stüdyosu",
+    "paragraph1": "Bravix Creative olarak, fikirleri dijital deneyimlere dönüştürme konusunda uzmanız. Modern bir tasarım ve yazılım stüdyosu olarak, temiz kod, güçlü görseller ve kullanıcı odaklı işlevselliği bir araya getiren özel çözümler sunuyoruz.",
+    "paragraph2": "Performans, kullanılabilirlik ve marka kimliğine odaklanarak, işletmelerin ve girişimcilerin bugünün rekabetçi ortamında öne çıkan etkileyici web siteleri ve dijital ürünler oluşturmasına yardımcı oluyoruz. İster yeni bir marka başlatıyor olun, ister mevcut birini geliştiriyor olun; her projeye açıklık, yaratıcılık ve tutarlılık getiriyoruz.",
+    "paragraph3": "Yenilikten ilham alan ve stratejik düşünceyle yönlendirilen Bravix Creative, kalıcı bir dijital varlık oluşturma konusunda sizin iş ortağınızdır.",
+    "statistics": {
+      "experience": "Yıllık Deneyim",
+      "projects": "Tamamlanan Proje",
+      "clients": "Memnuniyet Oranı"
+    }
+  },
+  "services": {
+    "title": "Hizmetler",
+    "subtitle": "Başarınıza Nasıl Katkı Sağlıyoruz",
+    "webDev": "Web Geliştirme",
+    "ctaWebDev": "Projeleri Keşfet",
+    "webDevDesc": "React JS ve en güncel web teknolojileriyle geliştirilen hızlı, ölçeklenebilir ve duyarlı web siteleri — işletmenizin büyümesine uyumlu şekilde tasarlanır.",
+    "ecommerce": "E-Ticaret Çözümleri",
+    "ctaEcommerce": "Mağazamı Kur",
+    "ecommerceDesc": "Sorunsuz ödeme deneyimi, güvenli ödeme entegrasyonu ve akıllı stok yönetimiyle işletmenize özel güçlü e-ticaret altyapıları.",
+    "uiDesign": "UI/UX Tasarımı",
+    "ctaUIdesign": "Tasarım Sürecini Görüntüle",
+    "uiDesignDesc": "Kullanıcı öncelikli yaklaşımla oluşturulmuş sezgisel ve etkileyici arayüzler — wireframe'den yüksek çözünürlüklü prototiplere kadar, Figma ile hazırlanır.",
+    "seo": "SEO Optimizasyonu",
+    "ctaSEO": "Stratejiyi İncele",
+    "seoDesc": "Görünürlüğünüzü artırmak, organik trafiği çoğaltmak ve arama motorlarında rakiplerinizin önüne geçmek için sayfa içi ve teknik SEO stratejileri.",
+    "mobileApp": "Mobil Uygulamalar",
+    "mobileAppDesc": "Tüm cihazlarda çalışan çapraz platform mobil uygulamalar",
+    "maintenance": "Bakım Hizmeti",
+    "ctaMaintenance": "Destek Al",
+    "maintenanceDesc": "Web sitenizin hızlı, güvenli ve güncel kalması için sürekli bakım, performans takibi ve önleyici güncellemeler.",
+    "learnMore": "Daha Fazla Bilgi",
+    "closeModal": "Kapat",
+    "process": "Süreç",
+    "technologies": "Teknolojiler",
+    "hero": "Hizmetlerimiz",
+    "benefits": "Faydalar",
+    "useCases": "Kullanım Alanları",
+    "faq": "Sık Sorulan Sorular",
+    "relatedProjects": "İlgili Projeler",
+    "blogPosts": "Blog Yazıları",
+    "step": "Adım",
+    "idealFor": "İdeal Olanlar",
+    "noData": "Veri mevcut değil",
+    "pricingModel": "Fiyatlandırma Modeli",
+    "commonMistakes": "Yaygın Hatalar",
+    "performanceMetrics": "Performans Ölçütleri"
+  },
+  "serviceDetails": {
+    "webDev": {
+      "title": "Web Geliştirme",
+      "description": "React JS, HTMLBravix Creative olarak, React JS, HTML5 ve Tailwind CSS kullanarak özel, duyarlı web siteleri geliştiriyoruz. Her proje, benzersiz iş hedeflerinize uyacak şekilde titizlikle tasarlanmakta ve ölçülebilir sonuçlar sağlamaktadır.",
+      "process": [
+        "Gereksinim toplama",
+        "Taslak ve tasarım",
+        "Frontend geliştirme",
+        "Backend entegrasyonu",
+        "Test ve optimizasyon",
+        "Dağıtım ve bakım"
+      ],
+      "technologies": [
+        "React JS",
+        "HTML5",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-Ticaret Çözümleri",
+      "description": "Güvenli ödeme sistemleri, kolay envanter yönetimi ve ürünlerinizi etkili şekilde sergileyen kullanıcı dostu arayüzlerle kapsamlı e-ticaret platformları sunuyoruz. Online satışlarınızı artırmayı hedefliyoruz.",
+      "process": [
+        "Mağaza planlama",
+        "Ürün kataloğu kurulumu",
+        "Ödeme geçidi entegrasyonu",
+        "Sipariş yönetim sistemi",
+        "Güvenlik uygulaması",
+        "Lansman ve destek"
+      ],
+      "technologies": [
+        "Stripe/PayPal",
+        "Envanter sistemleri",
+        "Müşteri yönetimi",
+        "Analitik"
+      ]
+    },
+    "uiDesign": {
+      "title": "UI/UX Tasarımı",
+      "description": "Estetik açıdan çekici ve kullanımı kolay, kullanıcı odaklı arayüzler tasarlıyoruz. Kullanıcı araştırmasından prototiplemeye ve son teslimata kadar her adımda deneyimi iyileştirmeye odaklanıyoruz.",
+      "process": [
+        "Kullanıcı araştırması",
+        "Taslak oluşturma",
+        "Prototip oluşturma",
+        "Kullanıcı testi",
+        "Görsel tasarım",
+        "Geliştirmeye aktarım"
+      ],
+      "technologies": [
+        "Figma",
+        "Adobe XD",
+        "Sketch",
+        "Prototip oluşturma araçları"
+      ]
+    },
+    "seo": {
+      "title": "SEO Optimizasyonu",
+      "description": "Web sitenizin arama motorlarındaki görünürlüğünü artırmak, organik trafiği yükseltmek ve sürdürülebilir iş büyümesi sağlamak için kapsamlı SEO stratejileri uyguluyoruz. Site denetimleri, anahtar kelime araştırmaları ve performans takibi gerçekleştiriyoruz.",
+      "process": [
+        "Site denetimi",
+        "Anahtar kelime araştırması",
+        "Sayfa optimizasyonu",
+        "Teknik SEO",
+        "İçerik stratejisi",
+        "Performans izleme"
+      ],
+      "technologies": [
+        "Google Analytics",
+        "Search Console",
+        "SEO araçları",
+        "İçerik optimizasyonu"
+      ]
+    },
+    "mobileApp": {
+      "title": "Mobil Uygulamalar",
+      "description": "Bravix Creative olarak, tüm cihazlarda sorunsuz ve etkileyici deneyimler sunan çapraz platform mobil uygulamalar geliştiriyoruz. Gereksinim belirlemeden tasarım, geliştirme, test ve uygulama mağazası yayınına kadar tüm süreci yönetiyoruz.",
+      "process": [
+        "Gereksinim tanımlama",
+        "UI/UX tasarımı",
+        "Geliştirme",
+        "Test",
+        "App store başvurusu",
+        "Bakım"
+      ],
+      "technologies": [
+        "React Native",
+        "Native API'lar",
+        "App store dağıtımı",
+        "Çapraz platform araçları"
+      ]
+    },
+    "maintenance": {
+      "title": "Bakım",
+      "description": "Web sitenizin güvenli, güncel ve optimal performansta kalmasını sağlamak için sürekli bakım hizmetleri sunuyoruz. Düzenli güncellemeler, güvenlik izleme, performans iyileştirmeleri, içerik yenileme ve teknik destek sağlıyoruz.",
+      "process": [
+        "Düzenli güncellemeler",
+        "Güvenlik izleme",
+        "Performans optimizasyonu",
+        "İçerik güncellemeleri",
+        "Teknik destek",
+        "Özellik eklemeleri"
+      ],
+      "technologies": [
+        "İzleme araçları",
+        "Yedekleme sistemleri",
+        "Güvenlik tarayıcıları",
+        "Performans testi"
+      ]
+    }
+  },
+  "portfolio": {
+    "title": "Portföyümüz",
+    "subtitle": "Son projelerimizi inceleyerek, müşterilerimize başarı getiren yenilikçi çözümlerimizi keşfedebilirsiniz.",
+    "all": "Tümü",
+    "web-design": "Web Tasarımı",
+    "web-development": "Web Geliştirme",
+    "ui-ux": "UI/UX",
+    "web-application": "Web Uygulaması",
+    "viewProject": "Projeyi Görüntüle",
+    "projectDetails": "Proje Detayları",
+    "viewMore": "Daha Fazla Gör"
+  },
+  "pricing": {
+    "title": "Fiyatlandırma",
+    "subtitle": "Her ölçekte işletme için esnek fiyat seçenekleri",
+    "basic": {
+      "title": "Starter",
+      "price": "$799",
+      "description": "Küçük işletmeler ve kişisel web siteleri için ideal",
+      "cta": "Projeyi başlat"
+    },
+    "pro": {
+      "title": "Business",
+      "price": "$1499",
+      "description": "Daha fazla özellik isteyen büyüyen işletmeler için en iyi seçim",
+      "cta": "Projeyi başlat"
+    },
+    "premium": {
+      "title": "Premium",
+      "price": "$2999",
+      "description": "Kurumsal ve kapsamlı çözüme ihtiyaç duyan işletmeler için",
+      "cta": "Projeyi başlat"
+    },
+    "popular": "En çok tercih edilen",
+    "custom": "Özel bir proje mi gerekiyor? Size özel fiyat teklifi almak için benimle iletişime geçin."
+  },
+  "skills": {
+    "title": "Beceriler ve Uzmanlık",
+    "subtitle": "Fikirlerinizi hayata geçirmek için çalıştığım teknolojiler",
+    "frontend": "Frontend Geliştirme",
+    "backend": "Backend Geliştirme",
+    "design": "Tasarım"
+  },
+  "tech": {
+    "title": "Çalıştığım Teknolojiler"
+  },
+  "cta": {
+    "title": "Projenize Başlamaya Hazır mısınız?",
+    "subtitle": "Fikirlerinizi hayata geçirmek için bizimle iletişime geçin. Birlikte harika bir şeyler yaratalım.",
+    "button": "İletişime Geçin"
+  },
+  "contact": {
+    "title": "İletişime Geç",
+    "subtitle": "Bir projen mi var? Sana nasıl yardımcı olabileceğimi konuşalım.",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "subject": "Konu",
+    "message": "Mesajınız",
+    "submit": "Mesaj Gönder",
+    "placeholderEmail": "Emailinizi yazınız",
+    "submit_newsletter": "Gönder",
+    "info": "İletişim Bilgileri",
+    "address": "123 İş Caddesi, 100. Ofis, Şehir",
+    "phone": "+90 (212) 345-6789",
+    "phoneLabel": "Telefon",
+    "emailLabel": "E-posta",
+    "addressLabel": "Adres",
+    "workHoursLabel": "Çalışma Saatleri",
+    "workHours": "09:00 - 18:00, Pazartesi - Cumartesi",
+    "letsMeet": "Bağlantıda Kalalım",
+    "letsMeetSub": "En yeni projelerimi ve güncellemelerimi görmek için beni sosyal medyada takip edin",
+    "processing": "Gönderiliyor",
+    "submitSuccessTitle": "Mesajınızı aldık!",
+    "submitSuccessDesc": "açıklama",
+    "status_link": "Sayfa yakında geliyor."
+  },
+  "footer": {
+    "title": "Dünyanın dört bir yanındaki işletmeler ve bireyler için etkileyici web deneyimleri oluşturuyorum.",
+    "rights": "Tüm Hakları Saklıdır",
+    "links": "Hızlı Bağlantılar",
+    "services": "Hizmetler",
+    "legal": "Yasal Bilgiler",
+    "privacy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "cookies": "Çerez Politikası",
+    "newsletter": "Bülten"
+  },
+  "projectDetail": {
+    "all": "Tüm Projeler",
+    "client": "Müşteri",
+    "overview": "Proje Özeti",
+    "challenge": "Zorluk",
+    "solution": "Çözüm",
+    "adminPanelTitle": "Yönetici Paneli",
+    "results": "Sonuçlar",
+    "technologiesUsed": "Kullanılan Teknolojiler",
+    "contactTitle": "Projenizi Konuşalım",
+    "contactText": "Benzer bir projeniz mi var? Fikirlerinizi gerçeğe dönüştürmem için konuşalım.",
+    "contactButton": "İletişime Geç"
+  },
+  "privacy-policy": {
+    "meta": {
+      "title": "Gizlilik Politikası | Bravix Creative",
+      "description": "Bravix Creative olarak kişisel verilerinizin gizliliğine önem veriyoruz. Detaylı bilgiyi gizlilik politikamızda bulabilirsiniz."
+    },
+    "title": "Gizlilik Politikası",
+    "sections": {
+      "0": {
+        "heading": "1. Giriş",
+        "text": "Bravix Creative olarak, kişisel verilerinizin güvenliği bizim için en yüksek önceliktir. Bu politika, web sitemizi kullanırken topladığımız bilgileri ve bu bilgileri nasıl kullandığımızı açıklamaktadır."
+      },
+      "1": {
+        "heading": "2. Toplanan Bilgiler",
+        "text": "Sitemizi ziyaret ettiğinizde IP adresiniz, tarayıcı bilgileriniz ve sayfa etkileşimleriniz gibi bazı teknik veriler otomatik olarak toplanabilir. İletişim formlarını doldurduğunuzda adınız, e-posta adresiniz gibi kişisel verileriniz tarafımıza iletilir."
+      },
+      "2": {
+        "heading": "3. Verilerin Kullanımı",
+        "text": "Toplanan veriler, yalnızca hizmet kalitemizi artırmak, sizinle iletişime geçmek ve istatistiksel analizler yapmak amacıyla kullanılır. Verileriniz hiçbir şekilde üçüncü şahıslarla paylaşılmaz veya satılmaz."
+      },
+      "3": {
+        "heading": "4. Verilerin Saklanması",
+        "text": "Verileriniz yalnızca gerekli olduğu süre boyunca saklanır. Gerekli olmayan veriler periyodik olarak silinir."
+      },
+      "4": {
+        "heading": "5. Haklarınız",
+        "text": "KVKK kapsamında, verilerinize erişim, düzeltme, silme veya işlenmesini kısıtlama gibi haklara sahipsiniz. Bu hakları kullanmak için bizimle iletişime geçebilirsiniz."
+      },
+      "5": {
+        "heading": "6. İletişim",
+        "text": "Gizlilik politikamız hakkında sorularınız için bizimle hello@bvsdesign.com adresinden iletişime geçebilirsiniz."
+      }
+    }
+  },
+  "terms-of-service": {
+    "meta": {
+      "title": "Hizmet Şartları | Bravix Creative",
+      "description": "Bravix Creative hizmetlerini kullanmadan önce lütfen hizmet şartlarımızı dikkatlice okuyun."
+    },
+    "title": "Hizmet Şartları",
+    "sectionOrder": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "sections": {
+      "0": {
+        "heading": "1. Kabul",
+        "text": "Bravix Creative web sitesini kullanarak, bu Hizmet Şartlarını kabul etmiş sayılırsınız. Bu şartları kabul etmiyorsanız, lütfen web sitemizi kullanmayınız."
+      },
+      "1": {
+        "heading": "2. Hizmet Tanımı",
+        "text": "Bravix Creative, web tasarımı ve dijital çözümler sunar. Sunulan hizmetler, zamanla güncellenebilir veya değiştirilebilir."
+      },
+      "2": {
+        "heading": "3. Kullanıcı Sorumluluğu",
+        "text": "Web sitemizi kullanırken doğru, yasal ve güvenli hareket etmekle yükümlüsünüz. Hizmetlerimizi kötüye kullanmanız halinde erişiminiz engellenebilir."
+      },
+      "3": {
+        "heading": "4. Fikri Mülkiyet",
+        "text": "Bu sitedeki tüm içerik (tasarımlar, metinler, logolar vb.) Bravix Creative’a aittir ve izinsiz kullanılamaz."
+      },
+      "4": {
+        "heading": "5. Değişiklikler",
+        "text": "Bu şartlar önceden haber verilmeden değiştirilebilir. Güncellenmiş şartlar web sitesinde yayınlandığı anda geçerli olur."
+      },
+      "5": {
+        "heading": "6. İletişim",
+        "text": "Bu hizmet şartları hakkında sorularınız varsa hello@bvsdesign.com adresinden bizimle iletişime geçebilirsiniz."
+      }
+    }
+  },
+  "cookie-policy": {
+    "meta": {
+      "title": "Çerez Politikası | Bravix Creative",
+      "description": "Web sitemizin çerez kullanımına dair detaylı bilgiye buradan ulaşabilirsiniz."
+    },
+    "title": "Çerez Politikası",
+    "sectionOrder": [
+      "0",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "sections": {
+      "0": {
+        "heading": "1. Çerez Nedir?",
+        "text": "Çerezler, web siteleri tarafından tarayıcınıza yerleştirilen küçük veri dosyalarıdır. Kullanıcı deneyimini geliştirmek için kullanılır."
+      },
+      "1": {
+        "heading": "2. Hangi Tür Çerezleri Kullanıyoruz?",
+        "text": "Zorunlu, performans ve analiz çerezlerini kullanıyoruz. Bu çerezler, web sitemizin çalışmasını ve geliştirilmesini sağlar."
+      },
+      "2": {
+        "heading": "3. Çerezleri Nasıl Kontrol Edebilirsiniz?",
+        "text": "Tarayıcı ayarlarınızdan çerezleri kabul etmeyi veya reddetmeyi seçebilirsiniz. Ancak bazı özellikler düzgün çalışmayabilir."
+      },
+      "3": {
+        "heading": "4. Üçüncü Taraf Çerezleri",
+        "text": "Google Analytics gibi hizmetler aracılığıyla üçüncü taraf çerezleri kullanabiliriz. Bu çerezler kullanıcı davranışını analiz etmemize yardımcı olur."
+      },
+      "4": {
+        "heading": "5. Değişiklikler",
+        "text": "Bu çerez politikası zaman zaman güncellenebilir. Güncellenmiş hali web sitemizde yayımlandığında geçerli olur."
+      },
+      "5": {
+        "heading": "6. İletişim",
+        "text": "Çerez politikamızla ilgili sorularınız için lütfen hello@bvsdesign.com adresinden bizimle iletişime geçin."
+      }
+    }
+  },
+  "projects": [
+    {
+      "id": "1",
+      "viewLiveSite": "Siteyi Görüntüle",
+      "liveUrl": "https://www.monihomes.com.tr",
+      "title": "Apart Otel Web Sitesi & Yönetici Paneli",
+      "client": "Monihomes",
+      "type": "web-design",
+      "category": "Web Tasarımı + Yönetim Paneli",
+      "description": "Otel sahibi için geliştirilen modern bir tek sayfalık tanıtım sitesi ve özel bir yönetici paneli. Proje, konuklar için kullanıcı dostu bir arayüz sunarken, otel sahibinin fiyatları ve doluluk durumunu kolayca yönetmesini sağlar.",
+      "challenge": "Müşteri, otelini tanıtmak için profesyonel ancak basit bir sayfa istedi. Ayrıca, her odanın doluluğunu Google Takvimi üzerinden takip edebileceği ve rezervasyon taleplerini verimli bir şekilde toplayabileceği bir arka uç sistemine ihtiyaç vardı.",
+      "solution": "React kullanarak hızlı ve şık bir açılış sayfası tasarladım. Yönetici paneli Node.js/Express, MongoDB ve JWT ile inşa edildi. Oda doluluk durumu otomatik olarak Google Takvimi'nden senkronize edildi. Misafirler doğrudan rezervasyon yapmadı, bunun yerine bilgilerini bir form aracılığıyla göndererek, bu bilgiler otel sahibine e-posta ve WhatsApp ile iletildi. Yönetici paneli, Google Analytics verilerini günlük, haftalık ve yıllık grafiklerde görüntülüyor.",
+      "technologies": [
+        "React",
+        "Node",
+        "MongoDB",
+        "Tailwind CSS",
+        "Google Takvimi API"
+      ],
+      "results": [
+        "Yönetim süresinde %60 azalma",
+        "Tüm talepler e-posta ve WhatsApp ile %100 yakalandı",
+        "Mobil uyumlu tasarım, kullanıcı deneyimini önemli ölçüde iyileştirdi"
+      ],
+      "testimonial": {
+        "content": "Yeni web sitemiz ve panelimizle otel yönetimi çok daha kolay hale geldi. Tüm bilgileri tek bir yerden kontrol edebiliyorum ve misafir talepleri anında bana ulaşıyor.",
+        "author": "U. Dinc, Sahip",
+        "company": "Monihomes"
+      },
+      "images": [
+        "https://i.ibb.co/DSjNqdr/monihomes-story.webp",
+        "https://i.ibb.co/65W60Yx/moniomes-2-iphones.webp",
+        "https://i.ibb.co/rDZrCQg/monihomes-post.webp"
+      ]
+    },
+    {
+      "id": "2",
+      "viewLiveSite": "Siteyi Görüntüle",
+      "liveUrl": "https://konyalimemlak.web.app/",
+      "title": "Bağ Yatırım Web Sitesi",
+      "client": "Bag Bahçe Yatırım",
+      "type": "web-design",
+      "category": "Çok Dilli Web Tasarımı",
+      "description": "Konya bölgesinde faaliyet gösteren bir bağ yatırımı şirketi için oluşturulmuş iki dilli tanıtım web sitesi. Site, şirketin hizmetlerini, yatırım kılavuzlarını ve blog içeriklerini sunarken, doğal ve güvenilir bir marka imajı yansıtmaktadır.",
+      "challenge": "Müşteri, bağ sahipliğiyle ilgilenen yatırımcıları çekmek için modern ve hızlı yüklenen bir web sitesi istiyordu. Hem Türkçe hem de İngilizce desteklemesi ve sürdürülebilir arazi yatırımı konseptiyle uyumlu doğal bir tasarım sunması gerekiyordu.",
+      "solution": "React kullanarak duyarlı ve estetik açıdan çekici bir açılış sayfası geliştirdim. Tasarım, doğal tonlar, paralaks efektler ve sade bir düzen içeriyor. Site, çok dilli içerik (i18n) desteği sunuyor ve Hakkında, Yatırım Süreci, Blog ve İletişim gibi bölümleri içeriyor. Yatırım ipuçları ve bağ sahipliği bilgilerini paylaşmak için bir blog sistemi planlanmıştır.",
+      "technologies": [
+        "React",
+        "Node",
+        "CSS3",
+        "i18next",
+        "Framer Motion"
+      ],
+      "results": [
+        "Profesyonel tasarım ile marka güveni arttı",
+        "İki dilli arayüz, yabancı yatırımcılar için erişilebilirliği artırdı",
+        "Mobil ve masaüstü kullanıcıları için optimize edilmiş performans"
+      ],
+      "testimonial": {
+        "content": "Web sitemiz hem görsel olarak hem de kullanıcı deneyimi açısından çok tatmin edici oldu. Yatırımcılarla iletişime geçmek artık çok daha kolay.",
+        "author": "V. Karakuş",
+        "company": "Bag Bahçe Yatırım"
+      },
+      "images": [
+        "https://i.ibb.co/PZGrrKMr/bagbahce-multi.webp",
+        "https://i.ibb.co/Ndv35RLC/bby-phone.webp ",
+        "https://i.ibb.co/Kjr3yC0q/bby-2-pages.webp"
+      ]
+    },
+    {
+      "id": "3",
+      "viewLiveSite": "Demo",
+      "liveUrl": "https://theglasshut.web.app/",
+      "title": "The Glass Hut – Kabin Tanıtım Sitesi",
+      "client": "The Glass Hut",
+      "type": "web-development",
+      "category": "Web Geliştirme",
+      "description": "Doğayla iç içe bir glamping deneyimi sunan cam kabin için modern ve etkileyici bir tanıtım sitesi. Site; kabin hakkında bilgiler, çevre tanıtımı, rezervasyon formu ve sıkça sorulan sorular bölümleriyle tek sayfalık bir yapıda sunulmuştur.",
+      "challenge": "Müşteri, doğayla uyumlu, sade ama görsel açıdan zengin bir web sitesi istiyordu. Amaç; hem kabini estetik bir şekilde tanıtmak hem de kullanıcıların kolayca bilgiye erişmesini sağlamaktı.",
+      "solution": "React ile geliştirilen tek sayfalık bir uygulama oluşturuldu ve Firebase Hosting ile yayınlandı. The Hut, The Area, Booking, About Us ve FAQ gibi bölümlerle kullanıcıların tüm bilgilere kolayca ulaşması sağlandı. Animasyonlar ve tam ekran görsellerle sakin ve huzurlu atmosfer yansıtıldı.",
+      "technologies": [
+        "React",
+        "React Router",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Firebase Hosting"
+      ],
+      "results": [
+        "Marka ruhuna uygun sade ve etkileyici web varlığı oluşturuldu",
+        "Mobil uyum ve net navigasyon kullanıcı deneyimini iyileştirdi",
+        "Ziyaretçilerin sitede kalma süresi belirgin şekilde arttı"
+      ],
+      "testimonial": {
+        "content": "Web sitemiz tam hayal ettiğimiz gibi sade, şık ve doğaya uygun oldu. Misafirlerimiz artık bilgiye kolayca ulaşıyor ve rezervasyon süreci çok daha net.",
+        "author": "Kavramsal Geri Bildirim",
+        "company": "Dahili İnceleme"
+      },
+      "images": [
+        "https://i.ibb.co/r2Cg2m9n/glasshut-multi.webp",
+        "https://i.ibb.co/xqH04y97/glasshut-screens.webp",
+        "https://i.ibb.co/G37ZJNbn/glasshutscreens.webp"
+      ]
+    },
+    {
+      "id": "4",
+      "viewLiveSite": "Demo",
+      "liveUrl": "https://theglasshut.web.app/",
+      "title": "Mindfulness Uygulama Tanıtım Sitesi",
+      "client": "ZenMind",
+      "type": "web-design",
+      "category": "Açılış Sayfası Tasarımı",
+      "description": "ZenMind mobil uygulamasını tanıtmak için oluşturulmuş sade, huzurlu ve tüm cihazlara uyumlu tek sayfalık bir web sitesi. Farkındalık temasıyla örtüşen renkler, tipografi ve etkileşimlerle kullanıcı dostu bir deneyim sunar.",
+      "challenge": "Müşteri, ZenMind uygulamasının huzur veren yapısını yansıtan, hızlı yüklenen ve mobil uyumlu bir web sitesi talep etti. En büyük zorluk, nefes animasyonu gibi interaktif bir yöntemle farkındalık hissini dijital ortama taşımaktı.",
+      "solution": "React ve Tailwind CSS kullanarak modern ve duyarlı bir landing page oluşturdum. 'Nefes Al / Ver' animasyonu özel hareket bileşenleriyle hazırlandı. Tasarımda uygulama tanıtımı, kullanıcı yorumları, fiyatlandırma ve açık çağrı butonları yer alıyor. Beyaz alan kullanımı ve geçiş efektleriyle sakin bir kullanıcı deneyimi sağlandı.",
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Duyarlı Web Tasarımı",
+        "Lottie Animasyon"
+      ],
+      "results": [
+        "Mobil dönüşüm oranı %45 arttı",
+        "Erken kullanıcılar tarafından UI/UX tasarımı çok beğenildi",
+        "Net CTA yapısıyla uygulama indirmeleri arttı"
+      ],
+      "testimonial": {
+        "content": "Yeni tanıtım sayfası tam olarak uygulamamız gibi hissettiriyor: sade, huzurlu ve ilham verici. Markamızın sesiyle birebir örtüşüyor.",
+        "author": "Kavramsal Geri Bildirim",
+        "company": "Dahili İnceleme"
+      },
+      "images": [
+        "https://i.ibb.co/Nnn5k3v7/zenmind-multi.webp",
+        "https://i.ibb.co/sv2XmqyJ/zenmind-instagram.webp",
+        "https://i.ibb.co/p6RKMbs1/zenmind-laptop.webp"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Yaratıcı Akış Paneli Arayüzü",
+      "viewLiveSite": "Demo",
+      "liveUrl": "https://creator-flow-dashboard.netlify.app/",
+      "client": "İç Konsept",
+      "type": "ui-ux",
+      "category": "Panel Arayüzü (UI/UX)",
+      "description": "İçerik üreticilerinin yaratıcı iş akışlarını kolaylaştırmak için tasarlanmış modern, duyarlı bir kontrol paneli arayüzü. Arayüz, kullanılabilirlik, netlik ve estetik dengeye odaklanarak görevleri, kazançları, içerikleri ve analizleri yönetmek için verimli bir alan sunar.",
+      "challenge": "İçerik üreticilerinin günlük olarak kullanabileceği, görsel olarak etkileyici ve işlevsel bir arayüz oluşturmak hedeflendi. Ana zorluk, mobil ve masaüstü uyumlu, temiz ve ilgi çekici bir görsel tasarımla veri yoğunluğunu dengelemekti.",
+      "solution": "Wireframe ve yüksek çözünürlüklü prototipler için Figma kullandım. Gelir grafikleri, son etkinlikler, hızlı işlemler ve gezinme gibi temel öğeleri sezgisel kullanıcı deneyimiyle yapılandırdım. Renk temaları ve boşluk kullanımı, uzun süreli kullanımlarda bile odaklanmayı ve sakinliği koruyacak şekilde özenle uygulandı.",
+      "technologies": [
+        "Figma",
+        "React",
+        "Tailwind CSS",
+        "Bileşen Tabanlı Arayüz",
+        "Duyarlı Tasarım",
+        "Veri Görselleştirme"
+      ],
+      "results": [
+        "Minimum zihinsel yükle verimli kullanıcı akışı",
+        "Genişlemeye uygun yüksek uyarlanabilir bileşen sistemi",
+        "Yaratıcı profesyonellerden estetik ve kullanılabilirlik açısından olumlu geri bildirim"
+      ],
+      "testimonial": {
+        "content": "Bu panel tasarımı, işlevsellik ile görsel netlik arasında mükemmel bir denge kuruyor. Bir içerik üreticisi olarak her gün kullanmak isteyeceğim türde bir araç.",
+        "author": "Kavramsal Geri Bildirim",
+        "company": "Dahili İnceleme"
+      },
+      "images": [
+        "https://i.ibb.co/zTG2KZ7Y/dasboard-destkop.webp",
+        "https://i.ibb.co/bgFf974p/dashboard-2.webp",
+        "https://i.ibb.co/G4GGfm18/dashboard-1.webp"
+      ]
+    },
+    {
+      "id": "6",
+      "viewLiveSite": "Canlı Site",
+      "liveUrl": "https://quick-bite-fastfood.netlify.app/",
+      "title": "Sipariş ve Ödeme Sistemi ile Fast Food Restoran Web Sitesi",
+      "client": "Quick Bite",
+      "type": "web-application",
+      "category": "Web Tasarımı + E-ticaret",
+      "description": "Quick Bite, eksiksiz bir çevrim içi sipariş deneyimi sunmak için tasarlanmış bir fast food restoran web sitesidir. Ziyaretçiler modern ve duyarlı menüyü inceleyebilir, ürünleri sepetlerine ekleyebilir, güvenli ödeme yapabilir ve siparişlerini gerçek zamanlı olarak takip edebilir — hepsi tek bir sorunsuz arayüzden.",
+      "challenge": "Amaç, geleneksel sipariş yöntemlerinin yerine tamamen entegre bir çevrim içi sipariş, ödeme ve teslimat takip sistemi sunarak hem müşteri deneyimini hem de iç operasyonel verimliliği artırmaktı.",
+      "solution": "React ve modern web geliştirme yaklaşımlarıyla, duyarlı ve etkileşimli bir yemek sipariş platformu oluşturdum. Öne çıkan özellikler arasında dinamik sepet sistemi, ödeme entegrasyonu ve gerçek zamanlı sipariş takip paneli yer alıyor.",
+      "adminPanel": {
+        "title": "Yönetim Paneli",
+        "content": "Restoran tarafındaki operasyonları kolaylaştırmak için hafif bir yönetim paneli oluşturdum. Panel sayesinde personel gelen siparişleri takip edebilir, sipariş durumlarını güncelleyebilir ('Hazırlanıyor', 'Yolda', 'Teslim Edildi' gibi) ve müşteri ile ödeme bilgilerine güvenli şekilde erişebilir. Bu yapı, sipariş sürecine anlık görünürlük sağlayarak manuel koordinasyonu azaltır ve verimliliği artırır."
+      },
+      "technologies": [
+        "React",
+        "Tailwind CSS",
+        "JavaScript",
+        "Ödeme API'si",
+        "Local Storage"
+      ],
+      "results": [
+        "Güvenli çevrim içi ödeme ve gerçek zamanlı teslimat takibi sağlandı",
+        "Yönetim paneli ile sipariş yönetim verimliliği artırıldı",
+        "Mobil öncelikli deneyim ile müşteri memnuniyeti geliştirildi"
+      ],
+      "testimonial": {
+        "content": "Müşterilerimiz çevrim içi sipariş ve ödeme kolaylığını çok seviyor. Sipariş takip özelliği de telefonla yapılan sorguları azalttı ve iş akışımızı geliştirdi.",
+        "author": "Restoran Müdürü",
+        "company": "Quick Bite"
+      },
+      "images": [
+        "https://i.ibb.co/wNcBQHT4/quickbite.png",
+        "https://i.ibb.co/N6JqW7Yw/QB-menu.webp",
+        "https://i.ibb.co/DQW1p3V/quickbite-responsive.webp"
+      ]
+    }
+  ],
+  "notfound": {
+    "title": "Bir şey mi arıyorsunuz?",
+    "description": "Üzgünüz. Girdiğiniz web adresi sitemizde çalışan bir sayfa değil.",
+    "cta": "BVS-Design Ana Sayfasına Git",
+    "help": "Yardıma mı ihtiyacınız var? Ziyaret edin",
+    "contact": "İletişim bölümü"
+  }
+}
