@@ -968,7 +968,7 @@ export const portfolioData: Record<string, Project[]> = {
     },
     {
       id: "1006",
-      slug: "fast-food-restaurant-website",
+      slug: "sayt-fastfud-restorana",
       viewLiveSite: "Живой сайт",
       liveUrl: "https://quick-bite-fastfood.netlify.app/",
       title: "Веб-сайт Fast Food ресторана",
