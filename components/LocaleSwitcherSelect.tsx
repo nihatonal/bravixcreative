@@ -7,60 +7,87 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useRouter, useParams } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { slugMap } from "@/utils/slugMap";
 import { projectSlugMapping } from "@/utils/projectSlugMapping";
-
-type Locale = "tr" | "en" | "ru";
+import {
+  blogSlugMapping,
+  blogSlugToGroupMap,
+  type Locale,
+} from "@/utils/generated/blogSlugMapping.generated";
 
 type Props = {
-  defaultValue: string;
+  defaultValue: Locale;
   label: string;
 };
 
 const locales: Locale[] = ["tr", "en", "ru"];
 
-export default function LocaleSwitcherSelect({ defaultValue, label }: Props) {
+export default function LocaleSwitcherSelect({
+  defaultValue,
+  label,
+}: Props) {
   const router = useRouter();
-  const params = useParams();
+  const pathname = usePathname();
 
   function onSelectChange(nextLocale: string) {
-    const currentLocale =
-      ((Array.isArray(params.locale) ? params.locale[0] : params.locale) as Locale) || "tr";
-    const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
-    const id = Array.isArray(params.id) ? params.id[0] : params.id;
+    const targetLocale = nextLocale as Locale;
+    const segments = pathname.split("/").filter(Boolean);
+    const currentLocale = (segments[0] as Locale) || "tr";
 
-    let newPathname = `/${nextLocale}`;
+    let newPathname = pathname;
 
-    if (id && slug) {
-      const projectData =
-        projectSlugMapping[id as keyof typeof projectSlugMapping];
-      const mappedSlug = projectData
-        ? projectData[nextLocale as Locale]
-        : null;
+    // /tr/blog/slug
+    if (segments[1] === "blog" && segments[2]) {
+      const currentSlug = segments[2];
+      const translationGroup = blogSlugToGroupMap[currentSlug];
+      const mappedSlug =
+        translationGroup
+          ? blogSlugMapping[translationGroup]?.[targetLocale]
+          : undefined;
 
-      if (mappedSlug) {
-        newPathname = `/${nextLocale}/project/${mappedSlug}/${id}`;
-      } else {
-        console.warn(
-          `Slug mapping not found for ID: ${id} and Locale: ${nextLocale}`
-        );
-        newPathname = `/${nextLocale}/project/${slug}/${id}`;
-      }
-    } else if (slug) {
+      newPathname = mappedSlug
+        ? `/${targetLocale}/blog/${mappedSlug}`
+        : `/${targetLocale}/blog/${currentSlug}`;
+    }
+
+    // /tr/project/slug/id
+    else if (segments[1] === "project" && segments[2] && segments[3]) {
+      const currentSlug = segments[2];
+      const id = segments[3];
+
+      const mappedSlug =
+        projectSlugMapping[id as keyof typeof projectSlugMapping]?.[targetLocale];
+
+      newPathname = mappedSlug
+        ? `/${targetLocale}/project/${mappedSlug}/${id}`
+        : `/${targetLocale}/project/${currentSlug}/${id}`;
+    }
+
+    // /tr/some-page
+    else if (segments[1]) {
+      const currentSlug = segments[1];
+
       const foundEntry = Object.entries(slugMap).find(
-        ([, value]) => value[currentLocale as Locale] === slug
+        ([, value]) => value[currentLocale] === currentSlug
       );
 
       if (foundEntry) {
-        const newSlug = foundEntry[1][nextLocale as Locale];
-        newPathname = `/${nextLocale}/${newSlug}`;
+        const newSlug = foundEntry[1][targetLocale];
+        newPathname = `/${targetLocale}/${newSlug}`;
       } else {
-        newPathname = `/${nextLocale}/${slug}`;
+        segments[0] = targetLocale;
+        newPathname = `/${segments.join("/")}`;
       }
     }
 
+    // /tr
+    else {
+      newPathname = `/${targetLocale}`;
+    }
+
     router.replace(newPathname);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   return (
@@ -71,6 +98,7 @@ export default function LocaleSwitcherSelect({ defaultValue, label }: Props) {
       >
         <SelectValue />
       </SelectTrigger>
+
       <SelectContent className="bg-[#d4cde4] border border-1 border-purple z-[9999]">
         {locales.map((locale) => (
           <SelectItem key={locale} value={locale} className="cursor-pointer">

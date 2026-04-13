@@ -108,7 +108,7 @@ export default function ProjectDetailsClient({ project }: ProjectDetailsClientPr
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-wrap gap-3 items-center"
                     >
-                        <span className="px-3 py-1 bg-bvs-lightPurple text-bvs-gray text-sm rounded-full">
+                        <span className="px-3 py-1 bg-bvs-lightPurple text-bvs-purple text-sm rounded-full">
                             {project.category}
                         </span>
 

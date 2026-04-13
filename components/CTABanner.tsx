@@ -20,7 +20,7 @@ export default function CTABanner(): JSX.Element {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-bvs-purple to-bvs-lightPurple text-white px-2 lg:px-20">
+    <section className="py-20 bg-gradient-to-r from-bvs-primary to-bvs-accent text-white px-2 lg:px-20">
       <div className="container mx-auto px-4 text-center" ref={ref}>
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

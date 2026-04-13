@@ -201,7 +201,7 @@ export default function Pricing() {
               >
                 {plan.highlighted && (
                   <>
-                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-bvs-purple via-bvs-lightPurple to-bvs-purple" />
+                    <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-bvs-primary via-bvs-accent to-bvs-primary" />
                     <div className="absolute top-5 right-5 z-10">
                       <span className="inline-flex items-center rounded-full bg-bvs-purple px-3 py-1 text-xs font-semibold text-white shadow-md">
                         {t("popular")}

@@ -108,20 +108,20 @@ function TestimonialCard({
               <h3 className="text-lg font-semibold text-bvs-darkColorL">
                 {item.name}
               </h3>
-              <p className="text-sm text-bvs-lightColor">
+              <p className="text-sm text-bvs-mutedText">
                 {item.role} · {item.company}
               </p>
             </div>
           </div>
 
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bvs-lightPurple/15 text-bvs-purple">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bvs-lightPurple/15 text-bvs-purpleDark">
             <Quote size={18} />
           </div>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mb-4">
           <RatingStars rating={item.rating} />
-          <span className="text-xs font-medium text-bvs-lightColor">
+          <span className="text-xs font-medium text-bvs-mutedText">
             {item.rating}/5 {ratedLabel}
           </span>
         </div>
@@ -132,7 +132,7 @@ function TestimonialCard({
 
         <div className="mt-auto border-t border-gray-100 pt-4">
           <div className="flex flex-wrap gap-2 mb-3">
-            <span className="inline-flex items-center rounded-full bg-bvs-purple/10 px-3 py-1 text-xs font-medium text-bvs-purple">
+            <span className="inline-flex items-center rounded-full bg-bvs-lightPurple/15 px-3 py-1 text-xs font-medium text-bvs-purpleDark">
               {item.service}
             </span>
             <span className="inline-flex items-center rounded-full bg-bvs-logoX/15 px-3 py-1 text-xs font-medium text-bvs-darkColorL">
@@ -140,7 +140,7 @@ function TestimonialCard({
             </span>
           </div>
 
-          <p className="text-xs text-gray-500">
+          <p className="text-xs text-gray-600">
             {formatDate(item.date, locale)}
           </p>
         </div>
@@ -189,15 +189,6 @@ export default function Testimonials() {
     setCurrentSlide(0);
   }, [itemsPerSlide, locale]);
 
-  // useEffect(() => {
-  //   if (slides.length <= 1) return;
-
-  //   const interval = setInterval(() => {
-  //     setCurrentSlide((prev) => (prev + 1) % slides.length);
-  //   }, 5500);
-
-  //   return () => clearInterval(interval);
-  // }, [slides.length]);
 
   const goToPrev = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -214,10 +205,14 @@ export default function Testimonials() {
     url: "https://www.bravixcreative.com",
     aggregateRating: {
       "@type": "AggregateRating",
-      ratingValue:
-        testimonials.reduce((sum, item) => sum + item.rating, 0) /
-        testimonials.length,
+      ratingValue: Number(
+        (
+          testimonials.reduce((sum, item) => sum + item.rating, 0) /
+          testimonials.length
+        ).toFixed(1)
+      ),
       reviewCount: testimonials.length,
+      ratingCount: testimonials.length,
       bestRating: 5,
       worstRating: 1,
     },
@@ -235,14 +230,6 @@ export default function Testimonials() {
       },
       reviewBody: item.content,
       datePublished: item.date,
-      itemReviewed: {
-        "@type": "Organization",
-        name: "Bravix Creative",
-      },
-      publisher: {
-        "@type": "Organization",
-        name: item.company,
-      },
     })),
   };
 
@@ -308,11 +295,10 @@ export default function Testimonials() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -40 }}
                 transition={{ duration: 0.45, ease: "easeOut" }}
-                className={`grid gap-6 pb-4 ${
-                  itemsPerSlide === 3
-                    ? "grid-cols-1 lg:grid-cols-3"
-                    : "grid-cols-1"
-                }`}
+                className={`grid gap-6 pb-4 ${itemsPerSlide === 3
+                  ? "grid-cols-1 lg:grid-cols-3"
+                  : "grid-cols-1"
+                  }`}
               >
                 {slides[currentSlide]?.map((item) => (
                   <TestimonialCard
@@ -339,11 +325,10 @@ export default function Testimonials() {
                     className="group relative flex h-4 items-center justify-center"
                   >
                     <span
-                      className={`block rounded-full transition-all duration-300 ${
-                        isActive
-                          ? "w-10 h-2 bg-bvs-purple shadow-[0_0_0_4px_rgba(126,105,171,0.12)]"
-                          : "w-2.5 h-2.5 bg-bvs-purple/30 group-hover:bg-bvs-purple/50"
-                      }`}
+                      className={`block rounded-full transition-all duration-300 ${isActive
+                        ? "w-10 h-2 bg-bvs-purple shadow-[0_0_0_4px_rgba(126,105,171,0.12)]"
+                        : "w-2.5 h-2.5 bg-bvs-purple/30 group-hover:bg-bvs-purple/50"
+                        }`}
                     />
                     {isActive && (
                       <motion.span
@@ -369,7 +354,7 @@ export default function Testimonials() {
           transition={{ duration: 0.5, delay: 0.25 }}
           className="mt-10 text-center"
         >
-          <p className="text-sm text-bvs-lightColor">
+          <p className="text-sm text-bvs-mutedText">
             {content.basedOn}
           </p>
         </motion.div>

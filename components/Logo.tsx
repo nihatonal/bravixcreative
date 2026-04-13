@@ -4,7 +4,7 @@ import { usePathname, useRouter } from "@/node_modules/next/navigation";
 import { handleMenuNavigation } from "@/utils/navigation";
 
 import React from "react";
-import logo from '../assets/webp/bravix.png'
+import logo from '../assets/webp/bravix.webp'
 const Logo = ({
     className,
     spanDesign,

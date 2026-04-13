@@ -5,7 +5,7 @@ export type Locale = 'tr' | 'en' | 'ru';
 export const projectSlugMapping: Record<string, Record<Locale, string>> = {
   "1001": {
     tr: "apart-otel-web-sitesi-ve-yonetici-paneli",
-    en: "apart-hotel-website-and-admin-panel",
+    en: "apartment-hotel-website-and-admin-panel",
     ru: "veb-sayt-apart-otelya-i-administrativnaya-panel",
   },
   "1002": {
@@ -21,16 +21,16 @@ export const projectSlugMapping: Record<string, Record<Locale, string>> = {
   "1004": {
     tr: "mindfulness-uygulama-tanitim-sitesi",
     en: "mindfulness-app-landing-page",
-    ru: "celevaya-stranica-prilozheniya-dlya-meditacii",
+    ru: "mindfulness-app-landing-page",
   },
   "1005": {
     tr: "yaratici-akis-paneli-arayuzu",
-    en: "creator-flow-dashboard-ui",
-    ru: "panel-upravleniya-creator-flow-ui",
+    en: "creative-flow-dashboard",
+    ru: "panel-upravleniya-creator-flow",
   },
   "1006": {
     tr: "fast-food-restoran-web-sitesi",
-    en: "fast-food-restaurant",
+    en: "fast-food-restaurant-website",
     ru: "sayt-fastfud-restorana",
   },
   "1007": {

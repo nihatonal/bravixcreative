@@ -9,7 +9,7 @@ type Props = {
 };
 
 
-const siteUrl = "https://www.bravixcreative.com";
+const siteUrl = "https://bravixcreative.com";
 const langs = ["tr", "en", "ru"] as const;
 
 function isValidLocale(locale: string): locale is Locale {

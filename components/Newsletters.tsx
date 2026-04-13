@@ -1,98 +1,89 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { Input } from './ui/input'
+import React, { ChangeEvent, FormEvent, useState } from "react";
+import { Input } from "./ui/input";
 import { useTranslations } from "next-intl";
-import { toast } from './ui/toast';
+import { toast } from "./ui/toast";
 import axios from "axios";
 
 interface NewslettersProps {
   title: string;
 }
+
 const Newsletters = ({ title }: NewslettersProps) => {
   const t = useTranslations("contact");
-  const [email, setEmail] = useState("")
+  const [email, setEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setEmail(e.target.value)
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    const data = { email: email }
 
     try {
-      await axios.post(`${process.env.NEXT_PUBLIC_BACKEND_URL}/newsletter`, data);
-      alert("Emailiniz başarıyla kaydedildi!");
+      await axios.post(
+        `https://bravix-server.vercel.app/api/newsletter`,
+        { email }
+      );
+
+      toast({
+        title: t("submitSuccessTitle", { default: "Successful!" }),
+        description: t("submitSuccessDesc", {
+          default: "Your email has been saved successfully.",
+        }),
+      });
+
+      setEmail("");
     } catch (err) {
       console.error(err);
 
-      alert("Bir hata oluştu." + err);
-    }
-
-    setTimeout(() => {
       toast({
-        title: t("submitSuccessTitle", { default: "Message sent!" }),
-        description: t("submitSuccessDesc", {
-          default: "Thanks for reaching out. I'll get back to you soon.",
+        title: t("submitErrorTitle", { default: "Something went wrong" }),
+        description: t("submitErrorDesc", {
+          default: "Please try again later.",
         }),
       });
-      setEmail("");
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
-  }
+    }
+  };
+
   return (
-    <form onSubmit={handleSubmit} className='shadow shadow-lg shadow-bvs-lightPurple/20 flex items-end justify-between gap-4 p-4 bg-gradient-to-l  from-bvs-lightPurple/10 to-bvs-accent/10 shadow rounded-lg'>
-      <div className='w-full'>
-        <label htmlFor="form_subject" className="text-white block text-lg font-semibold mb-4 mb-1">
-          {/* {t("subject")} */} {title}
-        </label>
+    <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm p-5 lg:p-6 shadow-lg shadow-bvs-lightPurple/10">
+      <h3 className="text-white text-xl font-semibold mb-2">{title}</h3>
+      <p className="text-sm text-gray-300 mb-4">
+        {t("newsletterDesc", {
+          default: "Stay updated with our latest news and insights.",
+        })}
+      </p>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col sm:flex-row items-stretch gap-3"
+      >
         <Input
-          className='border-bvs-light text-xs text-bvs-light'
+          type="email"
+          className="h-12 border-white/20 bg-white text-black placeholder:text-gray-500"
           placeholder={t("placeholderEmail")}
-          id="form_subject"
-          name="form_subject"
+          id="newsletter_email"
+          name="newsletter_email"
           value={email}
           onChange={handleChange}
           required
         />
-      </div>
-      <button
-        type="submit"
-        aria-label="submit button"
-        className=" cursor-pointer col-start-2 w-44 py-2 text-bvs-light rounded-[8px] bg-bvs-accent/60 hover:bg-bvs-accent/40"
-        disabled={email === ""}
-      >
-        {isSubmitting ? (
-          <span className="flex items-center justify-center">
-            <svg
-              className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
-              <circle
-                className="opacity-25"
-                cx="12"
-                cy="12"
-                r="10"
-                stroke="currentColor"
-                strokeWidth="4"
-              ></circle>
-              <path
-                className="opacity-75"
-                fill="currentColor"
-                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-              ></path>
-            </svg>
-            {t("processing", { default: "Processing..." })}
-          </span>
-        ) : (
-          t("submit_newsletter")
-        )}
-      </button>
 
-    </form>
-  )
-}
+        <button
+          type="submit"
+          aria-label="submit button"
+          disabled={email === "" || isSubmitting}
+          className="h-12 min-w-[140px] px-6 rounded-lg bg-bvs-accent/80 text-white font-medium hover:bg-bvs-accent/60 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+        >
+          {isSubmitting ? t("processing", { default: "Processing..." }) : t("submit_newsletter")}
+        </button>
+      </form>
+    </div>
+  );
+};
 
-export default Newsletters
+export default Newsletters;

@@ -1,8 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
 
-const siteUrl = "https://www.bravixcreative.com";
+const siteUrl = "https://bravixcreative.com";
 const locales = ["en", "tr", "ru"];
 const now = new Date().toISOString();
 
@@ -24,19 +23,22 @@ const legalPaths = {
   },
 };
 
-// Buraya kendi statik sayfalarını ekleyebilirsin
 const staticPaths = {
   home: {
     tr: "",
     en: "",
     ru: "",
   },
+  blog: {
+    tr: "blog",
+    en: "blog",
+    ru: "blog",
+  },
   terms: legalPaths.terms,
   privacy: legalPaths.privacy,
   cookie: legalPaths.cookie,
 };
 
-// URL sonuna slash eklemek için yardımcı
 function withTrailingSlash(url) {
   return url.endsWith("/") ? url : `${url}/`;
 }
@@ -61,7 +63,13 @@ function buildAlternateLinks(alternates = {}) {
     .join("\n");
 }
 
-function buildUrlEntry({ loc, lastmod, alternates, changefreq = "monthly", priority = "0.8" }) {
+function buildUrlEntry({
+  loc,
+  lastmod,
+  alternates,
+  changefreq = "monthly",
+  priority = "0.8",
+}) {
   const alternateLinks = buildAlternateLinks(alternates);
 
   return `<url>
@@ -72,33 +80,23 @@ ${alternateLinks ? `${alternateLinks}\n` : ""}  <changefreq>${changefreq}</chang
 </url>`;
 }
 
-async function loadPortfolioModule() {
-  const possiblePaths = [
-    "../constants/portfolioData.js",
-    "../constants/portfolioData.mjs",
-    "../constants/portfolioData.ts",
-    "../src/constants/portfolioData.js",
-    "../src/constants/portfolioData.mjs",
-    "../src/constants/portfolioData.ts",
-  ];
+function loadJson(possiblePaths, label) {
+  for (const absPath of possiblePaths) {
+    if (!fs.existsSync(absPath)) continue;
 
-  for (const relPath of possiblePaths) {
     try {
-      const absPath = path.resolve(process.cwd(), "scripts", relPath);
-      if (!fs.existsSync(absPath)) continue;
-
-      const mod = await import(pathToFileURL(absPath).href);
-      console.log(`Portfolio module loaded: ${relPath}`);
-      return mod;
+      const raw = fs.readFileSync(absPath, "utf8");
+      const parsed = JSON.parse(raw);
+      console.log(`${label} loaded: ${absPath}`);
+      return parsed;
     } catch (err) {
-      console.warn(`Portfolio module import failed: ${relPath}`);
+      console.warn(`${label} okunamadı: ${absPath}`);
       console.warn(err?.message || err);
     }
   }
 
-  throw new Error(
-    "portfolioData modülü yüklenemedi. Dosya yolu veya uzantısı yanlış olabilir."
-  );
+  console.warn(`${label} bulunamadı.`);
+  return null;
 }
 
 async function main() {
@@ -126,52 +124,46 @@ async function main() {
         lastmod: now,
         alternates,
         changefreq: key === "home" ? "weekly" : "monthly",
-        priority: key === "home" ? "1.0" : "0.8",
+        priority: key === "home" ? "1.0" : key === "blog" ? "0.9" : "0.8",
       });
     }
   }
 
-  // 2) Projeler
-  let portfolioModule;
-  try {
-    portfolioModule = await loadPortfolioModule();
-  } catch (err) {
-    console.error("Project pages sitemap'e eklenemedi:");
-    console.error(err?.message || err);
-    portfolioModule = null;
-  }
+  // 2) Project detail sayfaları
+  const projectSlugMapping = loadJson(
+    [
+      path.resolve(process.cwd(), "utils/projectSlugMapping.json"),
+      path.resolve(process.cwd(), "src/utils/projectSlugMapping.json"),
+    ],
+    "Project mapping JSON"
+  );
 
-  const getAllProjects = portfolioModule?.getAllProjects;
-  const getProjectById = portfolioModule?.getProjectById;
+  if (projectSlugMapping) {
+    const projectEntries = Object.entries(projectSlugMapping);
+    console.log(`Total projects found: ${projectEntries.length}`);
 
-  if (typeof getAllProjects === "function" && typeof getProjectById === "function") {
-    const allProjects = getAllProjects();
-    console.log(`Total projects found: ${allProjects.length}`);
+    for (const [projectId, translations] of projectEntries) {
+      const alternates = {};
 
-    for (const project of allProjects) {
-      const projectId = String(project.id);
+      for (const lng of locales) {
+        const slug = translations?.[lng];
+        if (slug) {
+          alternates[lng] = withTrailingSlash(
+            `${siteUrl}/${lng}/project/${slug}/${projectId}`
+          );
+        }
+      }
+
+      alternates["x-default"] =
+        alternates["en"] || alternates["tr"] || alternates["ru"];
 
       for (const locale of locales) {
-        const localizedProject = getProjectById(projectId, locale) || getProjectById(project.id, locale);
-        if (!localizedProject?.slug) continue;
-
-        const alternates = {};
-        for (const lng of locales) {
-          const altProject = getProjectById(projectId, lng) || getProjectById(project.id, lng);
-          if (altProject?.slug) {
-            alternates[lng] = withTrailingSlash(
-              `${siteUrl}/${lng}/project/${altProject.slug}/${projectId}`
-            );
-          }
-        }
-
-        alternates["x-default"] =
-          alternates["en"] ||
-          withTrailingSlash(`${siteUrl}/${locale}/project/${localizedProject.slug}/${projectId}`);
+        const slug = translations?.[locale];
+        if (!slug) continue;
 
         urls.push({
           loc: withTrailingSlash(
-            `${siteUrl}/${locale}/project/${localizedProject.slug}/${projectId}`
+            `${siteUrl}/${locale}/project/${slug}/${projectId}`
           ),
           lastmod: now,
           alternates,
@@ -181,10 +173,51 @@ async function main() {
       }
     }
   } else {
-    console.warn("getAllProjects veya getProjectById bulunamadı. Project URL'leri eklenmedi.");
+    console.warn("Project URL'leri eklenmedi.");
   }
 
-  // tekrar eden URL'leri temizle
+  // 3) Blog detail sayfaları
+  const blogMappingData = loadJson(
+    [
+      path.resolve(process.cwd(), "utils/generated/blogSlugMapping.generated.json"),
+      path.resolve(process.cwd(), "src/utils/generated/blogSlugMapping.generated.json"),
+    ],
+    "Blog mapping JSON"
+  );
+
+  const blogSlugMapping = blogMappingData?.blogSlugMapping || {};
+  const blogGroups = Object.entries(blogSlugMapping);
+
+  console.log(`Total blog translation groups found: ${blogGroups.length}`);
+
+  for (const [, translations] of blogGroups) {
+    const alternates = {};
+
+    for (const lng of locales) {
+      const slug = translations?.[lng];
+      if (slug) {
+        alternates[lng] = withTrailingSlash(`${siteUrl}/${lng}/blog/${slug}`);
+      }
+    }
+
+    alternates["x-default"] =
+      alternates["en"] || alternates["tr"] || alternates["ru"];
+
+    for (const locale of locales) {
+      const slug = translations?.[locale];
+      if (!slug) continue;
+
+      urls.push({
+        loc: withTrailingSlash(`${siteUrl}/${locale}/blog/${slug}`),
+        lastmod: now,
+        alternates,
+        changefreq: "weekly",
+        priority: "0.8",
+      });
+    }
+  }
+
+  // duplicate temizle
   const uniqueUrlsMap = new Map();
   for (const item of urls) {
     uniqueUrlsMap.set(item.loc, item);

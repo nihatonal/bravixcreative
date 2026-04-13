@@ -1,28 +1,68 @@
-export interface Testimonial {
+export interface ProjectTestimonial {
   content: string;
   author: string;
-  company: string;
+  company?: string;
 }
 
-export interface AdminPanel {
+export interface ProjectAdminPanel {
+  title?: string;
   content: string;
-  title: string;
+}
+
+export interface ProjectFaqItem {
+  question: string;
+  answer: string;
+}
+
+export interface ProjectSeo {
+  title?: string;
+  description?: string;
+  keywords?: string[];
 }
 
 export interface Project {
   id: string;
+  slug: string;
+
+  // UI
   title: string;
-  viewLiveSite?: string;
-  liveUrl?: string;
+  shortDescription?: string;
+
+  // SEO
+  seoTitle?: string;
+  seoDescription?: string;
+  keywords?: string[];
+
+  // Business / classification
   client: string;
   type: string;
   category: string;
+  industry?: string;
+  serviceType?: string;
+
+  // Core content
   description: string;
   challenge?: string;
   solution?: string;
-  technologies: string[];
+  process?: string;
   results?: string[];
-  testimonial?: Testimonial;
-  adminPanel?: AdminPanel;
+
+  // Conversion / trust
+  testimonial?: ProjectTestimonial;
+  adminPanel?: ProjectAdminPanel;
+  faq?: ProjectFaqItem[];
+
+  // Media / links
   images: string[];
+  coverImage?: string;
+  liveUrl?: string;
+  viewLiveSite?: string;
+
+  // Tech
+  technologies: string[];
+
+  // Optional SEO enhancements
+  noindex?: boolean;
+  publishedAt?: string;
+  updatedAt?: string;
 }

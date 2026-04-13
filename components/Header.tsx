@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Container from "./Container";
 import HeaderMenu from "./HeaderMenu";
 import Logo from "./Logo";
@@ -7,23 +7,19 @@ import MobileMenu from "./MobileMenu";
 import LocaleSwitcher from "./LocaleSwitcher";
 
 const Header = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 10);
-        };
+    // useEffect(() => {
+    //     const handleScroll = () => {
+    //         setIsScrolled(window.scrollY > 10);
+    //     };
 
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    //     window.addEventListener("scroll", handleScroll);
+    //     return () => window.removeEventListener("scroll", handleScroll);
+    // }, []);
 
     return (
         <header
-            className={`fixed w-full top-0 z-50 py-3 transition-colors duration-300 ${isScrolled
-                    ? "bg-white/70 backdrop-blur-md shadow-sm"
-                    : "bg-transparent"
-                }`}
+            className={`fixed w-full py-3 top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl`}
         >
             <Container className="flex items-center justify-between text-bvs-lightColor">
                 <div className="w-auto md:w-1/3 flex items-center gap-2.5 justify-start md:gap-0">

@@ -258,8 +258,8 @@ const Contact: React.FC = () => {
                                     <div>
                                         <h4 className="font-medium text-gray-700">{t("emailLabel")}</h4>
                                         <p className="text-gray-600">
-                                            <a href="mailto:onalnihat1986@gmail.com" className="hover:underline">
-                                                onalnihat1986@gmail.com
+                                            <a href="mailto:info@bravixcreative.com" className="hover:underline">
+                                                info@bravixcreative.com
                                             </a>
                                         </p>
                                     </div>
@@ -320,12 +320,12 @@ const Contact: React.FC = () => {
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-bvs-lightPurple to-bvs-accent p-6 text-white rounded-xl">
+                        <div className="bg-gradient-to-r from-bvs-primary to-bvs-accent p-6 text-white rounded-xl">
                             <h3 className="text-xl font-semibold mb-2">{t("letsMeet")}</h3>
                             <p className="mb-4 opacity-90">{t("letsMeetSub")}</p>
                             <SocialMedia
                                 className="text-bvs-accent"
-                                iconClassName=" text-white hover:bg-white/80 hover:text-bvs-lightPurple p-2 rounded-full transition-colors"
+                                iconClassName=" text-white hover:bg-white/80 hover:text-bvs-accent p-2 rounded-full transition-colors"
                                 status_link={t("status_link")}
                             />
                         </div>

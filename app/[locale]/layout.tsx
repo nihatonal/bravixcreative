@@ -23,9 +23,6 @@ const geistMono = localFont({
   display: "swap",
 });
 
-const siteUrl = "https://www.bravixcreative.com";
-const locales: Locale[] = ["tr", "en", "ru"];
-
 function isValidLocale(locale: string): locale is Locale {
   return routing.locales.includes(locale as Locale);
 }
@@ -48,39 +45,21 @@ export default async function LocaleLayout({
   }
 
   setRequestLocale(locale);
-
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale}>
-      <head>
-        <link rel="canonical" href={`${siteUrl}/${locale}/`} />
-
-        {locales.map((lng) => (
-          <link
-            key={lng}
-            rel="alternate"
-            hrefLang={lng}
-            href={`${siteUrl}/${lng}/`}
-          />
-        ))}
-        <link rel="alternate" hrefLang="x-default" href={`${siteUrl}/`} />
-      </head>
-      <body>
-        <NextIntlClientProvider locale={locale} messages={messages}>
-          <PlanProvider>
-            <ParallaxWrapper>
-              <div
-                className={`${geistSans.variable} ${geistMono.variable} overflow-x-hidden antialiased`}
-              >
-                <Header />
-                {children}
-                <Footer />
-              </div>
-            </ParallaxWrapper>
-          </PlanProvider>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider locale={locale} messages={messages}>
+      <PlanProvider>
+        <ParallaxWrapper>
+          <div
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <Header />
+            {children}
+            <Footer />
+          </div>
+        </ParallaxWrapper>
+      </PlanProvider>
+    </NextIntlClientProvider>
   );
 }

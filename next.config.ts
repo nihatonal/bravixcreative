@@ -10,7 +10,7 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
-  output: "export", // ⭐ static site
+  //output: "export", // ⭐ static site
   trailingSlash: true,
 
   images: {

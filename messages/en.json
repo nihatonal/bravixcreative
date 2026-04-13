@@ -7,6 +7,10 @@
     "projects": {
       "title": "Services | Bravix Creative",
       "description": "Explore professional services including Web Design, Development, and CMS solutions."
+    },
+    "blog": {
+      "title": "Blog | Bravix Creative",
+      "description": "Read the latest articles, featured posts and creative insights from Bravix Creative."
     }
   },
   "hero": {
@@ -26,7 +30,8 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "pricing": "Pricing",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog"
   },
   "about": {
     "title": "About Bravix Creative",
@@ -263,7 +268,8 @@
     "processing": "Sending",
     "submitSuccessTitle": "We got your message!",
     "submitSuccessDesc": "description",
-    "status_link": "Page coming soon."
+    "status_link": "Page coming soon.",
+    "newsletterDesc": "Stay updated with our latest news and insights."
   },
   "footer": {
     "title": "Creating beautiful web experiences for businesses and individuals around the world.",
@@ -274,20 +280,31 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "cookies": "Cookie Policy",
-    "newsletter": "Newsletter"
+    "newsletter": "Newsletter",
+    "newsletterDesc": "Stay updated with our latest news and insights."
   },
   "projectDetail": {
     "all": "All Projects",
     "client": "Client",
     "overview": "Project Overview",
-    "challenge": "The Challenge",
-    "solution": "The Solution",
+    "type": "Project Type",
+    "faqTitle": "Frequently Asked Questions",
+    "industry": "Industry",
+    "serviceType": "Service Type",
+    "faqText": "Below you can find answers to the most common questions about this project.",
+    "challenge": "Challenge",
+    "solution": "Solution",
     "adminPanelTitle": "Admin Panel",
-    "results": "Results",
+    "results": "Achieved Results",
+    "images": "Project Screenshots",
+    "clientComment": "Client Testimonial",
+    "category": "Categories",
     "technologiesUsed": "Technologies Used",
     "contactTitle": "Let's Discuss Your Project",
-    "contactText": "Have a similar project in mind? Let's talk about how I can help bring your ideas to life.",
-    "contactButton": "Get in Touch"
+    "contactText": "Do you have a similar project? Contact us and let's turn your idea into a real product.",
+    "contactButton": "Contact Us",
+    "title": "Start a New Project",
+    "text": "If you need a real project page focused on conversion, not just a portfolio page, we can help you."
   },
   "privacy-policy": {
     "meta": {
@@ -318,7 +335,7 @@
       },
       "5": {
         "heading": "6. Contact",
-        "text": "For questions about our privacy policy, you can contact us at hello@bvsdesign.com."
+        "text": "For questions about our privacy policy, you can contact us at info@bravixcreative.com."
       }
     }
   },
@@ -351,7 +368,7 @@
       },
       "5": {
         "heading": "6. Contact",
-        "text": "For questions about these terms, please contact us at hello@bvsdesign.com."
+        "text": "For questions about these terms, please contact us at info@bravixcreative.com."
       }
     }
   },
@@ -384,7 +401,7 @@
       },
       "5": {
         "heading": "6. Contact",
-        "text": "For questions about this policy, contact us at hello@bvsdesign.com."
+        "text": "For questions about this policy, contact us at info@bravixcreative.com."
       }
     }
   },
@@ -606,5 +623,21 @@
     "cta": "Go to BVS-Design Home Page",
     "help": "Need help? Visit the",
     "contact": "Contact section"
+  },
+  "blog": {
+    "latestArticles": "Latest Articles",
+    "popular": "Popular Articles",
+    "categories": "Categories",
+    "topics": "Topics",
+    "latest": "Latest",
+    "cta_title": "Stay Inspired",
+    "cta_text": "Weekly insights on design systems, typography, and the craft of digital product design.",
+    "cta_button": "Subscribe",
+    "cta_input": "your@email.com",
+    "read": "min read",
+    "views": "views",
+    "planTitle": "On this page",
+    "related": "Related Articles",
+    "readArticle": "Read Article"
   }
 }

@@ -7,6 +7,10 @@
     "projects": {
       "title": "Hizmetler | Bravix Creative",
       "description": "Web Tasarımı, Geliştirme ve CMS çözümleri dahil profesyonel hizmetleri keşfedin."
+    },
+    "blog": {
+      "title": "Blog | Bravix Creative",
+      "description": "Bravix Creative blog yazıları, güncel içerikler ve öne çıkan makaleler."
     }
   },
   "hero": {
@@ -26,7 +30,8 @@
     "services": "Hizmetler",
     "pricing": "Fiyatlandırma",
     "portfolio": "Portföy",
-    "contact": "İletişim"
+    "contact": "İletişim",
+    "blog": "Blog"
   },
   "about": {
     "title": "Bravix Creative Hakkında",
@@ -263,7 +268,8 @@
     "processing": "Gönderiliyor",
     "submitSuccessTitle": "Mesajınızı aldık!",
     "submitSuccessDesc": "açıklama",
-    "status_link": "Sayfa yakında geliyor."
+    "status_link": "Sayfa yakında geliyor.",
+    "newsletterDesc": "En son haberler ve içerikler için bültenimize katılın."
   },
   "footer": {
     "title": "Dünyanın dört bir yanındaki işletmeler ve bireyler için etkileyici web deneyimleri oluşturuyorum.",
@@ -280,14 +286,24 @@
     "all": "Tüm Projeler",
     "client": "Müşteri",
     "overview": "Proje Özeti",
-    "challenge": "Zorluk",
-    "solution": "Çözüm",
+    "type": "Proje Türü",
+    "faqTitle": "Sık Sorulan Sorular",
+    "industry": "Sektör",
+    "serviceType": "Hizmet Türü",
+    "faqText": "Bu projeyle ilgili en çok merak edilen soruların cevaplarını aşağıda bulabilirsiniz.",
+    "challenge": "Karşılaşılan Zorluk",
+    "solution": "Sunulan Çözüm",
     "adminPanelTitle": "Yönetici Paneli",
-    "results": "Sonuçlar",
+    "results": "Elde Edilen Sonuçlar",
+    "images": "Proje Ekran Görüntüleri",
+    "clientComment": "Müşteri Yorumu",
+    "category": "Kategoriler",
     "technologiesUsed": "Kullanılan Teknolojiler",
     "contactTitle": "Projenizi Konuşalım",
-    "contactText": "Benzer bir projeniz mi var? Fikirlerinizi gerçeğe dönüştürmem için konuşalım.",
-    "contactButton": "İletişime Geç"
+    "contactText": "Benzer bir projeniz mi var? Fikirlerinizi gerçeğe dönüştürmek için bizimle iletişime geçin.",
+    "contactButton": "İletişime Geç",
+    "title": "Yeni Bir Proje Başlatın",
+    "text": "Sadece bir portföy sayfası değil, dönüşüm odaklı çalışan profesyonel bir proje sayfası istiyorsanız size yardımcı olabiliriz."
   },
   "privacy-policy": {
     "meta": {
@@ -318,7 +334,7 @@
       },
       "5": {
         "heading": "6. İletişim",
-        "text": "Gizlilik politikamız hakkında sorularınız için bizimle hello@bvsdesign.com adresinden iletişime geçebilirsiniz."
+        "text": "Gizlilik politikamız hakkında sorularınız için bizimle info@bravixcreative.com adresinden iletişime geçebilirsiniz."
       }
     }
   },
@@ -359,7 +375,7 @@
       },
       "5": {
         "heading": "6. İletişim",
-        "text": "Bu hizmet şartları hakkında sorularınız varsa hello@bvsdesign.com adresinden bizimle iletişime geçebilirsiniz."
+        "text": "Bu hizmet şartları hakkında sorularınız varsa info@bravixcreative.com adresinden bizimle iletişime geçebilirsiniz."
       }
     }
   },
@@ -400,7 +416,7 @@
       },
       "5": {
         "heading": "6. İletişim",
-        "text": "Çerez politikamızla ilgili sorularınız için lütfen hello@bvsdesign.com adresinden bizimle iletişime geçin."
+        "text": "Çerez politikamızla ilgili sorularınız için lütfen info@bravixcreative.com adresinden bizimle iletişime geçin."
       }
     }
   },
@@ -621,5 +637,21 @@
     "cta": "BVS-Design Ana Sayfasına Git",
     "help": "Yardıma mı ihtiyacınız var? Ziyaret edin",
     "contact": "İletişim bölümü"
+  },
+  "blog": {
+    "latestArticles": "Son Yazılar",
+    "popular": "Popüler Yazılar",
+    "categories": "Kategoriler",
+    "topics": "Konular",
+    "latest": "En Yeni",
+    "cta_title": "İlham Almaya Devam Et",
+    "cta_text": "Tasarım sistemleri, tipografi ve dijital ürün tasarımı üzerine haftalık içgörüler.",
+    "cta_button": "Abone Ol",
+    "cta_input": "eposta@ornek.com",
+    "read": "dk okuma",
+    "views": "görüntülenme",
+    "planTitle": "Bu sayfada",
+    "related": "İlgili Yazılar",
+    "readArticle": "Yazıyı Oku"
   }
 }

@@ -37,74 +37,71 @@ const config = {
         text: "text",
         image: "image",
       },
+      fontFamily: {
+        serif: ["'Cormorant Garamond'", "Georgia", "serif"],
+        sans: ["'DM Sans'", "system-ui", "sans-serif"],
+      },
       colors: {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
         },
-
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
-
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
         },
-
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
-
         popover: {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
-
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
-        },
-
         bvs: {
-          primary: "#9F8CFD",
-          dark: "#1E293B",
-          light: "#F8FAFC",
-          blue: "#1A237E",
-          purple: "#7E69AB",
-          lightPurple: "#9b87f5",
-          accent: "#5D4D8F",
+          primary: "#E66B19",
+
+          dark: "#1A1613", // biraz daha koyu → heading netleşir
+          light: "#FCFAF7",
+
+          blue: "#4B423D", // daha koyu secondary tone
+          purple: "#8C7E74", // çok az koyulaştırıldı
+          purpleDark: "#2F2925", // daha usable koyu
+
+          lightPurple: "#F5EDE5", // biraz daha açık → surface ayrımı artar
+
+          accent: "#F29A3F",
+
           white: "#FFFFFF",
-          gray: "#F6F6F7",
-          lightGreen: "#3b9c3c",
-          darkColorL: "#151515",
-          lightColor: "#52525b",
-          logoText:"#0B1F3F",
-          logoX:"#FFC700"
+          gray: "#F4F1ED", // biraz açıldı → card ayrımı daha iyi
+
+          mutedText: "#5A4F47", // EN ÖNEMLİ FIX (kontrast ↑)
+
+          lightGreen: "#C7A27B",
+
+          darkColorL: "#120E0C", // footer daha derin
+
+          lightColor: "#A0948C", // border için biraz açıldı
+
+          logoText: "#241F1C",
+          logoX: "#E3A12B",
         },
 
         chart: {

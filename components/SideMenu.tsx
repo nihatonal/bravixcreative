@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react'
+import React, { FC, useState, useEffect } from 'react'
 // import Logo from './Logo';
 import { X } from "lucide-react";
 import { usePathname, useRouter } from '@/node_modules/next/navigation';
@@ -7,6 +7,7 @@ import { useOutsideClick } from '@/hooks/index';
 import { useTranslations } from "next-intl";
 import Logo from './Logo';
 import { handleMenuNavigation } from '@/utils/navigation';
+import Link from "next/link";
 interface SidebarProps {
     isOpen: boolean;
     onClose: () => void;
@@ -25,7 +26,16 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
         { id: "portfolio", label: t("portfolio") },
         { id: "pricing", label: t("pricing") },
         { id: "contact", label: t("contact") },
+        { id: "blog", label: t("blog") }
     ];
+    const locale = pathname.split("/")[1];
+    useEffect(() => {
+        if (pathname === `/${locale}/blog` || pathname === `/${locale}/blog/`) {
+            setSelectedSection("blog");
+        } else if (pathname === `/${locale}` || pathname === `/${locale}/`) {
+            setSelectedSection("home");
+        }
+    }, [pathname, locale]);
 
     const handleMenuClick = (id: string) => {
         handleMenuNavigation({
@@ -53,20 +63,43 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
                     <X />
                 </button>
             </div>
-            <div className='flex flex-col space-y-3.5 font-semibold tracking-wide text-stone-50'>
-                {navItems?.map((item) => (
-                    <button key={item?.id}
-                        aria-label="nav button"
-                        onClick={() => {
-                            onClose()
-                            handleMenuClick(item.id)
-                        }}
-                        className={`hover:text-bvs-lightPurple hoverEffect 
-            ${selectedSection === item?.id && "text-bvs-lightPurple"}`}
-                    >
-                        {item?.label}
-                    </button>
-                ))}
+            <div className='flex flex-col items-center space-y-3.5 font-semibold tracking-wide text-stone-50'>
+
+                {navItems?.map((item) => {
+
+
+                    if (item.id === "blog") {
+                        return (
+                            <Link
+                                href={`/${locale}/blog`}
+                                key={item.id}
+                                aria-label="nav button"
+                                onClick={() => {
+                                    onClose();
+                                }}
+                                className={`hover:text-bvs-lightPurple hoverEffect ${selectedSection === item.id ? "text-bvs-accent" : ""
+                                    }`}
+                            >
+                                {item.label}
+                            </Link>
+                        );
+                    }
+
+                    return (
+                        <button
+                            key={item.id}
+                            aria-label="nav button"
+                            onClick={() => {
+                                onClose();
+                                handleMenuClick(item.id);
+                            }}
+                            className={`hover:text-bvs-lightPurple hoverEffect ${selectedSection === item.id ? "text-bvs-accent" : ""
+                                }`}
+                        >
+                            {item.label}
+                        </button>
+                    );
+                })}
             </div>
             <SocialMedia iconClassName="text-white hover:bg-white/20 backdrop-blur p-2 rounded-full transition-all hover:scale-105 duration-200" />
         </div>

@@ -128,7 +128,7 @@ export default function Portfolio() {
                                         {project.technologies.map((tech) => (
                                             <span
                                                 key={tech}
-                                                className="bg-bvs-lightPurple/20 hover:bg-bvs-lightPurple/30 transitions text-bvs-purple px-3 py-1 rounded-full text-xs font-medium"
+                                                className="bg-bvs-lightPurple text-bvs-purpleDark px-3 py-1 rounded-full text-xs font-medium transition-colors"
                                             >
                                                 {tech}
                                             </span>
@@ -139,7 +139,7 @@ export default function Portfolio() {
                                 <Link
                                     aria-label="project link"
                                     href={`/${locale}/project/${project.slug}/${project.id}`}
-                                    className="flex items-center text-bvs-purple hover:text-bvs-lightPurple transition-colors gap-1 text-sm mt-auto"
+                                    className="flex items-center text-bvs-blue hover:opacity-80 transition-colors gap-1 text-sm mt-auto"
                                 >
                                     {t("viewProject")} <ExternalLink size={14} />
                                 </Link>

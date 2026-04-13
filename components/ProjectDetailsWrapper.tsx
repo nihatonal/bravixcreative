@@ -1,13 +1,12 @@
-"use client";
+import type { Project } from "@/types/Project";
+import ProjectDetails from "./ProjectDetails";
 
-import dynamic from "next/dynamic";
-import type { Project } from "@/types/Project"; // veya birebir Project tipi
-
-const ProjectDetailsClient = dynamic(() => import("./ProjectDetailsClient"), {
-    loading: () => <p className="text-center py-20">Loading project details...</p>,
-    ssr: false,
-});
-
-export default function ProjectDetailsWrapper({ project }: { project: Project }) {
-    return <ProjectDetailsClient project={project} />;
+export default function ProjectDetailsWrapper({
+    project,
+    locale,
+}: {
+    project: Project;
+    locale: string;
+}) {
+    return <ProjectDetails project={project} locale={locale} />;
 }
