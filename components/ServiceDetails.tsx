@@ -1,9 +1,10 @@
 "use client";
+
 import { ReactNode } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "@/node_modules/next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { handleMenuNavigation } from "@/utils/navigation";
-import { motion } from "framer-motion";
 
 interface Service {
   id: string;
@@ -31,9 +32,11 @@ interface Service {
     description: string;
   };
 }
+
 interface ServiceDetailsClientProps {
   service: Service;
 }
+
 export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
   const t = useTranslations("services");
   const pathname = usePathname();
@@ -54,16 +57,23 @@ export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
           <h1 className="text-3xl font-bold mb-4">Service Not Found</h1>
           <button
             aria-label="service button"
-            onClick={() => handleMenuClick("services")} className="text-bvs-purple hover:underline">
-            {/* {t("portfolio.backToPortfolio")} */} Services
+            onClick={() => handleMenuClick("services")}
+            className="text-bvs-purple hover:underline"
+          >
+            Services
           </button>
         </div>
       </div>
     );
   }
 
-  {/* Section Component */ }
-  const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
+  const Section = ({
+    title,
+    children,
+  }: {
+    title: string;
+    children: React.ReactNode;
+  }) => (
     <section className="container mx-auto mb-20">
       <h2 className="text-3xl font-bold text-bvs-dark border-l-4 border-bvs-purple pl-4 mb-10">
         {title}
@@ -74,14 +84,9 @@ export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
 
   return (
     <main className="pt-24 pb-32 px-4 lg:px-24 bg-bvs-light">
-      {/* Hero Section */}
       <section className="container mx-auto mb-24">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
+          <div>
             <h1 className="text-4xl lg:text-5xl font-extrabold text-bvs-dark mb-6 leading-tight">
               {service.title}
             </h1>
@@ -94,96 +99,78 @@ export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
             >
               {service.cta}
             </a>
-          </motion.div>
+          </div>
+
           {service.heroImageUrl && (
-            <motion.img
-              src={service.heroImageUrl}
-              alt={`${service.title} hero`}
-              className="rounded-2xl shadow-xl object-cover w-full h-auto max-h-[420px]"
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-            />
+            <div className="relative w-full h-[260px] sm:h-[320px] lg:h-[420px] overflow-hidden rounded-2xl shadow-xl">
+              <Image
+                src={service.heroImageUrl}
+                alt={`${service.title} hero`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
+              />
+            </div>
           )}
         </div>
       </section>
 
-      {/* Process Section */}
       <Section title={t("process")}>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {service.process?.map((step, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.1 }}
               className="p-6 bg-white rounded-2xl shadow hover:shadow-xl"
             >
               <h3 className="text-xl font-semibold text-bvs-logoText mb-2">
                 {`${t("step")} ${idx + 1}`}
               </h3>
               <p className="text-bvs-lightColor">{step}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
 
-      {/* Technologies Section */}
       <Section title={t("technologies")}>
         <div className="flex flex-wrap gap-4">
           {service.technologies?.map((tech, idx) => (
-            <motion.span
+            <span
               key={idx}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.05 }}
               className="px-4 py-2 bg-bvs-purple text-white rounded-full font-medium text-sm tracking-wide"
             >
               {tech}
-            </motion.span>
+            </span>
           ))}
         </div>
       </Section>
 
-      {/* Benefits Section */}
       <Section title={t("benefits")}>
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-4">
           {service.benefits?.map((benefit, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.25, delay: idx * 0.05 }}
               className="p-4 bg-bvs-gray text-bvs-dark rounded-xl shadow hover:shadow-md text-sm font-medium"
             >
               {benefit}
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
 
-      {/* Use Cases Section */}
       <Section title={t("useCases")}>
         <div className="flex flex-wrap gap-2">
           {service.useCases?.map((useCase, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.2, delay: idx * 0.03 }}
               className="px-3 py-1 bg-bvs-purple text-white rounded-full text-xs font-medium shadow-sm hover:shadow-md"
             >
               {useCase}
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
 
-      {/* Ideal For Section */}
       <Section title={t("idealFor")}>
         <ul className="list-disc list-inside space-y-2 text-bvs-darkColorL">
           {service.idealFor?.map((item, idx) => (
@@ -192,12 +179,10 @@ export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
         </ul>
       </Section>
 
-      {/* Pricing Model Section */}
       <Section title={t("pricingModel")}>
         <p className="text-bvs-darkColorL">{service.pricingModel}</p>
       </Section>
 
-      {/* Common Mistakes Section */}
       <Section title={t("commonMistakes")}>
         <ul className="list-disc list-inside space-y-2 text-bvs-darkColorL">
           {service.commonMistakes?.map((item, idx) => (
@@ -206,7 +191,6 @@ export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
         </ul>
       </Section>
 
-      {/* Performance Metrics Section */}
       <Section title={t("performanceMetrics")}>
         <ul className="list-disc list-inside space-y-2 text-bvs-darkColorL">
           {service.performanceMetrics?.map((item, idx) => (
@@ -215,27 +199,19 @@ export default function ServiceDetails({ service }: ServiceDetailsClientProps) {
         </ul>
       </Section>
 
-      {/* FAQ Section */}
       <Section title={t("faq")}>
         <div className="space-y-6">
           {service.faq?.map((item, idx) => (
-            <motion.div
+            <div
               key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: idx * 0.1 }}
               className="p-6 bg-white rounded-2xl shadow hover:shadow-xl"
             >
               <h3 className="font-semibold text-bvs-dark">{item.question}</h3>
               <p className="text-bvs-lightColor mt-2">{item.answer}</p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </Section>
     </main>
   );
-
-
 }
-

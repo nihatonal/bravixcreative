@@ -5,8 +5,8 @@
       "description": "Bravix Creative, markanıza özel yaratıcı çözümler sunan dijital ajans ve profesyonel web geliştirme stüdyosudur."
     },
     "projects": {
-      "title": "Hizmetler | Bravix Creative",
-      "description": "Web Tasarımı, Geliştirme ve CMS çözümleri dahil profesyonel hizmetleri keşfedin."
+      "title": "Portföy | Bravix Creative",
+      "description": "Web tasarım, UI/UX ve web geliştirme projelerimizden oluşan portföyümüzü inceleyin."
     },
     "blog": {
       "title": "Blog | Bravix Creative",
@@ -81,7 +81,8 @@
     "noData": "Veri mevcut değil",
     "pricingModel": "Fiyatlandırma Modeli",
     "commonMistakes": "Yaygın Hatalar",
-    "performanceMetrics": "Performans Ölçütleri"
+    "performanceMetrics": "Performans Ölçütleri",
+    "eyebrow": "Uzmanlığımız"
   },
   "serviceDetails": {
     "webDev": {
@@ -204,7 +205,15 @@
     "web-application": "Web Uygulaması",
     "viewProject": "Projeyi Görüntüle",
     "projectDetails": "Proje Detayları",
-    "viewMore": "Daha Fazla Gör"
+    "viewMore": "Daha Fazla Gör",
+    "eyebrow": "Seçili Projeler",
+    "viewAllProjects": "Tüm Projeleri Gör"
+  },
+  "blogPreview": {
+    "eyebrow": "Blog",
+    "title": "Son Yazılar",
+    "description": "Dijital büyüme, web tasarım, SEO ve marka stratejileri üzerine en güncel içerikleri keşfedin.",
+    "viewAll": "Tüm Blogları Gör"
   },
   "pricing": {
     "title": "Fiyatlandırma",
@@ -235,7 +244,8 @@
     "subtitle": "Fikirlerinizi hayata geçirmek için çalıştığım teknolojiler",
     "frontend": "Frontend Geliştirme",
     "backend": "Backend Geliştirme",
-    "design": "Tasarım"
+    "design": "Tasarım",
+    "eyebrow": "Kullandığım Araçlar ve Teknolojiler"
   },
   "tech": {
     "title": "Çalıştığım Teknolojiler"
@@ -246,8 +256,9 @@
     "button": "İletişime Geçin"
   },
   "contact": {
-    "title": "İletişime Geç",
-    "subtitle": "Bir projen mi var? Sana nasıl yardımcı olabileceğimi konuşalım.",
+    "eyebrow": "Proje Başlat",
+    "title": "Birlikte Harika Bir Şey İnşa Edelim",
+    "subtitle": "Aklınızda bir proje mi var? Fikirlerinizi hayata geçirmek için birlikte konuşalım.",
     "name": "Adınız",
     "email": "E-posta Adresiniz",
     "subject": "Konu",

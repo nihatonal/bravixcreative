@@ -24,7 +24,6 @@ export default function ProjectDetails({
   locale,
 }: ProjectDetailsProps) {
   const introText = getIntroText(project);
-  const portfolioHref = `/${locale}#portfolio`;
   const contactHref = `/${locale}#contact`;
   const t = useTranslations("projectDetail");
 
@@ -33,7 +32,7 @@ export default function ProjectDetails({
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <Link
-            href={portfolioHref}
+            href={`/${locale}/projects`}
             aria-label="Back to portfolio"
             className="inline-flex items-center justify-center text-bvs-purple hover:underline"
           >

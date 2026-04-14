@@ -19,7 +19,7 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed w-full py-3 top-0 z-40 border-b border-border bg-background/80 backdrop-blur-xl`}
+            className={`fixed w-full py-3 top-0 z-40 border-b border-border bg-background/70 backdrop-blur-xl`}
         >
             <Container className="flex items-center justify-between text-bvs-lightColor">
                 <div className="w-auto md:w-1/3 flex items-center gap-2.5 justify-start md:gap-0">

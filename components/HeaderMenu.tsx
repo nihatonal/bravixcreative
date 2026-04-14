@@ -27,7 +27,10 @@ const HeaderMenu = () => {
     useEffect(() => {
         if (pathname === `/${locale}/blog` || pathname === `/${locale}/blog/`) {
             setSelectedSection("blog");
-        } else if (pathname === `/${locale}` || pathname === `/${locale}/`) {
+        } else if (pathname === `/${locale}/projects` || pathname === `/${locale}/blog/`) {
+            setSelectedSection("portfolio");
+        }
+        else if (pathname === `/${locale}` || pathname === `/${locale}/`) {
             setSelectedSection("home");
         }
     }, [pathname, locale]);
@@ -45,10 +48,14 @@ const HeaderMenu = () => {
         <div className="hidden md:inline-flex w-1/3 items-center justify-center gap-3 lg:gap-7 text-sm capitalize font-semibold text-gray-800/80">
             {navItems.map((item) => {
                 const isBlog = item.id === "blog";
+                const isPortfolio = item.id === "portfolio"
                 const isActive =
                     isBlog
                         ? pathname === `/${locale}/blog` || pathname === `/${locale}/blog/`
-                        : selectedSection === item.id;
+
+                        : isPortfolio
+                            ? pathname === `/${locale}/projects` || pathname === `/${locale}/projects/`
+                            : selectedSection === item.id;
 
                 if (isBlog) {
                     return (
@@ -56,7 +63,28 @@ const HeaderMenu = () => {
                             href={`/${locale}/blog`}
                             key={item.id}
                             aria-label="nav button"
-                            className={`whitespace-nowrap hover:text-bvs-accent hoverEffect relative group ${isActive ? "text-bvs-accent" : ""
+                            className={`whitespace-nowrap hoverEffect relative group ${isActive ? "" : ""
+                                }`}
+                        >
+                            {item.label}
+                            <span
+                                className={`absolute -bottom-0.5 left-1/2 w-0 h-0.5 bg-bvs-purple group-hover:w-1/2 hoverEffect group-hover:left-0 ${isActive ? "w-1/2" : ""
+                                    }`}
+                            />
+                            <span
+                                className={`absolute -bottom-0.5 right-1/2 w-0 h-0.5 bg-bvs-purple group-hover:w-1/2 hoverEffect group-hover:right-0 ${isActive ? "w-1/2" : ""
+                                    }`}
+                            />
+                        </Link>
+                    );
+                }
+                if (isPortfolio) {
+                    return (
+                        <Link
+                            href={`/${locale}/projects`}
+                            key={item.id}
+                            aria-label="nav button"
+                            className={`whitespace-nowrap hoverEffect relative group ${isActive ? "" : ""
                                 }`}
                         >
                             {item.label}
@@ -77,7 +105,7 @@ const HeaderMenu = () => {
                         key={item.id}
                         aria-label="nav button"
                         onClick={() => handleMenuClick(item.id)}
-                        className={`whitespace-nowrap hover:text-bvs-accent hoverEffect relative group ${isActive ? "text-bvs-accent" : ""
+                        className={`whitespace-nowrap hoverEffect relative group ${isActive ? "text-bvs-dark" : ""
                             }`}
                     >
                         {item.label}

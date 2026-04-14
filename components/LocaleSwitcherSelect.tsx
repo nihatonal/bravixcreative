@@ -93,7 +93,8 @@ export default function LocaleSwitcherSelect({
   return (
     <Select defaultValue={defaultValue} onValueChange={onSelectChange}>
       <SelectTrigger
-        className="w-[60px] h-8 px-3 pl-1 border-none bg-transparent focus:ring-0 focus:ring-offset-0"
+        className="w-[60px] h-8 px-3 pl-1 border-none bg-transparent focus:ring-0 focus:ring-offset-0
+        text-bvs-mutedText"
         aria-label={label}
       >
         <SelectValue />

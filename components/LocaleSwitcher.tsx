@@ -8,7 +8,7 @@ export default function LocaleSwitcher() {
 
   return (
     <div className="flex items-center hover:text-bvs-accent">
-      <Globe className="h-4 w-4 text-muted-foreground" />
+      <Globe className="h-4 w-4 text-bvs-mutedText" />
       <LocaleSwitcherSelect
         defaultValue={locale}
         label="Select a locale"

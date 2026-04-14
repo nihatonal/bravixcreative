@@ -32,7 +32,10 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
     useEffect(() => {
         if (pathname === `/${locale}/blog` || pathname === `/${locale}/blog/`) {
             setSelectedSection("blog");
-        } else if (pathname === `/${locale}` || pathname === `/${locale}/`) {
+        } else if (pathname === `/${locale}/projects` || pathname === `/${locale}/projects/`) {
+            setSelectedSection("portfolio");
+        }
+        else if (pathname === `/${locale}` || pathname === `/${locale}/`) {
             setSelectedSection("home");
         }
     }, [pathname, locale]);
@@ -72,6 +75,22 @@ const SideMenu: FC<SidebarProps> = ({ isOpen, onClose }) => {
                         return (
                             <Link
                                 href={`/${locale}/blog`}
+                                key={item.id}
+                                aria-label="nav button"
+                                onClick={() => {
+                                    onClose();
+                                }}
+                                className={`hover:text-bvs-lightPurple hoverEffect ${selectedSection === item.id ? "text-bvs-accent" : ""
+                                    }`}
+                            >
+                                {item.label}
+                            </Link>
+                        );
+                    }
+                    if (item.id === "portfolio") {
+                        return (
+                            <Link
+                                href={`/${locale}/projects`}
                                 key={item.id}
                                 aria-label="nav button"
                                 onClick={() => {

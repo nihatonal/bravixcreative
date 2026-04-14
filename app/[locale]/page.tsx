@@ -1,13 +1,17 @@
-import type { Metadata } from 'next';
-import { getTranslations } from 'next-intl/server';
-import HomePageClient from "./HomePageClient";
-
+import type { Metadata } from "next";
+import { getTranslations } from "next-intl/server";
+import Hero from "@/components/home/Hero";
+import About from "@/components/home/About";
+import Services from "@/components/home/Services_";
+import HomeBottomClient from "./HomeBottomClient";
+import BlogPreview from "@/components/home/BlogPreview";
+import PortfolioPreview from "@/components/home/PortfolioPreview";
 export async function generateStaticParams() {
-  return ['en', 'tr', 'ru'].map((locale) => ({ locale }));
+  return ["en", "tr", "ru"].map((locale) => ({ locale }));
 }
 
 export async function generateMetadata(
-  { params }: { params: Promise<{ locale: string }> },
+  { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata.home" });
@@ -33,7 +37,21 @@ export async function generateMetadata(
   };
 }
 
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
 
-export default function HomePage() {
-  return <HomePageClient />;
+  return (
+    <>
+      <Hero />
+      <About />
+      <Services />
+      {await PortfolioPreview({ locale })}
+      {await BlogPreview({ locale })}
+      <HomeBottomClient />
+    </>
+  );
 }

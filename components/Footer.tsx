@@ -9,6 +9,7 @@ import Logo from "./Logo";
 import Newsletters from "./Newsletters";
 import ServiceModal from "./ServiceModal";
 import SocialMedia from "./SocialMedia";
+import Link from "@/node_modules/next/link";
 
 interface NavItem {
     id: string;
@@ -34,11 +35,11 @@ export default function Footer() {
     const [selectedService, setSelectedService] = useState<string>("");
 
     const navItems: NavItem[] = [
-        { id: "home", label: nav("home") },
-        { id: "about", label: nav("about") },
         { id: "services", label: nav("services") },
         { id: "portfolio", label: nav("portfolio") },
         { id: "pricing", label: nav("pricing") },
+        { id: "contact", label: nav("contact") },
+        { id: "blog", label: nav("blog") },
     ];
 
     const services: Service[] = [
@@ -50,10 +51,16 @@ export default function Footer() {
     ];
 
     const scrollToSection = (id: string) => {
+        const locale = pathname.split("/")[1];
+
         handleMenuNavigation({
             id,
             pathname,
             router,
+            allowedPaths: [
+                `/${locale}/blog`,
+                `/${locale}/projects`,
+            ],
         });
     };
 
@@ -87,14 +94,35 @@ export default function Footer() {
                         </h3>
                         <div className="space-y-3 flex flex-col items-start">
                             {navItems.map((item) => (
-                                <button
-                                    key={item.id}
-                                    aria-label="nav button"
-                                    onClick={() => scrollToSection(item.id)}
-                                    className="text-gray-300 hover:text-white transition-colors"
-                                >
-                                    {item.label}
-                                </button>
+                                item.id === "blog" ?
+                                    <Link
+                                        href={`/${locale}/blog`}
+                                        key={item.id}
+                                        aria-label="nav button"
+                                        className="text-gray-300 hover:text-white transition-colors"
+                                    >
+                                        {item.label}
+                                    </Link> :
+                                    item.id === "portfolio" ?
+                                        <Link
+                                            href={`/${locale}/projects`}
+                                            key={item.id}
+                                            aria-label="nav button"
+                                            className="text-gray-300 hover:text-white transition-colors"
+                                        >
+                                            {item.label}
+                                        </Link> :
+                                        <Link
+                                            href={`/${locale}#${item.id}`}
+                                            key={item.id}
+                                            aria-label="nav button"
+                                            //onClick={() => scrollToSection(item.id)}
+                                            className="text-gray-300 hover:text-white transition-colors"
+                                        >
+                                            {item.label}
+                                        </Link>
+
+
                             ))}
                         </div>
                     </div>
@@ -148,6 +176,6 @@ export default function Footer() {
                     </p>
                 </div>
             </div>
-        </footer>
+        </footer >
     );
 }

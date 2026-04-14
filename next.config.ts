@@ -17,7 +17,9 @@ const nextConfig: NextConfig = {
     domains: ["i.ibb.co"],
     unoptimized: true, // ⭐ static export için gerekli
   },
-
+  experimental: {
+    modern: true
+  },
   compiler: {
     removeConsole: true,
     emotion: true,

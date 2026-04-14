@@ -1,11 +1,10 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect, ChangeEvent, FormEvent } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useTranslations } from "next-intl";
-import { usePlan } from '../lib/PlanContext';
+import { usePlan } from "../lib/PlanContext";
 import { useToast } from "@/hooks/toast";
 import SocialMedia from "./SocialMedia";
 
@@ -20,11 +19,11 @@ interface FormData {
 const Contact: React.FC = () => {
     const { selectedPlan } = usePlan();
     const t = useTranslations("contact");
-    const ref = useRef<HTMLDivElement>(null);
-    const isInView = useInView(ref, { once: true, amount: 0.1 });
     const { toast } = useToast();
 
     const [planInput, setPlanInput] = useState<string>("");
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     const [formData, setFormData] = useState<FormData>({
         name: "",
         email: "",
@@ -39,9 +38,9 @@ const Contact: React.FC = () => {
         }
     }, [selectedPlan]);
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    ) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
     };
@@ -100,29 +99,27 @@ const Contact: React.FC = () => {
     };
 
     return (
-        <section id="contact" className="py-20 bg-gray-50 px-2 lg:px-20">
-            <div className="container mx-auto px-4" ref={ref}>
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">{t("title")}</h2>
-                    <p className="text-gray-600 max-w-xl mx-auto">{t("subtitle")}</p>
-                </motion.div>
+        <section id="contact" className="bg-gray-50 px-2 py-20 lg:px-20">
+            <div className="container mx-auto px-4">
+                <div className="mb-16 text-center">
+                    <span className="mb-4 inline-flex items-center rounded-full border border-bvs-purple/20 bg-white/80 px-4 py-1 text-sm font-medium text-bvs-mutedText shadow-sm backdrop-blur-sm">
+                        {t("eyebrow")}
+                    </span>
+                    <h2 className="mb-4 text-3xl font-bold md:text-4xl">{t("title")}</h2>
+                    <p className="mx-auto max-w-xl text-gray-600">{t("subtitle")}</p>
+                </div>
 
-                <div className="grid md:grid-cols-2 gap-10">
-                    {/* Contact Form */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="bg-white p-6 rounded-xl shadow-sm"
-                    >
-                        <form onSubmit={handleSubmit} className="space-y-3 flex flex-col justify-between lg:grid grid-cols-2 gap-x-4">
+                <div className="grid gap-10 md:grid-cols-2">
+                    <div className="rounded-xl bg-white p-6 shadow-sm">
+                        <form
+                            onSubmit={handleSubmit}
+                            className="flex flex-col space-y-3 lg:grid lg:grid-cols-2 lg:gap-x-4 lg:space-y-0 lg:gap-y-3"
+                        >
                             <div className="col-span-2">
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                                <label
+                                    htmlFor="name"
+                                    className="mb-1 block text-sm font-medium text-gray-700"
+                                >
                                     {t("name")}
                                 </label>
                                 <Input
@@ -135,7 +132,10 @@ const Contact: React.FC = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                                <label
+                                    htmlFor="phone"
+                                    className="mb-1 block text-sm font-medium text-gray-700"
+                                >
                                     {t("phoneLabel")}
                                 </label>
                                 <Input
@@ -149,7 +149,10 @@ const Contact: React.FC = () => {
                             </div>
 
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                                <label
+                                    htmlFor="email"
+                                    className="mb-1 block text-sm font-medium text-gray-700"
+                                >
                                     {t("email")}
                                 </label>
                                 <Input
@@ -163,7 +166,10 @@ const Contact: React.FC = () => {
                             </div>
 
                             <div className="col-span-2">
-                                <label htmlFor="form_subject" className="block text-sm font-medium text-gray-700 mb-1">
+                                <label
+                                    htmlFor="form_subject"
+                                    className="mb-1 block text-sm font-medium text-gray-700"
+                                >
                                     {t("subject")}
                                 </label>
                                 <Input
@@ -176,7 +182,10 @@ const Contact: React.FC = () => {
                             </div>
 
                             <div className="col-span-2">
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                                <label
+                                    htmlFor="message"
+                                    className="mb-1 block text-sm font-medium text-gray-700"
+                                >
                                     {t("message")}
                                 </label>
                                 <Textarea
@@ -193,13 +202,13 @@ const Contact: React.FC = () => {
                             <button
                                 type="submit"
                                 aria-label="submit button"
-                                className="col-start-2 w-full py-2 text-white rounded-[8px] bg-bvs-purple hover:bg-bvs-purple/90"
+                                className="col-start-2 min-h-[44px] w-full rounded-[8px] bg-bvs-purple py-2 text-white hover:bg-bvs-purple/90 disabled:opacity-70"
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? (
                                     <span className="flex items-center justify-center">
                                         <svg
-                                            className="animate-spin -ml-1 mr-2 h-4 w-4 text-white"
+                                            className="-ml-1 mr-2 h-4 w-4 animate-spin text-white"
                                             xmlns="http://www.w3.org/2000/svg"
                                             fill="none"
                                             viewBox="0 0 24 24"
@@ -211,12 +220,12 @@ const Contact: React.FC = () => {
                                                 r="10"
                                                 stroke="currentColor"
                                                 strokeWidth="4"
-                                            ></circle>
+                                            />
                                             <path
                                                 className="opacity-75"
                                                 fill="currentColor"
                                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                                            ></path>
+                                            />
                                         </svg>
                                         {t("processing", { default: "Processing..." })}
                                     </span>
@@ -225,21 +234,15 @@ const Contact: React.FC = () => {
                                 )}
                             </button>
                         </form>
-                    </motion.div>
+                    </div>
 
-                    {/* Contact Information */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                    >
-                        <div className="bg-white p-6 rounded-xl shadow-sm mb-8">
-                            <h3 className="text-xl font-semibold mb-4">{t("info")}</h3>
+                    <div>
+                        <div className="mb-8 rounded-xl bg-white p-6 shadow-sm">
+                            <h3 className="mb-4 text-xl font-semibold">{t("info")}</h3>
 
                             <div className="space-y-4">
-                                {/* Email */}
                                 <div className="flex items-start">
-                                    <div className="bg-bvs-lightPurple/20 p-3 rounded-full mr-4">
+                                    <div className="mr-4 rounded-full bg-bvs-lightPurple/20 p-3">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="h-5 w-5 text-bvs-purple"
@@ -258,16 +261,18 @@ const Contact: React.FC = () => {
                                     <div>
                                         <h4 className="font-medium text-gray-700">{t("emailLabel")}</h4>
                                         <p className="text-gray-600">
-                                            <a href="mailto:info@bravixcreative.com" className="hover:underline">
+                                            <a
+                                                href="mailto:info@bravixcreative.com"
+                                                className="hover:underline"
+                                            >
                                                 info@bravixcreative.com
                                             </a>
                                         </p>
                                     </div>
                                 </div>
 
-                                {/* Phone */}
                                 <div className="flex items-start">
-                                    <div className="bg-bvs-lightPurple/20 p-3 rounded-full mr-4">
+                                    <div className="mr-4 rounded-full bg-bvs-lightPurple/20 p-3">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="h-5 w-5 text-bvs-purple"
@@ -293,10 +298,8 @@ const Contact: React.FC = () => {
                                     </div>
                                 </div>
 
-
-                                {/* Working Hours */}
                                 <div className="flex items-start">
-                                    <div className="bg-bvs-lightPurple/20 p-3 rounded-full mr-4">
+                                    <div className="mr-4 rounded-full bg-bvs-lightPurple/20 p-3">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             className="h-5 w-5 text-bvs-purple"
@@ -313,23 +316,25 @@ const Contact: React.FC = () => {
                                         </svg>
                                     </div>
                                     <div>
-                                        <h4 className="font-medium text-gray-700">{t("workHoursLabel")}</h4>
+                                        <h4 className="font-medium text-gray-700">
+                                            {t("workHoursLabel")}
+                                        </h4>
                                         <p className="text-gray-600">{t("workHours")}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-r from-bvs-primary to-bvs-accent p-6 text-white rounded-xl">
-                            <h3 className="text-xl font-semibold mb-2">{t("letsMeet")}</h3>
+                        <div className="rounded-xl bg-gradient-to-r from-bvs-primary to-bvs-accent p-6 text-white">
+                            <h3 className="mb-2 text-xl font-semibold">{t("letsMeet")}</h3>
                             <p className="mb-4 opacity-90">{t("letsMeetSub")}</p>
                             <SocialMedia
                                 className="text-bvs-accent"
-                                iconClassName=" text-white hover:bg-white/80 hover:text-bvs-accent p-2 rounded-full transition-colors"
+                                iconClassName="rounded-full p-2 text-white transition-colors hover:bg-white/80 hover:text-bvs-accent"
                                 status_link={t("status_link")}
                             />
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
             </div>
         </section>
