@@ -44,9 +44,9 @@ const socialLink = [
     ,
     {
         title: "Behance",
-        href: "https://www.behance.net/nihatnal",
+        href: "https://www.behance.net/bravixcreative",
         icon: <BehanceIcon width={24} height={24} />,
-        status: false
+        status: true
     },
     {
         title: "Linkedin",

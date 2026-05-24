@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { getLocale, getTranslations } from "next-intl/server";
 
+import { getServicePath } from "@/lib/service-routes";
+import type { Locale } from "@/i18n/routing";
+import type { ServiceSlug } from "@/lib/services";
+
 type Service = {
   id: string;
-  slug: string;
+  slug: ServiceSlug;
   title: string;
   description: string;
   cta: string;
@@ -11,7 +15,7 @@ type Service = {
 };
 
 export default async function Services() {
-  const locale = await getLocale();
+  const locale = (await getLocale()) as Locale;
   const t = await getTranslations("services");
 
   const services: Service[] = [
@@ -89,7 +93,7 @@ export default async function Services() {
           <p className="mx-auto max-w-xl text-gray-600">{t("subtitle")}</p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {services.map((service) => (
             <div
               key={service.id}
@@ -106,7 +110,7 @@ export default async function Services() {
               </p>
 
               <Link
-                href={`/${locale}/services/${service.slug}`}
+                href={getServicePath(locale, service.slug)}
                 className="absolute bottom-4 right-4 inline-flex items-center font-medium text-bvs-mutedText hover:underline"
               >
                 {service.cta}

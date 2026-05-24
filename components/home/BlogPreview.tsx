@@ -13,11 +13,11 @@ type ApiResponse<T> = {
   error?: string;
 };
 
-const baseUrl =
+const fetchURL =
   process.env.NEXT_PUBLIC_BACKEND_URL || "https://bravix-server.vercel.app";
 
 async function fetchFromApi<T>(path: string): Promise<T> {
-  const res = await fetch(`${baseUrl}${path}`, {
+  const res = await fetch(`${fetchURL}${path}`, {
     cache: "force-cache",
   });
 
@@ -59,7 +59,7 @@ export default async function BlogPreview({ locale }: BlogPreviewProps) {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-3">
           {posts.map((post, index) => (
             <div
               key={post._id}

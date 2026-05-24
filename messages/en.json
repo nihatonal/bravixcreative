@@ -1,16 +1,17 @@
+
 {
   "metadata": {
     "home": {
-      "title": "Bravix Creative | Creative Digital Agency & Web Development",
-      "description": "Bravix Creative is a digital agency and professional web development studio offering custom creative solutions for your brand."
+      "title": "Custom Web Development & UI/UX Design | React Specialist | Bravix Creative",
+      "description": "Modern, fast websites built with React & Next.js. Web development, e-commerce, UI/UX design and SEO — starting at $799. Based in Moscow. Let's build yours."
     },
     "projects": {
-      "title": "Portfolio  | Bravix Creative",
-      "description": "Explore our portfolio of web design, UI/UX, and web development projects."
+      "title": "Web Development & Design Portfolio | Bravix Creative Projects",
+      "description": "Explore real-world projects — from e-commerce stores to custom dashboards. See how Bravix Creative turns ideas into high-performing digital products."
     },
     "blog": {
-      "title": "Blog | Bravix Creative",
-      "description": "Read the latest articles, featured posts and creative insights from Bravix Creative."
+      "title": "Web Design, SEO & Development Blog | Bravix Creative Insights",
+      "description": "Practical articles on web development, UI/UX design, SEO strategies and digital growth. Written by a React developer with 6+ years of experience."
     }
   },
   "hero": {
@@ -207,7 +208,28 @@
     "projectDetails": "Project Details",
     "viewMore": "View More",
     "eyebrow": "Selected Work",
-    "viewAllProjects": "View All Projects"
+    "viewAllProjects": "View All Projects",
+    "hero": {
+      "chips": {
+        "customWebsites": "Custom websites",
+        "uiUxSystems": "UI/UX systems",
+        "seoFocused": "SEO-focused builds"
+      },
+      "cta": {
+        "explore": "Explore projects",
+        "start": "Start a project"
+      },
+      "featured": "Featured project",
+      "focus": "Focus",
+      "delivery": "Delivery",
+      "focusText": "Conversion-driven design",
+      "deliveryText": "Strategy + execution",
+      "stats": {
+        "delivery": "Projects delivered",
+        "satisfaction": "Client satisfaction",
+        "experience": "Years experience"
+      }
+    }
   },
   "blogPreview": {
     "eyebrow": "Blog",
@@ -273,12 +295,16 @@
     "emailLabel": "Email",
     "addressLabel": "Address",
     "workHoursLabel": "Working Hours",
-    "workHours": "9 AM - 6 PM, Mon - Sat",
+    "workHours": "9 AM - 6 PM, Mon - Sun",
     "letsMeet": "Let's Connect",
     "letsMeetSub": "Follow me on social media to see my latest projects and updates",
     "processing": "Sending",
-    "submitSuccessTitle": "We got your message!",
-    "submitSuccessDesc": "description",
+    "submitSuccessTitle": "Message received!",
+    "submitSuccessDesc": "Thanks for reaching out. We'll get back to you as soon as possible.",
+    "newsletterSuccessTitle": "Subscription successful!",
+    "newsletterSuccessDesc": "You're now subscribed to our newsletter.",
+    "submitErrorTitle": "Something went wrong",
+    "submitErrorDesc": "We couldn't send your message. Please try again later.",
     "status_link": "Page coming soon.",
     "newsletterDesc": "Stay updated with our latest news and insights."
   },
@@ -416,218 +442,6 @@
       }
     }
   },
-  "projects": [
-    {
-      "id": "1",
-      "viewLiveSite": "Live Site",
-      "liveUrl": "https://www.monihomes.com.tr",
-      "title": "Apart Hotel Website & Admin Panel",
-      "client": "Monihomes",
-      "type": "web-design",
-      "category": "Web Design + Admin Panel",
-      "description": "A modern one-page promotional website and a custom admin panel developed for the hotel owner. The project provides a user-friendly interface for guests while allowing the hotel owner to manage prices and occupancy easily.",
-      "challenge": "The client needed a professional yet simple page to promote their hotel. They also wanted a backend system to track the occupancy of each room using Google Calendar and collect reservation requests efficiently.",
-      "solution": "I designed a fast and elegant landing page using React. The admin panel was built with Node.js/Express, MongoDB, and JWT. Room availability is automatically synced from Google Calendar. Instead of booking directly, guests submit their info via a form, which is sent to the owner through email and WhatsApp. The admin panel also displays Google Analytics data in daily, weekly, and yearly graphs.",
-      "technologies": [
-        "React",
-        "Node",
-        "MongoDB",
-        "Tailwind CSS",
-        "Google Calendar API"
-      ],
-      "results": [
-        "60% reduction in management time",
-        "100% of requests are captured via email and WhatsApp",
-        "Mobile-friendly design significantly improved user experience"
-      ],
-      "testimonial": {
-        "content": "Managing the hotel became much easier with our new website and panel. I can control all the information from one place, and guest requests reach me instantly.",
-        "author": "U. Dinc, Owner",
-        "company": "Monihomes"
-      },
-      "images": [
-        "https://i.ibb.co/DSjNqdr/monihomes-story.webp",
-        "https://i.ibb.co/65W60Yx/moniomes-2-iphones.webp",
-        "https://i.ibb.co/rDZrCQg/monihomes-post.webp"
-      ]
-    },
-    {
-      "id": "2",
-      "title": "Vineyard Investment Website",
-      "viewLiveSite": "Live Site",
-      "liveUrl": "https://konyalimemlak.web.app/",
-      "client": "Bag Bahçe Yatırım",
-      "type": "web-design",
-      "category": "Multilingual Web Design",
-      "description": "A bilingual promotional website created for a vineyard investment company operating in the Konya region. The site presents the company’s services, investment guides, and blog content while reflecting a natural and trustworthy brand image.",
-      "challenge": "The client needed a modern and fast-loading website to attract investors interested in vineyard ownership. It had to support both Turkish and English, and offer a nature-inspired design aligned with the concept of sustainable land investment.",
-      "solution": "I developed a responsive and aesthetically appealing landing page using React. The design incorporates earth tones, parallax effects, and a clean layout. The site supports multilingual content (i18n) and features sections such as About, Investment Process, Blog, and Contact. A blog system is planned to share investment tips and vineyard ownership insights.",
-      "technologies": [
-        "React",
-        "Node",
-        "CSS3",
-        "i18next",
-        "Framer Motion"
-      ],
-      "results": [
-        "Improved brand trust with a professional design",
-        "Bilingual interface increased accessibility for foreign investors",
-        "Optimized performance for mobile and desktop users"
-      ],
-      "testimonial": {
-        "content": "Our website is highly satisfying both visually and in terms of user experience. Reaching out to investors is now much easier.",
-        "author": "V. Karakuş",
-        "company": "Bag Bahçe Yatırım"
-      },
-      "images": [
-        "https://i.ibb.co/PZGrrKMr/bagbahce-multi.webp",
-        "https://i.ibb.co/Ndv35RLC/bby-phone.webp ",
-        "https://i.ibb.co/Kjr3yC0q/bby-2-pages.webp"
-      ]
-    },
-    {
-      "id": "3",
-      "title": "The Glass Hut – Cabin Website",
-      "viewLiveSite": "Demo",
-      "liveUrl": "https://theglasshut.web.app/",
-      "client": "The Glass Hut",
-      "type": "web-development",
-      "category": "Web Development",
-      "description": "A modern, visually immersive promotional website designed for a nature-focused glamping cabin. The site presents detailed information about the cabin, its surroundings, booking options, and frequently asked questions in a clean single-page architecture.",
-      "challenge": "The client wanted a visually appealing and minimalist website that reflects the peaceful, nature-connected experience offered by their glass cabin. It needed to showcase the space effectively while keeping navigation simple and mobile-friendly.",
-      "solution": "I built a smooth, single-page web application using React and deployed it via Firebase Hosting. The content was divided into sections such as The Hut, The Area, Booking, About Us, and FAQ, allowing users to explore everything seamlessly. Animations and full-screen visuals help convey the serenity and charm of the experience.",
-      "technologies": [
-        "React",
-        "React Router",
-        "CSS3",
-        "Framer Motion",
-        "Firebase Hosting"
-      ],
-      "results": [
-        "Elegant, immersive web presence that matches the natural brand",
-        "Clear navigation and mobile optimization improved user flow",
-        "Custom content structure helped increase time spent on site"
-      ],
-      "testimonial": {
-        "content": "Our website turned out just as we imagined – simple, elegant, and in harmony with nature. Our guests can now access information easily, and the reservation process is much clearer.",
-        "author": "Concept Feedback",
-        "company": "Internal Review"
-      },
-      "images": [
-        "https://i.ibb.co/r2Cg2m9n/glasshut-multi.webp",
-        "https://i.ibb.co/xqH04y97/glasshut-screens.webp",
-        "https://i.ibb.co/G37ZJNbn/glasshutscreens.webp"
-      ]
-    },
-    {
-      "id": "4",
-      "title": "Mindfulness App Landing Page",
-      "viewLiveSite": "Demo",
-      "liveUrl": "https://zenmind-breathe.netlify.app/",
-      "client": "ZenMind",
-      "type": "web-design",
-      "category": "Landing Page Design",
-      "description": "A responsive, elegant and calming one-page landing website created to promote the ZenMind mobile app. Designed to reflect the essence of mindfulness and breathing techniques while ensuring clarity and ease of use across all devices.",
-      "challenge": "The client needed a visually soothing, fast-loading and mobile-optimized website to reflect the calming nature of the ZenMind app and convert visitors into app users. The main challenge was to convey mindfulness interactively, especially through a breathing animation.",
-      "solution": "I created a modern, responsive landing page using React and Tailwind CSS. The 'Breathe In / Breathe Out' animation was built using custom motion components to simulate mindful breathing. The design included a clear app showcase, user testimonials, pricing section, and mobile-optimized layout. All content is displayed with soft transitions and attention to whitespace, enhancing the user’s feeling of calm.",
-      "technologies": [
-        "Figma",
-        "React",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Responsive Web Design",
-        "Lottie Animation"
-      ],
-      "results": [
-        "Improved mobile conversion by 45%",
-        "Highly praised UI/UX by early users",
-        "Increased app downloads through clear CTA placement"
-      ],
-      "testimonial": {
-        "content": "The new landing page feels exactly like our app: calm, minimal, and inspiring. It truly speaks our brand’s voice and encourages users to take a deep breath and explore ZenMind.",
-        "author": "Concept Feedback",
-        "company": "Internal Review"
-      },
-      "images": [
-        "https://i.ibb.co/Nnn5k3v7/zenmind-multi.webp",
-        "https://i.ibb.co/sv2XmqyJ/zenmind-instagram.webp",
-        "https://i.ibb.co/p6RKMbs1/zenmind-laptop.webp"
-      ]
-    },
-    {
-      "id": "5",
-      "title": "Creator Flow Dashboard UI",
-      "viewLiveSite": "Demo",
-      "liveUrl": "https://creator-flow-dashboard.netlify.app/",
-      "client": "Internal Concept",
-      "type": "ui-ux",
-      "category": "Dashboard UI/UX ",
-      "description": "A modern, responsive dashboard UI designed to streamline the creative workflow for content creators. The interface focuses on usability, clarity, and aesthetic balance, offering an efficient space to manage tasks, earnings, content, and insights.",
-      "challenge": "The goal was to create a visually appealing and functional interface that content creators can use daily to manage their creative flow. The main challenge was balancing data density with a clean and engaging visual design, especially across mobile and desktop.",
-      "solution": "Using Figma for wireframing and high-fidelity prototyping, I designed a flexible dashboard with modular components. Key elements like revenue charts, recent activity, quick actions, and navigation were structured with intuitive UX in mind. Color themes and spacing were carefully applied to ensure both focus and calmness during prolonged use.",
-      "technologies": [
-        "Figma",
-        "React",
-        "Tailwind CSS",
-        "Component-Based UI",
-        "Responsive Design",
-        "Data Visualization"
-      ],
-      "results": [
-        "Efficient user flow with minimal cognitive load",
-        "Highly adaptable component system for expansion",
-        "Positive feedback on aesthetics and usability from creative professionals"
-      ],
-      "testimonial": {
-        "content": "This dashboard design strikes the perfect balance between functionality and aesthetic clarity. It’s exactly the kind of tool I’d want to use every day as a creator.",
-        "author": "Concept Feedback",
-        "company": "Internal Review"
-      },
-      "images": [
-        "https://i.ibb.co/zTG2KZ7Y/dasboard-destkop.webp",
-        "https://i.ibb.co/bgFf974p/dashboard-2.webp",
-        "https://i.ibb.co/G4GGfm18/dashboard-1.webp"
-      ]
-    },
-    {
-      "id": "6",
-      "viewLiveSite": "Live Site",
-      "liveUrl": "https://quick-bite-fastfood.netlify.app/",
-      "title": "Fast Food Restaurant Website with Order & Payment System",
-      "client": "Quick Bite",
-      "type": "web-application",
-      "category": "Web Application + E-commerce",
-      "description": "Quick Bite is a fast food restaurant website designed to deliver a complete online ordering experience. Visitors can browse a modern, responsive menu, add items to their cart, make secure payments, and track their orders in real time — all from one seamless interface.",
-      "challenge": "The goal was to build a visually appealing and user-friendly digital platform that replaced traditional ordering methods with a fully integrated system for online ordering, payments, and delivery tracking — improving both customer experience and internal efficiency.",
-      "solution": "Using React and modern web development practices, I crafted a responsive and interactive food ordering platform. Key features include a dynamic cart system, payment integration, and a real-time order tracking dashboard.",
-      "adminPanel": {
-        "title": "Admin Panel",
-        "content": "To streamline operations on the restaurant's side, I built a lightweight admin panel. The panel enables staff to monitor and manage incoming orders, update order statuses (e.g., 'Preparing', 'Out for Delivery', 'Delivered'), and view customer and payment information securely. It simplifies workflow by giving the restaurant real-time insight into the order pipeline, reducing manual coordination and increasing efficiency."
-      },
-      "technologies": [
-        "React",
-        "Tailwind CSS",
-        "JavaScript",
-        "Payment API",
-        "Local Storage"
-      ],
-      "results": [
-        "Enabled secure online payments and real-time delivery tracking",
-        "Improved order management efficiency with an admin dashboard",
-        "Enhanced customer satisfaction through a smooth, mobile-first experience"
-      ],
-      "testimonial": {
-        "content": "Our customers love the convenience of ordering and paying online. The order tracking feature has also reduced phone inquiries and improved our workflow.",
-        "author": "Restaurant Manager",
-        "company": "Quick Bite"
-      },
-      "images": [
-        "https://i.ibb.co/wNcBQHT4/quickbite.png",
-        "https://i.ibb.co/N6JqW7Yw/QB-menu.webp",
-        "https://i.ibb.co/DQW1p3V/quickbite-responsive.webp"
-      ]
-    }
-  ],
   "notfound": {
     "title": "Looking for something?",
     "description": "We're sorry. The Web address you entered is not a functioning page on our site.",
@@ -648,118 +462,7 @@
     "read": "min read",
     "views": "views",
     "planTitle": "On this page",
-    "related": "Related Articles",
+    "related": "You may also like",
     "readArticle": "Read Article"
-  },
-  "webDevelopment": {
-    "meta": {
-      "title": "Web Development Services | Bravix Creative",
-      "description": "Custom web development services for brands that need fast, scalable, and conversion-focused digital experiences."
-    },
-    "hero": {
-      "eyebrow": "Web Development",
-      "title": "Custom websites built to grow your brand online",
-      "description": "We design and develop fast, modern, and scalable websites that combine strong visual identity with real business performance. From corporate websites to conversion-focused digital platforms, every project is built around clarity, speed, and growth.",
-      "primaryCta": "Start Your Project",
-      "secondaryCta": "View Our Work"
-    },
-    "trustStrip": [
-      "Responsive, mobile-first development",
-      "Performance-focused structure",
-      "SEO-ready content architecture"
-    ],
-    "whatWeBuild": {
-      "eyebrow": "What we build",
-      "title": "Development solutions tailored to real business needs",
-      "description": "We don’t treat websites as static pages. We build digital systems that support visibility, trust, conversions, and long-term scalability.",
-      "items": [
-        {
-          "title": "Corporate Websites",
-          "text": "Professional websites that present your brand clearly and build trust with your audience."
-        },
-        {
-          "title": "Landing Pages",
-          "text": "High-conversion pages designed for campaigns, launches, and focused service offers."
-        },
-        {
-          "title": "Multilingual Websites",
-          "text": "Structured experiences for brands that need to communicate across markets and languages."
-        },
-        {
-          "title": "Admin-Supported Platforms",
-          "text": "Web experiences connected to practical management flows, content systems, or custom dashboards."
-        }
-      ]
-    },
-    "process": {
-      "eyebrow": "Process",
-      "title": "A structured process from idea to launch",
-      "items": [
-        {
-          "step": "01",
-          "title": "Discovery",
-          "text": "We define goals, audience, functionality, and project direction before design and development begin."
-        },
-        {
-          "step": "02",
-          "title": "Planning & UX",
-          "text": "We shape the content flow, page structure, and user journey to create clarity and better conversions."
-        },
-        {
-          "step": "03",
-          "title": "Development",
-          "text": "We build the front-end and back-end experience with performance, responsiveness, and scalability in mind."
-        },
-        {
-          "step": "04",
-          "title": "Launch & Refinement",
-          "text": "We test, optimize, and launch with a focus on smooth delivery, technical quality, and long-term usability."
-        }
-      ]
-    },
-    "selectedWork": {
-      "eyebrow": "Selected Work",
-      "title": "Real projects with real development depth",
-      "description": "A few examples of websites and platforms we have designed and developed for different industries.",
-      "portfolioCta": "See full portfolio"
-    },
-    "whyBravix": {
-      "eyebrow": "Why Bravix Creative",
-      "title": "Built for design quality and business performance",
-      "items": [
-        "Clean, modern visual direction aligned with your brand",
-        "Development decisions shaped by usability and SEO foundations",
-        "Scalable architecture for future content and growth",
-        "A collaborative process with clear project structure"
-      ]
-    },
-    "faq": {
-      "eyebrow": "FAQ",
-      "title": "Common questions about our web development service",
-      "items": [
-        {
-          "question": "What kind of websites do you develop?",
-          "answer": "We build custom business websites, landing pages, portfolio sites, multilingual websites, and admin-supported digital platforms tailored to your goals."
-        },
-        {
-          "question": "Do you develop SEO-friendly websites?",
-          "answer": "Yes. Every website we build follows a structured SEO foundation including semantic content structure, performance optimization, mobile responsiveness, and metadata planning."
-        },
-        {
-          "question": "Can you redesign an existing website instead of building from scratch?",
-          "answer": "Yes. We can improve your current website’s structure, design, performance, and conversion flow without losing your brand identity."
-        },
-        {
-          "question": "How long does a web development project usually take?",
-          "answer": "Smaller websites can take a few weeks, while larger custom projects with extra integrations or admin panels can take longer depending on scope."
-        }
-      ]
-    },
-    "finalCta": {
-      "eyebrow": "Start a New Project",
-      "title": "Need a website that looks sharp and performs with purpose?",
-      "description": "Let’s build a digital experience that reflects your brand, supports your goals, and creates real momentum online.",
-      "button": "Contact Us"
-    }
   }
 }

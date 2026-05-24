@@ -1,7 +1,8 @@
+"use client";
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Input } from "./ui/input";
 import { useTranslations } from "next-intl";
-import { toast } from "./ui/toast";
+import { toast } from "@hooks/toast";
 import axios from "axios";
 
 interface NewslettersProps {

@@ -10,7 +10,9 @@
   --foreground: oklch(0.145 0 0);
   --radius: 0.625rem;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 body {
   overflow-x: hidden;
   font-family: var(--font-poppins);

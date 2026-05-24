@@ -1,36 +1,62 @@
-import { smoothScrollTo } from "./scroll";
-
-interface HandleMenuNavigationProps {
+type HandleMenuNavigationProps = {
   id: string;
   pathname: string;
-  router: any; // useRouter hook'undan alınan router instance
-  setSelectedSection?: (id: string) => void;
-  allowedPaths?: string[];
-  forceScroll?: boolean;
-}
+  router: {
+    push: (href: string) => void;
+  };
+  setSelectedSection?: (section: string) => void;
+};
 
-export const handleMenuNavigation = ({
+const HOME_SECTION_IDS = [
+  "home",
+  "about",
+  "services",
+  "portfolio",
+  "pricing",
+  "contact",
+] as const;
+
+export function handleMenuNavigation({
   id,
   pathname,
   router,
   setSelectedSection,
-  allowedPaths = [],
-  forceScroll = false,
-}: HandleMenuNavigationProps) => {
+}: HandleMenuNavigationProps) {
   const locale = pathname.split("/")[1];
   const isHomePage = pathname === `/${locale}` || pathname === `/${locale}/`;
-  const isAllowedPage =
-    isHomePage || allowedPaths.includes(pathname) || forceScroll;
+  const isHomeSection = HOME_SECTION_IDS.includes(
+    id as (typeof HOME_SECTION_IDS)[number]
+  );
 
   setSelectedSection?.(id);
 
-  if (isAllowedPage) {
-    const section = document.getElementById(id);
-    if (section) {
-      smoothScrollTo(section.offsetTop, 800);
-    }
-  } else {
-    router.push(`/${locale}`);
-    sessionStorage.setItem("scrollTo", id);
+  if (id === "blog") {
+    router.push(`/${locale}/blog`);
+    return;
   }
-};
+
+  if (id === "portfolio") {
+    router.push(`/${locale}/projects`);
+    return;
+  }
+
+  if (!isHomeSection) {
+    return;
+  }
+
+  if (isHomePage) {
+    const element = document.getElementById(id);
+
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+
+    return;
+  }
+
+  sessionStorage.setItem("pendingScrollSection", id);
+  router.push(`/${locale}`);
+}

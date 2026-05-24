@@ -149,7 +149,7 @@ export default async function Testimonials() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Bravix Creative",
-    url: "https://www.bravixcreative.com",
+    url: "https://bravixcreative.com",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: Number(

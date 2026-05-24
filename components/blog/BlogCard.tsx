@@ -7,17 +7,21 @@ import { urlFor } from "@/sanity/lib/image";
 interface BlogCardProps {
   post: Post;
   index?: number;
-  variant?: "default" | "large" | "compact";
+  variant?: "default" | "large" | "compact" | "service";
 }
 
-const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
+export default function BlogCard({
+  post,
+  index = 0,
+  variant,
+}: BlogCardProps) {
   const resolvedVariant = variant ?? (index === 0 ? "large" : "compact");
 
   const imageUrl = post.image
     ? urlFor(post.image)
-        .width(resolvedVariant === "large" ? 1200 : 400)
-        .height(resolvedVariant === "large" ? 800 : 300)
-        .url()
+      .width(resolvedVariant === "large" ? 1200 : 400)
+      .height(resolvedVariant === "large" ? 800 : 300)
+      .url()
     : "";
 
   const category = post.category?.title || "Uncategorized";
@@ -25,15 +29,17 @@ const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
   const readingTime = post.readingTime || 0;
   const publishedDate = post.publishedAt
     ? new Date(post.publishedAt).toLocaleDateString("en-US", {
-        month: "short",
-        day: "numeric",
-      })
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    })
     : "No date";
+
+  const href = `/${post.lang ?? "en"}/blog/${post.slug}`;
 
   if (resolvedVariant === "compact") {
     return (
-      //href={`/${post.lang ?? "en"}/blog/${post.slug}`}
-      <Link href={`/${post.lang ?? "en"}/blog/${post.slug}`} className="group flex gap-4">
+      <Link href={href} className="group flex gap-4">
         <div className="image-zoom h-16 w-16 flex-shrink-0 overflow-hidden rounded-md">
           {imageUrl ? (
             <Image
@@ -60,10 +66,57 @@ const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
       </Link>
     );
   }
+  if (resolvedVariant === "service") {
+    return (
+      <Link href={href} className="group block h-full">
+        <article className="h-full overflow-hidden rounded-[28px] border border-[#E2D5CA] bg-white/80 shadow-[0_10px_28px_rgba(36,31,28,0.04)] transition duration-300 hover:bg-white">
+          <div className="image-zoom aspect-[16/10] overflow-hidden">
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
+                alt={post.image?.alt || post.title}
+                width={500}
+                height={320}
+                unoptimized
+                className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+              />
+            ) : (
+              <div className="h-full w-full bg-[#F8F3EE]" />
+            )}
+          </div>
+
+          <div className="p-6">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-bvs-lightColor">
+              {category}
+            </span>
+
+            <h3 className="mt-3 line-clamp-3 text-xl font-semibold leading-snug tracking-[-0.02em] text-bvs-logoText transition-colors group-hover:text-bvs-accent">
+              {post.title}
+            </h3>
+
+            {post.excerpt ? (
+              <p className="mt-3 line-clamp-2 text-sm leading-6 text-bvs-mutedText">
+                {post.excerpt}
+              </p>
+            ) : null}
+
+            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-bvs-lightColor">
+              <span>{publishedDate}</span>
+              <span>·</span>
+              <span className="flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                {readingTime} min
+              </span>
+            </div>
+          </div>
+        </article>
+      </Link>
+    );
+  }
 
   if (resolvedVariant === "large") {
     return (
-      <Link href={`/${post.lang ?? "en"}/blog/${post.slug}`} className="group block">
+      <Link href={href} className="group block">
         <article className="card-elevated overflow-hidden rounded-lg bg-card">
           <div className="image-zoom aspect-[16/10] overflow-hidden">
             {imageUrl ? (
@@ -89,11 +142,11 @@ const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
               {post.title}
             </h2>
 
-            {post.excerpt && (
+            {post.excerpt ? (
               <p className="mt-3 leading-relaxed text-muted-foreground">
                 {post.excerpt}
               </p>
-            )}
+            ) : null}
 
             <div className="mt-5 flex items-center gap-3 text-sm text-muted-foreground">
               <span className="font-medium text-foreground">{authorName}</span>
@@ -112,7 +165,7 @@ const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
   }
 
   return (
-    <Link href={`/${post.lang ?? "en"}/blog/${post.slug}`} className="group block">
+    <Link href={href} className="group block">
       <article className="card-elevated overflow-hidden rounded-lg bg-card">
         <div className="image-zoom aspect-[16/10] overflow-hidden">
           {imageUrl ? (
@@ -138,11 +191,11 @@ const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
             {post.title}
           </h3>
 
-          {post.excerpt && (
+          {post.excerpt ? (
             <p className="mt-2 line-clamp-2 text-sm text-muted-foreground">
               {post.excerpt}
             </p>
-          )}
+          ) : null}
 
           <div className="mt-4 flex items-center gap-3 text-xs text-muted-foreground">
             <span className="font-medium text-foreground">{authorName}</span>
@@ -158,6 +211,4 @@ const BlogCard = ({ post, index = 0, variant }: BlogCardProps) => {
       </article>
     </Link>
   );
-};
-
-export default BlogCard;
+}

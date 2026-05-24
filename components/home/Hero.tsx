@@ -5,13 +5,12 @@ import HeroButtons from "../HeroButtons";
 export default function Hero(): JSX.Element {
   const t = useTranslations("hero");
 
-
   return (
     <section
       id="home"
       className="relative flex min-h-screen flex-col justify-start px-4 pt-32 lg:pt-44"
     >
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute  inset-0 z-10 overflow-x-clip overflow-y-hidden">
         <div className="absolute right-[-4rem] top-0 h-80 w-80 rounded-full bg-bvs-lightPurple opacity-10 blur-3xl" />
         <div className="absolute bottom-0 left-[-4rem] h-72 w-72 rounded-full bg-bvs-purple opacity-20 blur-2xl" />
       </div>
@@ -41,10 +40,11 @@ export default function Hero(): JSX.Element {
                 <Image
                   src="/images/nihat-435.webp"
                   alt="Nihat Onal - Web Designer"
-                  width={600}
-                  height={290}
-                  sizes="(max-width: 768px) 100vw, 435px"
+                  width={1200}
+                  height={800}
                   priority
+                  fetchPriority="high"
+                  sizes="100vw"
                   className="h-auto w-full object-cover"
                 />
               </div>

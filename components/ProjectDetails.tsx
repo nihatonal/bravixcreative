@@ -1,18 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Project } from "@/types/Project";
+import type { Locale } from "@/i18n/routing";
 import ProjectGalleryClient from "./ProjectGalleryClient";
-
+import ScrollHomeLink from "@/components/ScrollHomeLink";
 import { useTranslations } from "next-intl";
-
+import { getProjectsPath } from "@/lib/project-routes";
 interface ProjectDetailsProps {
   project: Project;
-  locale: string;
+  locale: Locale;
 }
 
 function getIntroText(project: Project) {
   return (
-    project.seoDescription ||
     project.shortDescription ||
     project.description ||
     `${project.client} için geliştirilen proje detay sayfası.`
@@ -24,7 +24,6 @@ export default function ProjectDetails({
   locale,
 }: ProjectDetailsProps) {
   const introText = getIntroText(project);
-  const contactHref = `/${locale}#contact`;
   const t = useTranslations("projectDetail");
 
   return (
@@ -32,7 +31,7 @@ export default function ProjectDetails({
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <Link
-            href={`/${locale}/projects`}
+            href={getProjectsPath(locale)}
             aria-label="Back to portfolio"
             className="inline-flex items-center justify-center text-bvs-purple hover:underline"
           >
@@ -155,7 +154,9 @@ export default function ProjectDetails({
 
             {project.testimonial && (
               <section className="bg-gray-50 border-l-4 border-bvs-purple p-5 rounded-r-lg mb-10">
-                <h2 className="text-2xl font-bold mb-4">{t("clientComment")}</h2>
+                <h2 className="text-2xl font-bold mb-4">
+                  {t("clientComment")}
+                </h2>
                 <blockquote className="italic text-gray-700 mb-3">
                   &quot;{project.testimonial.content}&quot;
                 </blockquote>
@@ -169,17 +170,17 @@ export default function ProjectDetails({
             {project.faq && project.faq.length > 0 && (
               <section className="mb-12">
                 <div className="mb-6">
-                  <h2 className="text-2xl md:text-3xl font-bold mb-2">{t("faqTitle")}</h2>
-                  <p className="text-gray-600 leading-7">
-                    {t("faqText")}
-                  </p>
+                  <h2 className="text-2xl md:text-3xl font-bold mb-2">
+                    {t("faqTitle")}
+                  </h2>
+                  <p className="text-gray-600 leading-7">{t("faqText")}</p>
                 </div>
 
                 <div className="space-y-4">
                   {project.faq.map((item, index) => (
                     <details
                       key={`${item.question}-${index}`}
-                      open={index===0}
+                      open={index === 0}
                       className="group rounded-2xl border border-gray-200 bg-white px-5 py-4 shadow-sm transition-all open:shadow-md"
                     >
                       <summary className="list-none cursor-pointer flex items-start justify-between gap-4">
@@ -216,17 +217,17 @@ export default function ProjectDetails({
               </section>
             )}
 
-            <section className="rounded-2xl bg-bvs-lightPurple/30 p-6 md:p-8">
+            <section className="rounded-2xl bg-bvs-lightPurple p-6 md:p-8">
               <h2 className="text-2xl font-bold mb-4">{t("contactTitle")}</h2>
               <p className="text-gray-700 leading-8 mb-5">{t("contactText")}</p>
-
-              <Link
-                href={contactHref}
+              <ScrollHomeLink
+                locale={locale}
+                sectionId="contact"
                 aria-label="Contact section"
                 className="inline-flex items-center justify-center px-6 py-3 bg-bvs-purple text-white rounded-[10px] hover:bg-bvs-purple/90 transition-colors"
               >
                 {t("contactButton")}
-              </Link>
+              </ScrollHomeLink>
             </section>
           </article>
 
@@ -252,14 +253,18 @@ export default function ProjectDetails({
 
               {project.client && (
                 <div className="mb-6">
-                  <h3 className="font-semibold text-base mb-2">{t("client")}</h3>
+                  <h3 className="font-semibold text-base mb-2">
+                    {t("client")}
+                  </h3>
                   <p className="text-gray-600">{project.client}</p>
                 </div>
               )}
 
               {project.category && (
                 <div className="mb-6">
-                  <h3 className="font-semibold text-base mb-2">{t("category")}</h3>
+                  <h3 className="font-semibold text-base mb-2">
+                    {t("category")}
+                  </h3>
                   <p className="text-gray-600">{project.category}</p>
                 </div>
               )}
@@ -273,7 +278,9 @@ export default function ProjectDetails({
 
               {project.industry && (
                 <div className="mb-6">
-                  <h3 className="font-semibold text-base mb-2">{t("industry")}</h3>
+                  <h3 className="font-semibold text-base mb-2">
+                    {t("industry")}
+                  </h3>
                   <p className="text-gray-600">{project.industry}</p>
                 </div>
               )}
@@ -291,13 +298,14 @@ export default function ProjectDetails({
                 <h3 className="font-bold text-lg mb-3">{t("title")}</h3>
                 <p className="text-gray-600 mb-4">{t("text")}</p>
 
-                <Link
-                  href={contactHref}
+                <ScrollHomeLink
+                  locale={locale}
+                  sectionId="contact"
                   aria-label="Contact section"
                   className="block text-center w-full py-3 bg-bvs-purple text-white rounded-[8px] hover:bg-bvs-purple/90 transition-colors"
                 >
                   {t("contactButton")}
-                </Link>
+                </ScrollHomeLink>
               </div>
             </div>
           </aside>

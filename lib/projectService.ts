@@ -5,9 +5,18 @@ export function getProjectById(
   id: string,
   locale: string
 ): Project | undefined {
-  const projects = portfolioData[locale] || portfolioData["en"];
+  const projects = portfolioData[locale] || portfolioData.en;
   return projects.find((project) => project.id === id);
 }
+
+export function getProjectBySlug(
+  slug: string,
+  locale: string
+): Project | undefined {
+  const projects = portfolioData[locale] || portfolioData.en;
+  return projects.find((project) => project.slug === slug);
+}
+
 export function getAllProjects(): Project[] {
   const projectsMap = new Map<string, Project>();
 

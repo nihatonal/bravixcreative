@@ -1,16 +1,16 @@
 {
   "metadata": {
     "home": {
-      "title": "Bravix Creative | Yaratıcı Dijital Ajans & Web Geliştirme",
-      "description": "Bravix Creative, markanıza özel yaratıcı çözümler sunan dijital ajans ve profesyonel web geliştirme stüdyosudur."
+      "title": "React ile Web Geliştirme & UI/UX Tasarım | Bravix Creative",
+      "description": "React ve Next.js ile hızlı, modern web siteleri — 799$'dan başlayan fiyatlarla. Web geliştirme, e-ticaret, UI/UX tasarım ve SEO. Hemen başlayalım."
     },
     "projects": {
-      "title": "Portföy | Bravix Creative",
-      "description": "Web tasarım, UI/UX ve web geliştirme projelerimizden oluşan portföyümüzü inceleyin."
+      "title": "Web Geliştirme & Tasarım Portföyü | Bravix Creative Projeleri",
+      "description": "E-ticaret sitelerinden özel dashboard'lara kadar gerçek projeler. Bravix Creative'in fikirleri nasıl dijital ürünlere dönüştürdüğünü keşfedin."
     },
     "blog": {
-      "title": "Blog | Bravix Creative",
-      "description": "Bravix Creative blog yazıları, güncel içerikler ve öne çıkan makaleler."
+      "title": "Web Tasarım, SEO & Geliştirme Blogu | Bravix Creative",
+      "description": "Web geliştirme, UI/UX tasarım ve SEO üzerine pratik makaleler. 6+ yıllık deneyimli React geliştiricisinden güncel içerikler."
     }
   },
   "hero": {
@@ -207,7 +207,28 @@
     "projectDetails": "Proje Detayları",
     "viewMore": "Daha Fazla Gör",
     "eyebrow": "Seçili Projeler",
-    "viewAllProjects": "Tüm Projeleri Gör"
+    "viewAllProjects": "Tüm Projeleri Gör",
+    "hero": {
+      "chips": {
+        "customWebsites": "Özel web siteleri",
+        "uiUxSystems": "UI/UX sistemleri",
+        "seoFocused": "SEO odaklı projeler"
+      },
+      "cta": {
+        "explore": "Projeleri keşfet",
+        "start": "Proje başlat"
+      },
+      "featured": "Öne çıkan proje",
+      "focus": "Odak",
+      "delivery": "Teslim",
+      "focusText": "Dönüşüm odaklı tasarım",
+      "deliveryText": "Strateji + uygulama",
+      "stats": {
+        "delivery": "Teslim edilen projeler",
+        "satisfaction": "Müşteri memnuniyeti",
+        "experience": "Deneyim yılı"
+      }
+    }
   },
   "blogPreview": {
     "eyebrow": "Blog",
@@ -273,12 +294,16 @@
     "emailLabel": "E-posta",
     "addressLabel": "Adres",
     "workHoursLabel": "Çalışma Saatleri",
-    "workHours": "09:00 - 18:00, Pazartesi - Cumartesi",
+    "workHours": "09:00 - 18:00, Pazartesi - Pazar",
     "letsMeet": "Bağlantıda Kalalım",
     "letsMeetSub": "En yeni projelerimi ve güncellemelerimi görmek için beni sosyal medyada takip edin",
     "processing": "Gönderiliyor",
-    "submitSuccessTitle": "Mesajınızı aldık!",
-    "submitSuccessDesc": "açıklama",
+    "submitSuccessTitle": "Mesajınız alındı!",
+    "submitSuccessDesc": "Bizimle iletişime geçtiğiniz için teşekkürler. En kısa sürede size dönüş yapacağız.",
+    "submitErrorTitle": "Bir hata oluştu",
+    "submitErrorDesc": "Mesajınız gönderilemedi. Lütfen daha sonra tekrar deneyin.",
+    "newsletterSuccessTitle": "Abonelik başarılı!",
+    "newsletterSuccessDesc": "Bültenimize başarıyla abone oldunuz.",
     "status_link": "Sayfa yakında geliyor.",
     "newsletterDesc": "En son haberler ve içerikler için bültenimize katılın."
   },
@@ -431,217 +456,6 @@
       }
     }
   },
-  "projects": [
-    {
-      "id": "1",
-      "viewLiveSite": "Siteyi Görüntüle",
-      "liveUrl": "https://www.monihomes.com.tr",
-      "title": "Apart Otel Web Sitesi & Yönetici Paneli",
-      "client": "Monihomes",
-      "type": "web-design",
-      "category": "Web Tasarımı + Yönetim Paneli",
-      "description": "Otel sahibi için geliştirilen modern bir tek sayfalık tanıtım sitesi ve özel bir yönetici paneli. Proje, konuklar için kullanıcı dostu bir arayüz sunarken, otel sahibinin fiyatları ve doluluk durumunu kolayca yönetmesini sağlar.",
-      "challenge": "Müşteri, otelini tanıtmak için profesyonel ancak basit bir sayfa istedi. Ayrıca, her odanın doluluğunu Google Takvimi üzerinden takip edebileceği ve rezervasyon taleplerini verimli bir şekilde toplayabileceği bir arka uç sistemine ihtiyaç vardı.",
-      "solution": "React kullanarak hızlı ve şık bir açılış sayfası tasarladım. Yönetici paneli Node.js/Express, MongoDB ve JWT ile inşa edildi. Oda doluluk durumu otomatik olarak Google Takvimi'nden senkronize edildi. Misafirler doğrudan rezervasyon yapmadı, bunun yerine bilgilerini bir form aracılığıyla göndererek, bu bilgiler otel sahibine e-posta ve WhatsApp ile iletildi. Yönetici paneli, Google Analytics verilerini günlük, haftalık ve yıllık grafiklerde görüntülüyor.",
-      "technologies": [
-        "React",
-        "Node",
-        "MongoDB",
-        "Tailwind CSS",
-        "Google Takvimi API"
-      ],
-      "results": [
-        "Yönetim süresinde %60 azalma",
-        "Tüm talepler e-posta ve WhatsApp ile %100 yakalandı",
-        "Mobil uyumlu tasarım, kullanıcı deneyimini önemli ölçüde iyileştirdi"
-      ],
-      "testimonial": {
-        "content": "Yeni web sitemiz ve panelimizle otel yönetimi çok daha kolay hale geldi. Tüm bilgileri tek bir yerden kontrol edebiliyorum ve misafir talepleri anında bana ulaşıyor.",
-        "author": "U. Dinc, Sahip",
-        "company": "Monihomes"
-      },
-      "images": [
-        "https://i.ibb.co/DSjNqdr/monihomes-story.webp",
-        "https://i.ibb.co/65W60Yx/moniomes-2-iphones.webp",
-        "https://i.ibb.co/rDZrCQg/monihomes-post.webp"
-      ]
-    },
-    {
-      "id": "2",
-      "viewLiveSite": "Siteyi Görüntüle",
-      "liveUrl": "https://konyalimemlak.web.app/",
-      "title": "Bağ Yatırım Web Sitesi",
-      "client": "Bag Bahçe Yatırım",
-      "type": "web-design",
-      "category": "Çok Dilli Web Tasarımı",
-      "description": "Konya bölgesinde faaliyet gösteren bir bağ yatırımı şirketi için oluşturulmuş iki dilli tanıtım web sitesi. Site, şirketin hizmetlerini, yatırım kılavuzlarını ve blog içeriklerini sunarken, doğal ve güvenilir bir marka imajı yansıtmaktadır.",
-      "challenge": "Müşteri, bağ sahipliğiyle ilgilenen yatırımcıları çekmek için modern ve hızlı yüklenen bir web sitesi istiyordu. Hem Türkçe hem de İngilizce desteklemesi ve sürdürülebilir arazi yatırımı konseptiyle uyumlu doğal bir tasarım sunması gerekiyordu.",
-      "solution": "React kullanarak duyarlı ve estetik açıdan çekici bir açılış sayfası geliştirdim. Tasarım, doğal tonlar, paralaks efektler ve sade bir düzen içeriyor. Site, çok dilli içerik (i18n) desteği sunuyor ve Hakkında, Yatırım Süreci, Blog ve İletişim gibi bölümleri içeriyor. Yatırım ipuçları ve bağ sahipliği bilgilerini paylaşmak için bir blog sistemi planlanmıştır.",
-      "technologies": [
-        "React",
-        "Node",
-        "CSS3",
-        "i18next",
-        "Framer Motion"
-      ],
-      "results": [
-        "Profesyonel tasarım ile marka güveni arttı",
-        "İki dilli arayüz, yabancı yatırımcılar için erişilebilirliği artırdı",
-        "Mobil ve masaüstü kullanıcıları için optimize edilmiş performans"
-      ],
-      "testimonial": {
-        "content": "Web sitemiz hem görsel olarak hem de kullanıcı deneyimi açısından çok tatmin edici oldu. Yatırımcılarla iletişime geçmek artık çok daha kolay.",
-        "author": "V. Karakuş",
-        "company": "Bag Bahçe Yatırım"
-      },
-      "images": [
-        "https://i.ibb.co/PZGrrKMr/bagbahce-multi.webp",
-        "https://i.ibb.co/Ndv35RLC/bby-phone.webp ",
-        "https://i.ibb.co/Kjr3yC0q/bby-2-pages.webp"
-      ]
-    },
-    {
-      "id": "3",
-      "viewLiveSite": "Demo",
-      "liveUrl": "https://theglasshut.web.app/",
-      "title": "The Glass Hut – Kabin Tanıtım Sitesi",
-      "client": "The Glass Hut",
-      "type": "web-development",
-      "category": "Web Geliştirme",
-      "description": "Doğayla iç içe bir glamping deneyimi sunan cam kabin için modern ve etkileyici bir tanıtım sitesi. Site; kabin hakkında bilgiler, çevre tanıtımı, rezervasyon formu ve sıkça sorulan sorular bölümleriyle tek sayfalık bir yapıda sunulmuştur.",
-      "challenge": "Müşteri, doğayla uyumlu, sade ama görsel açıdan zengin bir web sitesi istiyordu. Amaç; hem kabini estetik bir şekilde tanıtmak hem de kullanıcıların kolayca bilgiye erişmesini sağlamaktı.",
-      "solution": "React ile geliştirilen tek sayfalık bir uygulama oluşturuldu ve Firebase Hosting ile yayınlandı. The Hut, The Area, Booking, About Us ve FAQ gibi bölümlerle kullanıcıların tüm bilgilere kolayca ulaşması sağlandı. Animasyonlar ve tam ekran görsellerle sakin ve huzurlu atmosfer yansıtıldı.",
-      "technologies": [
-        "React",
-        "React Router",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Firebase Hosting"
-      ],
-      "results": [
-        "Marka ruhuna uygun sade ve etkileyici web varlığı oluşturuldu",
-        "Mobil uyum ve net navigasyon kullanıcı deneyimini iyileştirdi",
-        "Ziyaretçilerin sitede kalma süresi belirgin şekilde arttı"
-      ],
-      "testimonial": {
-        "content": "Web sitemiz tam hayal ettiğimiz gibi sade, şık ve doğaya uygun oldu. Misafirlerimiz artık bilgiye kolayca ulaşıyor ve rezervasyon süreci çok daha net.",
-        "author": "Kavramsal Geri Bildirim",
-        "company": "Dahili İnceleme"
-      },
-      "images": [
-        "https://i.ibb.co/r2Cg2m9n/glasshut-multi.webp",
-        "https://i.ibb.co/xqH04y97/glasshut-screens.webp",
-        "https://i.ibb.co/G37ZJNbn/glasshutscreens.webp"
-      ]
-    },
-    {
-      "id": "4",
-      "viewLiveSite": "Demo",
-      "liveUrl": "https://theglasshut.web.app/",
-      "title": "Mindfulness Uygulama Tanıtım Sitesi",
-      "client": "ZenMind",
-      "type": "web-design",
-      "category": "Açılış Sayfası Tasarımı",
-      "description": "ZenMind mobil uygulamasını tanıtmak için oluşturulmuş sade, huzurlu ve tüm cihazlara uyumlu tek sayfalık bir web sitesi. Farkındalık temasıyla örtüşen renkler, tipografi ve etkileşimlerle kullanıcı dostu bir deneyim sunar.",
-      "challenge": "Müşteri, ZenMind uygulamasının huzur veren yapısını yansıtan, hızlı yüklenen ve mobil uyumlu bir web sitesi talep etti. En büyük zorluk, nefes animasyonu gibi interaktif bir yöntemle farkındalık hissini dijital ortama taşımaktı.",
-      "solution": "React ve Tailwind CSS kullanarak modern ve duyarlı bir landing page oluşturdum. 'Nefes Al / Ver' animasyonu özel hareket bileşenleriyle hazırlandı. Tasarımda uygulama tanıtımı, kullanıcı yorumları, fiyatlandırma ve açık çağrı butonları yer alıyor. Beyaz alan kullanımı ve geçiş efektleriyle sakin bir kullanıcı deneyimi sağlandı.",
-      "technologies": [
-        "React",
-        "Tailwind CSS",
-        "Framer Motion",
-        "Duyarlı Web Tasarımı",
-        "Lottie Animasyon"
-      ],
-      "results": [
-        "Mobil dönüşüm oranı %45 arttı",
-        "Erken kullanıcılar tarafından UI/UX tasarımı çok beğenildi",
-        "Net CTA yapısıyla uygulama indirmeleri arttı"
-      ],
-      "testimonial": {
-        "content": "Yeni tanıtım sayfası tam olarak uygulamamız gibi hissettiriyor: sade, huzurlu ve ilham verici. Markamızın sesiyle birebir örtüşüyor.",
-        "author": "Kavramsal Geri Bildirim",
-        "company": "Dahili İnceleme"
-      },
-      "images": [
-        "https://i.ibb.co/Nnn5k3v7/zenmind-multi.webp",
-        "https://i.ibb.co/sv2XmqyJ/zenmind-instagram.webp",
-        "https://i.ibb.co/p6RKMbs1/zenmind-laptop.webp"
-      ]
-    },
-    {
-      "id": "5",
-      "title": "Yaratıcı Akış Paneli Arayüzü",
-      "viewLiveSite": "Demo",
-      "liveUrl": "https://creator-flow-dashboard.netlify.app/",
-      "client": "İç Konsept",
-      "type": "ui-ux",
-      "category": "Panel Arayüzü (UI/UX)",
-      "description": "İçerik üreticilerinin yaratıcı iş akışlarını kolaylaştırmak için tasarlanmış modern, duyarlı bir kontrol paneli arayüzü. Arayüz, kullanılabilirlik, netlik ve estetik dengeye odaklanarak görevleri, kazançları, içerikleri ve analizleri yönetmek için verimli bir alan sunar.",
-      "challenge": "İçerik üreticilerinin günlük olarak kullanabileceği, görsel olarak etkileyici ve işlevsel bir arayüz oluşturmak hedeflendi. Ana zorluk, mobil ve masaüstü uyumlu, temiz ve ilgi çekici bir görsel tasarımla veri yoğunluğunu dengelemekti.",
-      "solution": "Wireframe ve yüksek çözünürlüklü prototipler için Figma kullandım. Gelir grafikleri, son etkinlikler, hızlı işlemler ve gezinme gibi temel öğeleri sezgisel kullanıcı deneyimiyle yapılandırdım. Renk temaları ve boşluk kullanımı, uzun süreli kullanımlarda bile odaklanmayı ve sakinliği koruyacak şekilde özenle uygulandı.",
-      "technologies": [
-        "Figma",
-        "React",
-        "Tailwind CSS",
-        "Bileşen Tabanlı Arayüz",
-        "Duyarlı Tasarım",
-        "Veri Görselleştirme"
-      ],
-      "results": [
-        "Minimum zihinsel yükle verimli kullanıcı akışı",
-        "Genişlemeye uygun yüksek uyarlanabilir bileşen sistemi",
-        "Yaratıcı profesyonellerden estetik ve kullanılabilirlik açısından olumlu geri bildirim"
-      ],
-      "testimonial": {
-        "content": "Bu panel tasarımı, işlevsellik ile görsel netlik arasında mükemmel bir denge kuruyor. Bir içerik üreticisi olarak her gün kullanmak isteyeceğim türde bir araç.",
-        "author": "Kavramsal Geri Bildirim",
-        "company": "Dahili İnceleme"
-      },
-      "images": [
-        "https://i.ibb.co/zTG2KZ7Y/dasboard-destkop.webp",
-        "https://i.ibb.co/bgFf974p/dashboard-2.webp",
-        "https://i.ibb.co/G4GGfm18/dashboard-1.webp"
-      ]
-    },
-    {
-      "id": "6",
-      "viewLiveSite": "Canlı Site",
-      "liveUrl": "https://quick-bite-fastfood.netlify.app/",
-      "title": "Sipariş ve Ödeme Sistemi ile Fast Food Restoran Web Sitesi",
-      "client": "Quick Bite",
-      "type": "web-application",
-      "category": "Web Tasarımı + E-ticaret",
-      "description": "Quick Bite, eksiksiz bir çevrim içi sipariş deneyimi sunmak için tasarlanmış bir fast food restoran web sitesidir. Ziyaretçiler modern ve duyarlı menüyü inceleyebilir, ürünleri sepetlerine ekleyebilir, güvenli ödeme yapabilir ve siparişlerini gerçek zamanlı olarak takip edebilir — hepsi tek bir sorunsuz arayüzden.",
-      "challenge": "Amaç, geleneksel sipariş yöntemlerinin yerine tamamen entegre bir çevrim içi sipariş, ödeme ve teslimat takip sistemi sunarak hem müşteri deneyimini hem de iç operasyonel verimliliği artırmaktı.",
-      "solution": "React ve modern web geliştirme yaklaşımlarıyla, duyarlı ve etkileşimli bir yemek sipariş platformu oluşturdum. Öne çıkan özellikler arasında dinamik sepet sistemi, ödeme entegrasyonu ve gerçek zamanlı sipariş takip paneli yer alıyor.",
-      "adminPanel": {
-        "title": "Yönetim Paneli",
-        "content": "Restoran tarafındaki operasyonları kolaylaştırmak için hafif bir yönetim paneli oluşturdum. Panel sayesinde personel gelen siparişleri takip edebilir, sipariş durumlarını güncelleyebilir ('Hazırlanıyor', 'Yolda', 'Teslim Edildi' gibi) ve müşteri ile ödeme bilgilerine güvenli şekilde erişebilir. Bu yapı, sipariş sürecine anlık görünürlük sağlayarak manuel koordinasyonu azaltır ve verimliliği artırır."
-      },
-      "technologies": [
-        "React",
-        "Tailwind CSS",
-        "JavaScript",
-        "Ödeme API'si",
-        "Local Storage"
-      ],
-      "results": [
-        "Güvenli çevrim içi ödeme ve gerçek zamanlı teslimat takibi sağlandı",
-        "Yönetim paneli ile sipariş yönetim verimliliği artırıldı",
-        "Mobil öncelikli deneyim ile müşteri memnuniyeti geliştirildi"
-      ],
-      "testimonial": {
-        "content": "Müşterilerimiz çevrim içi sipariş ve ödeme kolaylığını çok seviyor. Sipariş takip özelliği de telefonla yapılan sorguları azalttı ve iş akışımızı geliştirdi.",
-        "author": "Restoran Müdürü",
-        "company": "Quick Bite"
-      },
-      "images": [
-        "https://i.ibb.co/wNcBQHT4/quickbite.png",
-        "https://i.ibb.co/N6JqW7Yw/QB-menu.webp",
-        "https://i.ibb.co/DQW1p3V/quickbite-responsive.webp"
-      ]
-    }
-  ],
   "notfound": {
     "title": "Bir şey mi arıyorsunuz?",
     "description": "Üzgünüz. Girdiğiniz web adresi sitemizde çalışan bir sayfa değil.",
@@ -662,7 +476,7 @@
     "read": "dk okuma",
     "views": "görüntülenme",
     "planTitle": "Bu sayfada",
-    "related": "İlgili Yazılar",
+    "related": "Benzer Yazılar",
     "readArticle": "Yazıyı Oku"
   }
 }

@@ -8,6 +8,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useRouter, usePathname } from "next/navigation";
+
 import { slugMap } from "@/utils/slugMap";
 import { projectSlugMapping } from "@/utils/projectSlugMapping";
 import {
@@ -15,6 +16,18 @@ import {
   blogSlugToGroupMap,
   type Locale,
 } from "@/utils/generated/blogSlugMapping.generated";
+
+import {
+  getServicePath,
+  resolveServiceSlugFromPath,
+} from "@/lib/service-routes";
+
+import {
+  getProjectIdBySlug,
+  getProjectPath,
+  getProjectsPath,
+  isProjectSection,
+} from "@/lib/project-routes";
 
 type Props = {
   defaultValue: Locale;
@@ -37,34 +50,69 @@ export default function LocaleSwitcherSelect({
 
     let newPathname = pathname;
 
-    // /tr/blog/slug
+    // Blog detail
     if (segments[1] === "blog" && segments[2]) {
       const currentSlug = segments[2];
       const translationGroup = blogSlugToGroupMap[currentSlug];
-      const mappedSlug =
-        translationGroup
-          ? blogSlugMapping[translationGroup]?.[targetLocale]
-          : undefined;
+
+      const mappedSlug = translationGroup
+        ? blogSlugMapping[translationGroup]?.[targetLocale]
+        : undefined;
 
       newPathname = mappedSlug
         ? `/${targetLocale}/blog/${mappedSlug}`
         : `/${targetLocale}/blog/${currentSlug}`;
     }
 
-    // /tr/project/slug/id
-    else if (segments[1] === "project" && segments[2] && segments[3]) {
-      const currentSlug = segments[2];
-      const id = segments[3];
-
-      const mappedSlug =
-        projectSlugMapping[id as keyof typeof projectSlugMapping]?.[targetLocale];
-
-      newPathname = mappedSlug
-        ? `/${targetLocale}/project/${mappedSlug}/${id}`
-        : `/${targetLocale}/project/${currentSlug}/${id}`;
+    // Projects listing
+    else if (
+      segments[1] &&
+      isProjectSection(currentLocale, segments[1]) &&
+      !segments[2]
+    ) {
+      newPathname = getProjectsPath(targetLocale);
     }
 
-    // /tr/some-page
+    // Project detail
+    else if (
+      segments[1] &&
+      segments[2] &&
+      isProjectSection(currentLocale, segments[1])
+    ) {
+      const currentProjectSlug = segments[2];
+      const projectId = getProjectIdBySlug(currentLocale, currentProjectSlug);
+
+      const mappedSlug = projectId
+        ? projectSlugMapping[projectId as keyof typeof projectSlugMapping]?.[
+            targetLocale
+          ]
+        : undefined;
+
+      newPathname = mappedSlug
+        ? getProjectPath(targetLocale, mappedSlug)
+        : getProjectsPath(targetLocale);
+    }
+
+    // Service detail
+    else if (segments[1] && segments[2]) {
+      const section = segments[1];
+      const servicePublicSlug = segments[2];
+
+      const serviceSlug = resolveServiceSlugFromPath(
+        currentLocale,
+        section,
+        servicePublicSlug
+      );
+
+      if (serviceSlug) {
+        newPathname = getServicePath(targetLocale, serviceSlug);
+      } else {
+        segments[0] = targetLocale;
+        newPathname = `/${segments.join("/")}`;
+      }
+    }
+
+    // Legal/static pages
     else if (segments[1]) {
       const currentSlug = segments[1];
 
@@ -81,7 +129,7 @@ export default function LocaleSwitcherSelect({
       }
     }
 
-    // /tr
+    // Home
     else {
       newPathname = `/${targetLocale}`;
     }
@@ -93,8 +141,7 @@ export default function LocaleSwitcherSelect({
   return (
     <Select defaultValue={defaultValue} onValueChange={onSelectChange}>
       <SelectTrigger
-        className="w-[60px] h-8 px-3 pl-1 border-none bg-transparent focus:ring-0 focus:ring-offset-0
-        text-bvs-mutedText"
+        className="w-[60px] h-8 px-3 pl-1 border-none bg-transparent focus:ring-0 focus:ring-offset-0 text-bvs-mutedText"
         aria-label={label}
       >
         <SelectValue />

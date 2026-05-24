@@ -22,6 +22,11 @@ const legalPaths = {
     ru: "politika-cookie",
   },
 };
+const projectSections = {
+  en: "projects",
+  tr: "projeler",
+  ru: "proekty",
+};
 
 const staticPaths = {
   home: {
@@ -34,10 +39,59 @@ const staticPaths = {
     en: "blog",
     ru: "blog",
   },
+   projects: {
+    tr: "projeler",
+    en: "projects",
+    ru: "proekty",
+  },
   terms: legalPaths.terms,
   privacy: legalPaths.privacy,
   cookie: legalPaths.cookie,
 };
+
+const serviceRoutes = {
+  "web-development": {
+    en: { section: "services", slug: "web-development" },
+    tr: { section: "hizmetler", slug: "web-gelistirme" },
+    ru: { section: "uslugi", slug: "razrabotka-saytov" },
+  },
+  "ecommerce-development": {
+    en: { section: "services", slug: "ecommerce-development" },
+    tr: { section: "hizmetler", slug: "eticaret-gelistirme" },
+    ru: { section: "uslugi", slug: "razrabotka-internet-magazinov" },
+  },
+  "ui-ux-design": {
+    en: { section: "services", slug: "ui-ux-design" },
+    tr: { section: "hizmetler", slug: "ui-ux-tasarimi" },
+    ru: { section: "uslugi", slug: "ui-ux-dizayn" },
+  },
+  "seo-optimization": {
+    en: { section: "services", slug: "seo-optimization" },
+    tr: { section: "hizmetler", slug: "seo-optimizasyonu" },
+    ru: { section: "uslugi", slug: "seo-optimizatsiya" },
+  },
+  "website-maintenance": {
+    en: { section: "services", slug: "website-maintenance" },
+    tr: { section: "hizmetler", slug: "website-bakimi" },
+    ru: { section: "uslugi", slug: "podderzhka-sayta" },
+  },
+};
+
+function getServiceUrl(locale, serviceKey) {
+  const route = serviceRoutes[serviceKey]?.[locale];
+
+  if (!route) return null;
+
+  return withTrailingSlash(
+    `${siteUrl}/${locale}/${route.section}/${route.slug}`,
+  );
+}
+
+function getProjectUrl(locale, slug) {
+  return withTrailingSlash(
+    `${siteUrl}/${locale}/${projectSections[locale]}/${slug}`,
+  );
+}
 
 function withTrailingSlash(url) {
   return url.endsWith("/") ? url : `${url}/`;
@@ -57,8 +111,8 @@ function buildAlternateLinks(alternates = {}) {
     .map(
       ([lng, href]) =>
         `    <xhtml:link rel="alternate" hreflang="${escapeXml(
-          lng
-        )}" href="${escapeXml(href)}" />`
+          lng,
+        )}" href="${escapeXml(href)}" />`,
     )
     .join("\n");
 }
@@ -117,7 +171,7 @@ async function main() {
           ? withTrailingSlash(`${siteUrl}/${lng}/${altPath}`)
           : withTrailingSlash(`${siteUrl}/${lng}`);
       }
-      alternates["x-default"] = withTrailingSlash(`${siteUrl}/en`);
+      alternates["x-default"] = alternates.en;
 
       urls.push({
         loc,
@@ -129,42 +183,68 @@ async function main() {
     }
   }
 
-  // 2) Project detail sayfaları
+  // 2) Service detail sayfaları
+  for (const serviceKey of Object.keys(serviceRoutes)) {
+    const alternates = {};
+
+    for (const lng of locales) {
+      const serviceUrl = getServiceUrl(lng, serviceKey);
+
+      if (serviceUrl) {
+        alternates[lng] = serviceUrl;
+      }
+    }
+
+    alternates["x-default"] = alternates.en;
+
+    for (const locale of locales) {
+      const loc = getServiceUrl(locale, serviceKey);
+
+      if (!loc) continue;
+
+      urls.push({
+        loc,
+        lastmod: now,
+        alternates,
+        changefreq: "monthly",
+        priority: "0.8",
+      });
+    }
+  }
+
+  // 3) Project detail sayfaları
   const projectSlugMapping = loadJson(
     [
       path.resolve(process.cwd(), "utils/projectSlugMapping.json"),
       path.resolve(process.cwd(), "src/utils/projectSlugMapping.json"),
     ],
-    "Project mapping JSON"
+    "Project mapping JSON",
   );
 
   if (projectSlugMapping) {
     const projectEntries = Object.entries(projectSlugMapping);
     console.log(`Total projects found: ${projectEntries.length}`);
 
-    for (const [projectId, translations] of projectEntries) {
+    for (const [, translations] of projectEntries) {
       const alternates = {};
 
       for (const lng of locales) {
         const slug = translations?.[lng];
+
         if (slug) {
-          alternates[lng] = withTrailingSlash(
-            `${siteUrl}/${lng}/project/${slug}/${projectId}`
-          );
+          alternates[lng] = getProjectUrl(lng, slug);
         }
       }
 
-      alternates["x-default"] =
-        alternates["en"] || alternates["tr"] || alternates["ru"];
+      alternates["x-default"] = alternates.en;
 
       for (const locale of locales) {
         const slug = translations?.[locale];
+
         if (!slug) continue;
 
         urls.push({
-          loc: withTrailingSlash(
-            `${siteUrl}/${locale}/project/${slug}/${projectId}`
-          ),
+          loc: getProjectUrl(locale, slug),
           lastmod: now,
           alternates,
           changefreq: "monthly",
@@ -176,13 +256,19 @@ async function main() {
     console.warn("Project URL'leri eklenmedi.");
   }
 
-  // 3) Blog detail sayfaları
+  // 4) Blog detail sayfaları
   const blogMappingData = loadJson(
     [
-      path.resolve(process.cwd(), "utils/generated/blogSlugMapping.generated.json"),
-      path.resolve(process.cwd(), "src/utils/generated/blogSlugMapping.generated.json"),
+      path.resolve(
+        process.cwd(),
+        "utils/generated/blogSlugMapping.generated.json",
+      ),
+      path.resolve(
+        process.cwd(),
+        "src/utils/generated/blogSlugMapping.generated.json",
+      ),
     ],
-    "Blog mapping JSON"
+    "Blog mapping JSON",
   );
 
   const blogSlugMapping = blogMappingData?.blogSlugMapping || {};

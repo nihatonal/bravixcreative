@@ -1,45 +1,17 @@
 "use client";
 
-import ArrowRight from "lucide-react/dist/esm/icons/arrow-right";
-import MessageSquare from "lucide-react/dist/esm/icons/message-square";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
-import { handleMenuNavigation } from "@/utils/navigation";
 
-type GAEventParams = Record<string, string | number | boolean>;
-
-type WindowWithGtag = Window & {
-  gtag?: (
-    command: "event",
-    eventName: string,
-    params?: GAEventParams
-  ) => void;
-};
-
-const sendGAEvent = (eventName: string, params: GAEventParams) => {
-  if (typeof window === "undefined") return;
-
-  const gtag = (window as WindowWithGtag).gtag;
-  if (!gtag) return;
-
-  gtag("event", eventName, params);
-};
 
 export default function HeroButtons() {
   const t = useTranslations("hero");
-  const router = useRouter();
-  const pathname = usePathname();
-
-  const scrollToSection = (sectionId: string) => {
-    handleMenuNavigation({
-      id: sectionId,
-      pathname,
-      router,
-    });
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
   const handleClick = (buttonName: string, sectionId: string) => {
-    sendGAEvent("click_hero_button", { button_name: buttonName });
     scrollToSection(sectionId);
   };
 

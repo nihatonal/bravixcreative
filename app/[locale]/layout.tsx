@@ -4,6 +4,7 @@ import { Locale, routing } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Toaster } from "@/components/ui/toaster";
 import "../globals.css";
 import { PlanProvider } from "@/lib/PlanContext";
 
@@ -38,6 +39,7 @@ export default async function LocaleLayout({
           <Header />
           {children}
           <Footer />
+          <Toaster />
         </>
       </PlanProvider>
     </NextIntlClientProvider>

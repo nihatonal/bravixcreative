@@ -1,7 +1,8 @@
-"use client"
+"use client";
+
 import { useEffect, useState } from "react";
 
-const ReadingProgress = () => {
+export default function ReadingProgress() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -13,10 +14,10 @@ const ReadingProgress = () => {
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return <div className="reading-progress" style={{ width: `${progress}%` }} />;
-};
-
-export default ReadingProgress;
+}

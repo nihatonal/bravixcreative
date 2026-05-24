@@ -4,6 +4,8 @@ import BlogCard from "./BlogCard";
 import { Send } from "lucide-react";
 import { Post } from "@/types/post";
 import { useTranslations } from "next-intl";
+import { toast } from "@hooks/toast";
+import axios from "axios";
 
 type BlogSidebarProps = {
   popular: Post[];
@@ -15,11 +17,37 @@ const BlogSidebar = ({ popular, latest, categories, tags }: BlogSidebarProps) =>
   const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
   const t = useTranslations("blog");
-  const handleSubscribe = (e: React.FormEvent) => {
+  const contact = useTranslations("contact")
+
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubscribed(true);
+    setSubscribed(true);
+
+    try {
+      await axios.post(
+        `https://bravix-server.vercel.app/api/newsletter`,
+        { email }
+      );
+
+      toast({
+        title: contact("submitSuccessTitle", { default: "Successful!" }),
+        description: contact("submitSuccessDesc", {
+          default: "Your email has been saved successfully.",
+        }),
+      });
+
       setEmail("");
+    } catch (err) {
+      console.error(err);
+
+      toast({
+        title: contact("submitErrorTitle", { default: "Something went wrong" }),
+        description: contact("submitErrorDesc", {
+          default: "Please try again later.",
+        }),
+      });
+    } finally {
+      setSubscribed(false);
     }
   };
 
@@ -29,7 +57,7 @@ const BlogSidebar = ({ popular, latest, categories, tags }: BlogSidebarProps) =>
       <div className="rounded-lg border border-border bg-card p-6">
         <h3 className="font-serif text-xl font-bold text-card-foreground">{t("cta_title")}</h3>
         <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-        {t("cta_text")}
+          {t("cta_text")}
         </p>
         {subscribed ? (
           <p className="mt-4 text-sm font-medium text-primary">Thank you for subscribing ✓</p>

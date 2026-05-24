@@ -109,8 +109,8 @@ const Contact: React.FC = () => {
                     <p className="mx-auto max-w-xl text-gray-600">{t("subtitle")}</p>
                 </div>
 
-                <div className="grid gap-10 md:grid-cols-2">
-                    <div className="rounded-xl bg-white p-6 shadow-sm">
+                <div className="grid w-full items-stretch gap-10 md:grid-cols-2">
+                    <div className="h-full rounded-xl bg-white p-6 shadow-sm">
                         <form
                             onSubmit={handleSubmit}
                             className="flex flex-col space-y-3 lg:grid lg:grid-cols-2 lg:gap-x-4 lg:space-y-0 lg:gap-y-3"
@@ -202,7 +202,7 @@ const Contact: React.FC = () => {
                             <button
                                 type="submit"
                                 aria-label="submit button"
-                                className="col-start-2 min-h-[44px] w-full rounded-[8px] bg-bvs-purple py-2 text-white hover:bg-bvs-purple/90 disabled:opacity-70"
+                               className="col-span-2 min-h-[44px] w-full rounded-[8px] bg-bvs-purple py-2 text-white hover:bg-bvs-purple/90 disabled:opacity-70 lg:ml-auto "
                                 disabled={isSubmitting}
                             >
                                 {isSubmitting ? (
@@ -236,8 +236,8 @@ const Contact: React.FC = () => {
                         </form>
                     </div>
 
-                    <div>
-                        <div className="mb-8 rounded-xl bg-white p-6 shadow-sm">
+                    <div className="flex h-full flex-col gap-8">    
+                        <div className="flex-1 rounded-xl bg-white p-6 shadow-sm">
                             <h3 className="mb-4 text-xl font-semibold">{t("info")}</h3>
 
                             <div className="space-y-4">
@@ -330,7 +330,7 @@ const Contact: React.FC = () => {
                             <p className="mb-4 opacity-90">{t("letsMeetSub")}</p>
                             <SocialMedia
                                 className="text-bvs-accent"
-                                iconClassName="rounded-full p-2 text-white transition-colors hover:bg-white/80 hover:text-bvs-accent"
+                                iconClassName="rounded-full p-2 text-white transition-colors hover:bg-white/80 hover:text-bvs-primary"
                                 status_link={t("status_link")}
                             />
                         </div>

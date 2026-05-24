@@ -1,55 +1,57 @@
 "use client";
 
-import { useTranslations, useLocale } from "next-intl";
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ExternalLink } from "lucide-react";
-import { portfolioData, Project } from "@/constants/portfolioData";
 import { Card, CardContent } from "@/components/ui/card";
+import type { PortfolioCardProject } from "@/lib/portfolio";
+import { getProjectPath } from "@/lib/project-routes";
+import type { Locale } from "@/i18n/routing";
+type FilterItem = {
+  id: string;
+  name: string;
+};
 
-export default function PortfolioClient() {
-  const locale = useLocale();
-  const t = useTranslations("portfolio");
+type PortfolioGridClientProps = {
+  locale: Locale;
+  title: string;
+  subtitle: string;
+  eyebrow: string;
+  viewProjectLabel: string;
+  filters: FilterItem[];
+  projects: PortfolioCardProject[];
+};
 
+export default function PortfolioGridClient({
+  locale,
+  title,
+  subtitle,
+  eyebrow,
+  viewProjectLabel,
+  filters,
+  projects,
+}: PortfolioGridClientProps) {
   const [activeFilter, setActiveFilter] = useState("all");
 
-  const filters = useMemo(
-    () => [
-      { id: "all", name: t("all") },
-      { id: "web-design", name: t("web-design") },
-      { id: "ui-ux", name: t("ui-ux") },
-      { id: "web-development", name: t("web-development") },
-      { id: "web-application", name: t("web-application") },
-    ],
-    [t]
-  );
-
-  const currentProjects = useMemo<Project[]>(
-    () => portfolioData[locale as keyof typeof portfolioData] || portfolioData.en,
-    [locale]
-  );
-
   const filteredProjects = useMemo(() => {
-    const projects =
+    const items =
       activeFilter === "all"
-        ? currentProjects
-        : currentProjects.filter((project) => project.type === activeFilter);
+        ? projects
+        : projects.filter((project) => project.type === activeFilter);
 
-    return [...projects].reverse();
-  }, [activeFilter, currentProjects]);
+    return [...items].reverse();
+  }, [activeFilter, projects]);
 
   return (
     <section id="portfolio" className="bg-gray-50 px-2 py-20 lg:px-20">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <span className="mb-4 inline-flex items-center rounded-full border border-bvs-purple/20 bg-white/80 px-4 py-1 text-sm font-medium text-bvs-purple shadow-sm backdrop-blur-sm">
-            {t("eyebrow")}
+            {eyebrow}
           </span>
-          <h1 className="mb-4 text-3xl font-bold md:text-4xl">
-            {t("title")}
-          </h1>
-          <p className="mx-auto max-w-xl text-gray-600">{t("subtitle")}</p>
+          <h1 className="mb-4 text-3xl font-bold md:text-4xl">{title}</h1>
+          <p className="mx-auto max-w-xl text-gray-600">{subtitle}</p>
         </div>
 
         <div className="mb-10 flex flex-wrap justify-center gap-2">
@@ -69,7 +71,7 @@ export default function PortfolioClient() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredProjects.map((project) => (
             <Card
               key={project.id}
@@ -77,7 +79,7 @@ export default function PortfolioClient() {
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src={project.images?.[0] || "/placeholder.svg"}
+                  src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-110"
@@ -109,10 +111,10 @@ export default function PortfolioClient() {
                 </div>
 
                 <Link
-                  href={`/${locale}/project/${project.slug}/${project.id}`}
+                href={getProjectPath(locale, project.slug)}
                   className="mt-auto flex items-center gap-1 text-sm text-bvs-blue transition-colors hover:opacity-80"
                 >
-                  {t("viewProject")} <ExternalLink size={14} />
+                  {viewProjectLabel} <ExternalLink size={14} />
                 </Link>
               </CardContent>
             </Card>

@@ -24,8 +24,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: "Bravix Creative",
-              url: "https://www.bravixcreative.com",
-              logo: "https://www.bravixcreative.com/bravix.png",
+              url: "https://bravixcreative.com",
+              logo: "https://bravixcreative.com/bravix.png",
               sameAs: ["https://www.instagram.com/bravixcreative"],
               description:
                 "Bravix Creative, yaratıcı dijital çözümler sunan web tasarım ve geliştirme ajansıdır.",
@@ -42,11 +42,11 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Bravix Creative",
-              url: "https://www.bravixcreative.com",
+              url: "https://bravixcreative.com",
               potentialAction: {
                 "@type": "SearchAction",
                 target:
-                  "https://www.bravixcreative.com/search?q={search_term_string}",
+                  "https://bravixcreative.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string",
               },
             }),

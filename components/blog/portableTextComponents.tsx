@@ -1,9 +1,9 @@
+
 import type { PortableTextComponents } from "@portabletext/react";
 import Image from "next/image";
 import Link from "next/link";
 import { urlFor } from "@/sanity/lib/image";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { vscDarkPlus } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import CodeBlock from "./CodeBlock";
 
 function isExternalUrl(href: string) {
   return /^https?:\/\//i.test(href);
@@ -13,10 +13,20 @@ function getHeadingId(value: { _key?: string } | undefined, fallback: string) {
   return value?._key ? `heading-${value._key}` : fallback;
 }
 
+type PortableImageValue = {
+  alt?: string;
+  [key: string]: unknown;
+};
+
+type CodeBlockValue = {
+  language?: string;
+  code?: string;
+};
+
 export const portableTextComponents: PortableTextComponents = {
   block: {
     normal: ({ children }) => (
-      <p className="my-6 text-[17px] leading-8 text-foreground/90">
+      <p className="my-4 text-[17px] md:text-[18px] leading-8 text-foreground/90">
         {children}
       </p>
     ),
@@ -27,7 +37,7 @@ export const portableTextComponents: PortableTextComponents = {
       return (
         <h2
           id={id}
-          className="mt-14 mb-5 scroll-mt-28 text-3xl font-regular tracking-tight text-foreground"
+          className="mt-14 mb-5 scroll-mt-28 text-3xl font-semibold tracking-tight text-foreground"
         >
           {children}
         </h2>
@@ -56,52 +66,30 @@ export const portableTextComponents: PortableTextComponents = {
 
   types: {
     image: ({ value }) => {
-      const imgUrl = urlFor(value).width(1200).height(700).url();
+      const imageValue = value as PortableImageValue;
+      const imgUrl = urlFor(imageValue).width(1200).height(700).url();
 
       return (
-        <figure className="my-10 overflow-hidden rounded-3xl">
+        <figure className="my-6 overflow-hidden rounded-3xl">
           <Image
             src={imgUrl}
-            alt={value?.alt || ""}
+            alt={imageValue?.alt || "Blog image"}
             width={1200}
             height={700}
             unoptimized
             className="w-full rounded-3xl object-cover shadow-lg"
           />
+          {imageValue?.alt ? (
+            <figcaption className="pl-3 mt-3 text-sm text-muted-foreground">
+              {imageValue.alt}
+            </figcaption>
+          ) : null}
         </figure>
       );
     },
 
     codeBlock: ({ value }) => {
-      return (
-        <div className="my-10 overflow-hidden rounded-2xl border border-white/10 bg-[#2e2305] shadow-lg">
-          <div className="flex items-center justify-between border-b border-white/10 px-4 py-2">
-            <span className="text-xs uppercase tracking-wider text-zinc-400">
-              {value?.language || "code"}
-            </span>
-
-            <div className="flex gap-2">
-              <span className="h-3 w-3 rounded-full bg-red-500" />
-              <span className="h-3 w-3 rounded-full bg-yellow-500" />
-              <span className="h-3 w-3 rounded-full bg-green-500" />
-            </div>
-          </div>
-
-          <SyntaxHighlighter
-            language={value?.language || "javascript"}
-            style={vscDarkPlus}
-            customStyle={{
-              margin: 0,
-              padding: "20px",
-              background: "transparent",
-              fontSize: "14px",
-            }}
-            showLineNumbers
-          >
-            {value?.code || ""}
-          </SyntaxHighlighter>
-        </div>
-      );
+      return <CodeBlock value={value as CodeBlockValue} />;
     },
   },
 
@@ -128,7 +116,7 @@ export const portableTextComponents: PortableTextComponents = {
       <strong className="font-semibold text-foreground">{children}</strong>
     ),
     code: ({ children }) => (
-      <code className="rounded-md bg-muted px-2 py-1 font-mono text-sm text-foreground">
+      <code className="rounded-md bg-muted px-2 py-1 font-mono text-sm text-[#e66b19]">
         {children}
       </code>
     ),
@@ -151,7 +139,7 @@ export const portableTextComponents: PortableTextComponents = {
         <a
           href={href}
           target="_blank"
-          rel="nofollow noopener noreferrer"
+          rel="noopener noreferrer"
           className="font-medium text-primary underline underline-offset-4 transition-colors hover:text-primary/80"
         >
           {children}

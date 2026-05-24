@@ -1,6 +1,5 @@
 import createNextIntlPlugin from "next-intl/plugin";
 import withBundleAnalyzer from "@next/bundle-analyzer";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
 import type { NextConfig } from "next";
 
 const withNextIntl = createNextIntlPlugin();
@@ -10,34 +9,15 @@ const bundleAnalyzer = withBundleAnalyzer({
 });
 
 const nextConfig: NextConfig = {
-  //output: "export", // ⭐ static site
   trailingSlash: true,
-
+  //output: "export",
   images: {
-    domains: ["i.ibb.co"],
-    unoptimized: true, // ⭐ static export için gerekli
-  },
-  experimental: {
-    modern: true
+    formats: ["image/avif", "image/webp"],
+    unoptimized: true,
   },
   compiler: {
     removeConsole: true,
     emotion: true,
-  },
-
-  webpack(config, { isServer }) {
-    if (!isServer && process.env.ANALYZE === "true") {
-      config.plugins.push(
-        new BundleAnalyzerPlugin({
-          analyzerMode: "static",
-          reportFilename: "./analyze/client.html",
-          openAnalyzer: false,
-          generateStatsFile: true,
-          statsFilename: "./analyze/stats.json",
-        })
-      );
-    }
-    return config;
   },
 };
 

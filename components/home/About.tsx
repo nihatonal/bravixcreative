@@ -52,7 +52,7 @@ export default function AboutMe() {
               <p className="mb-10 text-gray-600">{t("paragraph2")}</p>
               <p className="mb-10 text-gray-600">{t("paragraph3")}</p>
 
-              <div className="grid grid-cols-3 gap-4 text-center">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
                 {statistics.map((stat) => (
                   <div
                     key={stat.label}

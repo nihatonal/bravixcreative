@@ -73,9 +73,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1001",
       slug: "apartment-hotel-website-and-admin-panel",
 
-      title: "Apartment Hotel Website",
+      title:
+        "Hotel Website with Admin Panel & Booking System | Bravix Creative",
       shortDescription:
-        "Modern hotel website with a reservation-focused landing page and custom admin panel for rate and availability management.",
+        "Custom hotel website with reservation-focused landing page, Google Calendar sync, and admin panel for availability & rate management. Built with React & Node.js.",
 
       seoTitle: "Apartment Hotel Website & Admin Panel",
       seoDescription:
@@ -163,9 +164,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1002",
       slug: "vineyard-investment-website",
 
-      title: "Vineyard Investment Website",
+      title:
+        "Bilingual Investment Website for Vineyard Company | Bravix Creative",
       shortDescription:
-        "Fast, bilingual investment website designed to present vineyard opportunities, services, and blog content with a trustworthy brand image.",
+        "Fast, bilingual corporate website built with React and i18next. Designed to attract local and international investors with a trustworthy brand image and clear content.",
 
       seoTitle: "Vineyard Investment Website",
       seoDescription:
@@ -241,9 +243,9 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1003",
       slug: "the-glass-hut-cabin-website",
 
-      title: "The Glass Hut Website",
+      title: "Glamping Cabin Website with Booking & FAQ | Bravix Creative",
       shortDescription:
-        "A visually immersive cabin website designed to showcase a calm glamping experience with booking-focused sections and FAQs.",
+        "Immersive single-page React website for a glass cabin glamping experience. Features booking section, FAQ, full-screen visuals, and smooth animations via Framer Motion.",
 
       seoTitle: "The Glass Hut – Glamping Cabin Website",
       seoDescription:
@@ -325,9 +327,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1004",
       slug: "mindfulness-app-landing-page",
 
-      title: "Mindfulness App Landing Page",
+      title:
+        "Mindfulness App Landing Page with Breathing Animation | Bravix Creative",
       shortDescription:
-        "A calm, responsive landing page built to promote a mindfulness app with breathing animation, pricing, reviews, and conversion-focused sections.",
+        "Calm, conversion-focused React landing page for ZenMind. Features interactive breathing animation, pricing, user reviews, and mobile-first design with Lottie & Framer Motion.",
 
       seoTitle: "Mindfulness App Landing Page",
       seoDescription:
@@ -409,9 +412,9 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1005",
       slug: "creative-flow-dashboard",
 
-      title: "Creative Flow Dashboard",
+      title: "Creator Dashboard UI/UX Design — Figma & React | Bravix Creative",
       shortDescription:
-        "Modern dashboard UI concept designed for creators to manage analytics, income, tasks, and content in a clear and visually balanced layout.",
+        "Modern, responsive dashboard UI concept for content creators. Manages analytics, income, tasks, and content in a visually balanced, low-friction interface. Built in Figma & React.",
 
       seoTitle: "Creative Flow Dashboard UI",
       seoDescription:
@@ -493,9 +496,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1006",
       slug: "fast-food-restaurant-website",
 
-      title: "Fast Food Restaurant Website",
+      title:
+        "Restaurant Website with Online Ordering & Real-Time Tracking | Bravix Creative",
       shortDescription:
-        "Interactive restaurant website with online ordering, secure payment flow, and real-time order tracking supported by a lightweight admin panel.",
+        "Full-featured React restaurant website with cart, secure payment, real-time order tracking, and staff admin panel. Mobile-first design built for Quick Bite.",
 
       seoTitle: "Fast Food Restaurant Website",
       seoDescription:
@@ -582,9 +586,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1007",
       slug: "ta-travel-web-site",
 
-      title: "TA-Travel Website",
+      title:
+        "Tourism Website with Admin Panel & Newsletter Integration | Bravix Creative",
       shortDescription:
-        "Modern tourism platform with destination pages, customer reviews, newsletter integration, and admin panel support.",
+        "Modern React tourism platform with destination pages, customer reviews, newsletter management, and Google Analytics tracking. Built for TA-Travel with Node.js & MongoDB.",
 
       seoTitle: "TA-Travel Website | Modern Tourism Platform & Admin Panel",
       seoDescription:
@@ -658,19 +663,19 @@ export const portfolioData: Record<string, Project[]> = {
       ],
       faq: [
         {
-          question: "What was the main goal of this hotel website project?",
+          question: "What features does the TA-Travel website include?",
           answer:
-            "The main goal was to create a professional website that promotes the hotel while also giving the owner an easy way to manage room availability and guest requests.",
+            "The website includes destination highlights, contact forms, customer reviews, newsletter subscription, legal policy pages, and an admin panel for content and review management.",
         },
         {
-          question: "Was an admin panel included in the project?",
+          question: "How does the review moderation system work?",
           answer:
-            "Yes. A custom admin panel was developed to manage availability, rates, and reservation-related workflows.",
+            "All user reviews go through an approval process in the admin panel. Only reviews approved by the admin are published on the site. New submissions are held until reviewed.",
         },
         {
-          question: "Which technologies were used in this project?",
+          question: "Which technologies power the TA-Travel platform?",
           answer:
-            "The project was built with React, Node.js, MongoDB, Tailwind CSS, and Google Calendar API integration.",
+            "The project was built with React, Tailwind CSS, Node.js, MongoDB, Firebase Hosting, i18next, Google Analytics, and Email API.",
         },
       ],
     },
@@ -680,9 +685,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1001",
       slug: "apart-otel-web-sitesi-ve-yonetici-paneli",
 
-      title: "Apart Otel Web Sitesi",
+      title:
+        "Rezervasyon Odaklı Otel Web Sitesi ve Yönetim Paneli | Bravix Creative",
       shortDescription:
-        "Rezervasyon odaklı açılış sayfası ve fiyat ile müsaitlik yönetimi için özel yönetim paneli içeren modern otel web sitesi.",
+        "Google Calendar entegrasyonu, fiyat ve müsaitlik yönetimi ile özel yönetim paneli içeren React tabanlı modern otel web sitesi. Monihomes için geliştirildi.",
 
       seoTitle: "Apart Otel Web Sitesi ve Yönetim Paneli",
       seoDescription:
@@ -770,9 +776,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1002",
       slug: "bag-yatirim-web-sitesi",
 
-      title: "Bağ Yatırım Web Sitesi",
+      title:
+        "Bağ Yatırım Şirketi İçin İki Dilli Kurumsal Web Sitesi | Bravix Creative",
       shortDescription:
-        "Bağ yatırım fırsatlarını, hizmetleri ve blog içeriklerini güven veren bir marka yapısıyla sunmak için tasarlanmış hızlı ve iki dilli yatırım web sitesi.",
+        "React ve i18next ile geliştirilmiş hızlı, iki dilli yatırım web sitesi. Yerel ve yabancı yatırımcılara hitap eden güven odaklı tasarım ve net içerik yapısı.",
 
       seoTitle: "Bağ Yatırım Web Sitesi",
       seoDescription:
@@ -848,9 +855,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1003",
       slug: "the-glass-hut-kabin-tanitim-sitesi",
 
-      title: "The Glass Hut Web Sitesi",
+      title:
+        "Glamping Kabin Web Sitesi — Rezervasyon & Tanıtım | Bravix Creative",
       shortDescription:
-        "Sakin bir glamping deneyimini rezervasyon odaklı bölümler ve sık sorulan sorular ile sunmak için tasarlanmış görsel açıdan etkileyici kabin web sitesi.",
+        "Cam kabin deneyimini sunan tek sayfalık React web sitesi. Rezervasyon formu, sık sorulan sorular, tam ekran görseller ve Framer Motion animasyonları ile doğa atmosferi.",
 
       seoTitle: "The Glass Hut – Glamping Kabin Web Sitesi",
       seoDescription:
@@ -932,9 +940,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1004",
       slug: "mindfulness-uygulama-tanitim-sitesi",
 
-      title: "Mindfulness Uygulaması Açılış Sayfası",
+      title:
+        "Mindfulness Uygulaması için Nefes Animasyonlu Açılış Sayfası | Bravix Creative",
       shortDescription:
-        "Nefes animasyonu, fiyatlandırma, kullanıcı yorumları ve dönüşüm odaklı bölümlerle bir mindfulness uygulamasını tanıtmak için hazırlanmış sakin ve duyarlı açılış sayfası.",
+        "ZenMind için sakin ve dönüşüm odaklı React açılış sayfası. İnteraktif nefes animasyonu, fiyatlandırma, kullanıcı yorumları ve mobil uyumlu tasarım.",
 
       seoTitle: "Mindfulness Uygulaması Açılış Sayfası",
       seoDescription:
@@ -1016,9 +1025,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1005",
       slug: "yaratici-akis-paneli-arayuzu",
 
-      title: "Creative Flow Dashboard",
+      title:
+        "İçerik Üreticileri için Dashboard UI/UX Tasarımı | Figma & React | Bravix Creative",
       shortDescription:
-        "Üreticilerin analiz, gelir, görev ve içeriklerini net ve görsel açıdan dengeli bir arayüzde yönetmesi için tasarlanmış modern dashboard UI konsepti.",
+        "Analiz, gelir, görev ve içerik yönetimi için modern ve duyarlı dashboard arayüzü. Figma ve React ile geliştirilmiş, düşük bilişsel yük odaklı tasarım.",
 
       seoTitle: "Creative Flow Dashboard UI",
       seoDescription:
@@ -1100,9 +1110,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1006",
       slug: "fast-food-restoran-web-sitesi",
 
-      title: "Fast Food Restoran Web Sitesi",
+      title:
+        "Online Sipariş & Gerçek Zamanlı Takipli Restoran Web Sitesi | Bravix Creative",
       shortDescription:
-        "Hafif bir yönetim paneliyle desteklenen, online sipariş, güvenli ödeme akışı ve gerçek zamanlı sipariş takibi sunan etkileşimli restoran web sitesi.",
+        "Sepet, güvenli ödeme, gerçek zamanlı sipariş takibi ve yönetim paneli içeren React tabanlı fast food web sitesi. Mobil öncelikli tasarım.",
 
       seoTitle: "Fast Food Restoran Web Sitesi",
       seoDescription:
@@ -1190,9 +1201,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1007",
       slug: "ta-travel-web-sitesi",
 
-      title: "TA-Travel Web Sitesi",
+      title:
+        "Yönetim Paneli & Bülten Entegrasyonlu Turizm Web Sitesi | Bravix Creative",
       shortDescription:
-        "Destinasyon sayfaları, müşteri yorumları, bülten entegrasyonu ve yönetim paneli desteği sunan modern turizm platformu.",
+        "Destinasyon sayfaları, müşteri yorumları, bülten yönetimi ve Google Analytics takibi sunan modern React turizm platformu. Node.js & MongoDB ile geliştirildi..",
 
       seoTitle:
         "TA-Travel Web Sitesi | Modern Turizm Platformu ve Yönetim Paneli",
@@ -1268,12 +1280,12 @@ export const portfolioData: Record<string, Project[]> = {
             "Web sitesinde destinasyon öne çıkanları, iletişim formları, müşteri yorumları, bülten aboneliği, yasal politika sayfaları ve içerik ile yorum yönetimi için bir yönetim paneli yer aldı.",
         },
         {
-          question: "Bu proje için bir yönetim paneli geliştirildi mi?",
+          question: "Yorum moderasyon sistemi nasıl çalışıyor?",
           answer:
-            "Evet. Yorumları, bülten aboneliklerini ve Google Analytics verilerini yönetmek için özel bir yönetim paneli geliştirildi.",
+            "Tüm kullanıcı yorumları yönetim panelinde onay sürecinden geçer. Yalnızca yönetici tarafından onaylanan yorumlar sitede yayınlanır. Yeni yorumlar incelenene kadar bekletilir.",
         },
         {
-          question: "Bu projede hangi teknolojiler kullanıldı?",
+          question: "TA-Travel platformunda hangi teknolojiler kullanıldı?",
           answer:
             "Proje React, Tailwind CSS, Node.js, MongoDB, Firebase Hosting, i18next, Google Analytics ve Email API ile geliştirildi.",
         },
@@ -1285,9 +1297,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1001",
       slug: "veb-sayt-apart-otelya-i-administrativnaya-panel",
 
-      title: "Сайт апарт-отеля",
+      title:
+        "Сайт отеля с системой бронирования и админ-панелью | Bravix Creative",
       shortDescription:
-        "Современный сайт отеля с посадочной страницей, ориентированной на бронирование, и собственной админ-панелью для управления ценами и доступностью.",
+        "Современный сайт апарт-отеля на React с синхронизацией Google Calendar, управлением ценами и доступностью. Заявки — мгновенно на email и WhatsApp.",
 
       seoTitle: "Сайт апарт-отеля и админ-панель",
       seoDescription:
@@ -1375,9 +1388,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1002",
       slug: "veb-sayt-investiciy-v-vinodelni",
 
-      title: "Сайт для инвестиций в виноградники",
+      title:
+        "Двуязычный корпоративный сайт для инвестиционной компании | Bravix Creative",
       shortDescription:
-        "Быстрый двуязычный инвестиционный сайт, созданный для презентации возможностей вложений в виноградники, услуг и блог-контента с надежным образом бренда.",
+        "Быстрый двуязычный сайт на React и i18next для компании по инвестициям в виноградники. Доверительный дизайн для местных и иностранных инвесторов.",
 
       seoTitle: "Сайт для инвестиций в виноградники",
       seoDescription:
@@ -1453,9 +1467,9 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1003",
       slug: "the-glass-hut-sayt-dlya-steklyannogo-domika",
 
-      title: "Сайт The Glass Hut",
+      title: "Сайт глэмпинг-домика с бронированием и FAQ | Bravix Creative",
       shortDescription:
-        "Визуально выразительный сайт домика, созданный для демонстрации спокойного глэмпинг-опыта с акцентом на бронирование и FAQ.",
+        "Одностраничный React-сайт для стеклянного домика в природе. Форма бронирования, FAQ, полноэкранные визуалы и плавные анимации на Framer Motion.",
 
       seoTitle: "The Glass Hut – сайт глэмпинг-домика",
       seoDescription:
@@ -1537,9 +1551,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1004",
       slug: "mindfulness-app-landing-page",
 
-      title: "Лендинг для mindfulness-приложения",
+      title:
+        "Лендинг mindfulness-приложения с анимацией дыхания | Bravix Creative",
       shortDescription:
-        "Спокойная адаптивная посадочная страница для продвижения mindfulness-приложения с анимацией дыхания, тарифами, отзывами и конверсионными блоками.",
+        "Спокойный конверсионный лендинг ZenMind на React. Интерактивная анимация дыхания, тарифы, отзывы пользователей и мобильная адаптация с Lottie & Framer Motion.",
 
       seoTitle: "Лендинг для mindfulness-приложения",
       seoDescription:
@@ -1621,9 +1636,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1005",
       slug: "panel-upravleniya-creator-flow",
 
-      title: "Creative Flow Dashboard",
+      title:
+        "UI/UX дашборд для авторов контента — Figma & React | Bravix Creative",
       shortDescription:
-        "Современная UI-концепция дашборда для авторов, позволяющая управлять аналитикой, доходом, задачами и контентом в ясном и визуально сбалансированном интерфейсе.",
+        "Современный адаптивный дашборд для управления аналитикой, доходом, задачами и контентом. Спроектирован в Figma, реализован на React с минимальной когнитивной нагрузкой.",
 
       seoTitle: "Creative Flow Dashboard UI",
       seoDescription:
@@ -1705,9 +1721,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1006",
       slug: "sayt-fastfud-restorana",
 
-      title: "Сайт ресторана быстрого питания",
+      title:
+        "Сайт ресторана с онлайн-заказом и отслеживанием в реальном времени | Bravix Creative",
       shortDescription:
-        "Интерактивный сайт ресторана с онлайн-заказом, безопасной оплатой и отслеживанием заказа в реальном времени, поддерживаемый легкой админ-панелью.",
+        "React-платформа для быстрого питания: корзина, безопасная оплата, трекинг заказов и админ-панель для персонала. Mobile-first дизайн для Quick Bite.",
 
       seoTitle: "Сайт ресторана быстрого питания",
       seoDescription:
@@ -1795,9 +1812,10 @@ export const portfolioData: Record<string, Project[]> = {
       id: "1007",
       slug: "ta-travel-vebsayt",
 
-      title: "Сайт TA-Travel",
+      title:
+        "Туристический сайт с админ-панелью и интеграцией рассылки | Bravix Creative",
       shortDescription:
-        "Современная туристическая платформа со страницами направлений, отзывами клиентов, интеграцией рассылки и поддержкой админ-панели.",
+        "Современная React-платформа для TA-Travel: направления, отзывы, управление рассылкой и Google Analytics. Реализовано на Node.js и MongoDB.",
 
       seoTitle:
         "Сайт TA-Travel | Современная туристическая платформа и админ-панель",
@@ -1889,7 +1907,7 @@ export const portfolioData: Record<string, Project[]> = {
 
 export function getProjectById(
   id: string,
-  locale: string
+  locale: string,
 ): Project | undefined {
   const projects = portfolioData[locale] || portfolioData["en"];
   return projects.find((project) => project.id === id);

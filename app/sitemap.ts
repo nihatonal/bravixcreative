@@ -3,7 +3,7 @@ import { getAllProjects, getProjectById } from "@/lib/projectService";
 
 export const dynamic = "force-static";
 
-const siteUrl = "https://www.bravixcreative.com";
+const siteUrl = "https://bravixcreative.com";
 const locales = ["en", "tr", "ru"] as const;
 
 const staticPages = [

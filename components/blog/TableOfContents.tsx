@@ -1,82 +1,45 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 
-interface PortableTextSpan {
-  _type: "span";
-  text?: string;
-}
-
-interface PortableTextBlock {
-  _key?: string;
-  _type: string;
-  style?: string;
-  children?: PortableTextSpan[];
-}
-
-interface Heading {
+export interface TocItem {
   id: string;
   text: string;
-  level: number;
+  level: 2 | 3;
 }
 
 interface TableOfContentsProps {
-  body: PortableTextBlock[];
+  items: TocItem[];
 }
 
-const TableOfContents = ({ body }: TableOfContentsProps) => {
+export default function TableOfContents({ items }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState("");
   const t = useTranslations("blog");
 
-  const headings: Heading[] = useMemo(() => {
-    if (!Array.isArray(body)) return [];
-
-    return body
-      .filter(
-        (block): block is PortableTextBlock =>
-          block?._type === "block" &&
-          (block.style === "h2" || block.style === "h3") &&
-          !!block._key
-      )
-      .map((block) => {
-        const text = (block.children ?? [])
-          .map((child) => child.text ?? "")
-          .join("")
-          .trim();
-
-        return {
-          id: `heading-${block._key}`,
-          text,
-          level: block.style === "h2" ? 2 : 3,
-        };
-      })
-      .filter((heading) => heading.text.length > 0);
-  }, [body]);
-
   useEffect(() => {
-    if (!headings.length) return;
+    if (!items.length) return;
 
     const handleScroll = () => {
       const offset = 140;
 
-      const visibleHeadings = headings
-        .map((heading) => {
-          const el = document.getElementById(heading.id);
+      const visibleItems = items
+        .map((item) => {
+          const el = document.getElementById(item.id);
           if (!el) return null;
 
           return {
-            id: heading.id,
+            id: item.id,
             top: el.getBoundingClientRect().top,
           };
         })
         .filter(Boolean) as { id: string; top: number }[];
 
-      if (!visibleHeadings.length) return;
+      if (!visibleItems.length) return;
 
-      let currentId = visibleHeadings[0].id;
+      let currentId = visibleItems[0].id;
 
-      for (const item of visibleHeadings) {
+      for (const item of visibleItems) {
         if (item.top <= offset) {
           currentId = item.id;
         } else {
@@ -96,9 +59,9 @@ const TableOfContents = ({ body }: TableOfContentsProps) => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [headings]);
+  }, [items]);
 
-  if (!headings.length) return null;
+  if (!items.length) return null;
 
   return (
     <nav>
@@ -107,40 +70,41 @@ const TableOfContents = ({ body }: TableOfContentsProps) => {
       </h4>
 
       <ul className="space-y-1.5 border-l border-border">
-        {headings.map((heading) => (
-          <li key={heading.id}>
-            <a
-              href={`#${heading.id}`}
-              onClick={(e) => {
-                e.preventDefault();
+        {items
+          .filter((item) => item.level === 2)
+          .map((item) => (
+            <li key={item.id}>
+              <a
+                href={`#${item.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
 
-                const el = document.getElementById(heading.id);
-                if (!el) return;
+                  const el = document.getElementById(item.id);
+                  if (!el) return;
 
-                const y = el.getBoundingClientRect().top + window.scrollY - 110;
+                  const y =
+                    el.getBoundingClientRect().top + window.scrollY - 110;
 
-                window.scrollTo({
-                  top: y,
-                  behavior: "smooth",
-                });
+                  window.scrollTo({
+                    top: y,
+                    behavior: "smooth",
+                  });
 
-                setActiveId(heading.id);
-              }}
-              className={`block border-l-2 py-1 text-sm transition-colors ${
-                heading.level === 3 ? "pl-6" : "pl-4"
-              } ${
-                activeId === heading.id
-                  ? "border-primary font-medium text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {heading.text}
-            </a>
-          </li>
-        ))}
+                  setActiveId(item.id);
+                }}
+                className={`block border-l-2 py-1 text-sm transition-colors ${
+                  item.level === 3 ? "pl-6" : "pl-4"
+                } ${
+                  activeId === item.id
+                    ? "border-primary font-medium text-foreground"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {item.text}
+              </a>
+            </li>
+          ))}
       </ul>
     </nav>
   );
-};
-
-export default TableOfContents;
+}

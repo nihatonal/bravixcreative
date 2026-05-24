@@ -3,9 +3,15 @@ import { getTranslations } from "next-intl/server";
 import Hero from "@/components/home/Hero";
 import About from "@/components/home/About";
 import Services from "@/components/home/Services_";
-import HomeBottomClient from "./HomeBottomClient";
 import BlogPreview from "@/components/home/BlogPreview";
 import PortfolioPreview from "@/components/home/PortfolioPreview";
+import HomeScrollHandler from "./HomeScrollHandler";
+import CTABanner from "@/components/CTABanner";
+import Skills from "@/components/home/Skills";
+import Testimonials from "@/components/home/Testimonials";
+import Pricing from "@/components/home/Pricing";
+import ContactSection from "@/components/home/ContactSection";
+
 export async function generateStaticParams() {
   return ["en", "tr", "ru"].map((locale) => ({ locale }));
 }
@@ -16,7 +22,7 @@ export async function generateMetadata(
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata.home" });
 
-  const baseUrl = "https://www.bravixcreative.com";
+  const baseUrl = "https://bravixcreative.com";
 
   return {
     title: t("title"),
@@ -46,12 +52,17 @@ export default async function HomePage({
 
   return (
     <>
+      <HomeScrollHandler />
       <Hero />
       <About />
-      <Services />
+      {await Services()}
       {await PortfolioPreview({ locale })}
       {await BlogPreview({ locale })}
-      <HomeBottomClient />
+      {await Pricing()}
+      <CTABanner />
+      <Skills />
+      {await Testimonials()}
+      <ContactSection />
     </>
   );
 }

@@ -5,7 +5,7 @@ import BlogHero from '@/components/blog/BlogHero';
 import BlogCard from '@/components/blog/BlogCard';
 import BlogSidebar from '@/components/blog/BlogSidebar';
 import type { Post } from '@/types/post';
-import {setRequestLocale} from 'next-intl/server';
+import { setRequestLocale } from 'next-intl/server';
 
 type PageProps = {
   params: Promise<{
@@ -19,10 +19,10 @@ type ApiResponse<T> = {
   error?: string;
 };
 
-const baseUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://bravix-server.vercel.app';
-
+const fetchURL = process.env.NEXT_PUBLIC_BACKEND_URL || 'https://bravix-server.vercel.app';
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://bravixcreative.com"
 async function fetchFromApi<T>(path: string): Promise<T> {
-  const res = await fetch(`${baseUrl}${path}`, {
+  const res = await fetch(`${fetchURL}${path}`, {
     cache: 'force-cache',
   });
 
@@ -126,13 +126,13 @@ export default async function BlogPage({ params }: PageProps) {
             </div>
 
             <div className="grid gap-8 md:grid-cols-2">
-              {latest[0] && (
+              {latest.length >= 3 && (
                 <div className="md:col-span-2 animate-fade-up">
                   <BlogCard post={latest[0]} index={0} />
                 </div>
               )}
 
-              {latest.slice(1).map((post: Post, i: number) => (
+              {posts.filter((item => item.slug !== featured[0].slug)).slice(1).map((post: Post, i: number) => (
                 <div
                   key={post._id}
                   className={`animate-fade-up animation-delay-${(i + 1) * 100}`}
